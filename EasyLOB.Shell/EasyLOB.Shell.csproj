@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E57D18D3-26C8-4C79-B831-055EA2DF4504}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>EasyLOB.Shell</RootNamespace>
+    <AssemblyName>EasyLOB.Shell</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.6.5\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=3.3.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Abstractions.3.3.1\lib\net46\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.8.13.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Container.5.8.13\lib\net46\Unity.Container.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\ApplicationDemo.cs" />
+    <Compile Include="Application\AuditTrail.cs" />
+    <Compile Include="Application\Activity.cs" />
+    <Compile Include="Application\Identity.cs" />
+    <Compile Include="AutoMapper\AuditTrail.cs" />
+    <Compile Include="AutoMapper\Activity.cs" />
+    <Compile Include="AutoMapper\AutoMapperDemo.cs" />
+    <Compile Include="AutoMapper\Identity.cs" />
+    <Compile Include="Demo\CodeSmithDemo.cs" />
+    <Compile Include="Demo\EnvironmentApplication.cs" />
+    <Compile Include="Demo\DIManager.cs" />
+    <Compile Include="Demo\EMail.cs" />
+    <Compile Include="Demo\MultiTenant.cs" />
+    <Compile Include="Demo\Log.cs" />
+    <Compile Include="Demo\Demo.cs" />
+    <Compile Include="Demo\EnvironmentSession.cs" />
+    <Compile Include="EasyLOB\AppHelper.cs" />
+    <Compile Include="EasyLOB\DIUnity\AppDIUnityHelper.cs" />
+    <Compile Include="EasyLOB\Activity\AppDIUnityHelperActivity.cs" />
+    <Compile Include="EasyLOB\AuditTrail\AppDIUnityHelperAuditTrail.cs" />
+    <Compile Include="EasyLOB\DIUnity\AppDIUnityHelperExtensions.cs" />
+    <Compile Include="EasyLOB\Identity\AppDIUnityHelperIdentity.cs" />
+    <Compile Include="EasyLOB\DIUnity\AppDIUnityHelperLog.cs" />
+    <Compile Include="EDM\EDM.cs" />
+    <Compile Include="EDM\EDMDemo.cs" />
+    <Compile Include="Persistence\Activity.cs" />
+    <Compile Include="Persistence\AuditTrail.cs" />
+    <Compile Include="Persistence\Identity.cs" />
+    <Compile Include="Persistence\PersistenceDemo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="EasyLOB-Configuration\JSON\MultiTenant.json" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="EasyLOB-Configuration\JSON\MyLOBMultiTenant.json" />
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EasyLOB.Activity\EasyLOB.Activity.Application\EasyLOB.Activity.Application.csproj">
+      <Project>{b8a988b8-206e-4eaa-b450-08073e56ae32}</Project>
+      <Name>EasyLOB.Activity.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Activity\EasyLOB.Activity.Data\EasyLOB.Activity.Data.csproj">
+      <Project>{3fd320bd-301c-4702-807a-79bd097fee0f}</Project>
+      <Name>EasyLOB.Activity.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Activity\EasyLOB.Activity.PersistenceEntityFramework\EasyLOB.Activity.PersistenceEntityFramework.csproj">
+      <Project>{3dda15bd-751b-4afc-8567-c1a9d466b705}</Project>
+      <Name>EasyLOB.Activity.PersistenceEntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Activity\EasyLOB.Activity\EasyLOB.Activity.csproj">
+      <Project>{d8fb9c93-4224-4eea-ac7a-68435da6065e}</Project>
+      <Name>EasyLOB.Activity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Application\EasyLOB.Application\EasyLOB.Application.csproj">
+      <Project>{90d108e3-3dea-45ac-84a5-53de6ffa9ff5}</Project>
+      <Name>EasyLOB.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.AuditTrail\EasyLOB.AuditTrail.Application\EasyLOB.AuditTrail.Application.csproj">
+      <Project>{87a7e2ee-a7ab-4b8c-865c-c534d5e622f6}</Project>
+      <Name>EasyLOB.AuditTrail.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.AuditTrail\EasyLOB.AuditTrail.Data\EasyLOB.AuditTrail.Data.csproj">
+      <Project>{c1271aa6-876d-4d3f-af2e-3f5097c232d3}</Project>
+      <Name>EasyLOB.AuditTrail.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.AuditTrail\EasyLOB.AuditTrail.PersistenceEntityFramework\EasyLOB.AuditTrail.PersistenceEntityFramework.csproj">
+      <Project>{aee9b888-51e7-4083-877e-c5c76c3acbaf}</Project>
+      <Name>EasyLOB.AuditTrail.PersistenceEntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.AuditTrail\EasyLOB.AuditTrail\EasyLOB.AuditTrail.csproj">
+      <Project>{68555183-7e6f-4b6c-a908-63276d1ac73d}</Project>
+      <Name>EasyLOB.AuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Data\EasyLOB.Data\EasyLOB.Data.csproj">
+      <Project>{1f89f104-c08b-4537-a9a8-5c51c53376f0}</Project>
+      <Name>EasyLOB.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.DI\EasyLOB.DIUnity\EasyLOB.DIUnity.csproj">
+      <Project>{7b6433b4-6151-4bf5-af3f-9bb76ce96d75}</Project>
+      <Name>EasyLOB.DIUnity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Environment\EasyLOB.Environment.Desktop\EasyLOB.Environment.Desktop.csproj">
+      <Project>{1c591acf-69af-4296-bacd-2c3ff278d6c5}</Project>
+      <Name>EasyLOB.Environment.Desktop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Environment\EasyLOB.Environment\EasyLOB.Environment.csproj">
+      <Project>{52df21cd-3cca-4aa4-a013-785e4bc8cac2}</Project>
+      <Name>EasyLOB.Environment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Extensions\EasyLOB.Extensions.Edm\EasyLOB.Extensions.Edm.csproj">
+      <Project>{e876d7fb-2103-44d7-84d1-2db735423c9c}</Project>
+      <Name>EasyLOB.Extensions.Edm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Extensions\EasyLOB.Extensions.Ini\EasyLOB.Extensions.Ini.csproj">
+      <Project>{7a3b48cd-b1ef-494e-8692-6d8a26997f07}</Project>
+      <Name>EasyLOB.Extensions.Ini</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Extensions\EasyLOB.Extensions.Mail\EasyLOB.Extensions.Mail.csproj">
+      <Project>{2d9412e9-8719-4bda-9957-f4e9df5deb8f}</Project>
+      <Name>EasyLOB.Extensions.Mail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Identity\EasyLOB.Identity.Application\EasyLOB.Identity.Application.csproj">
+      <Project>{7fe3fcb5-79cd-48af-83a8-a1b30a58587d}</Project>
+      <Name>EasyLOB.Identity.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Identity\EasyLOB.Identity.Data\EasyLOB.Identity.Data.csproj">
+      <Project>{637e4c69-daf3-4c5d-99ac-241ef3fcee31}</Project>
+      <Name>EasyLOB.Identity.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Identity\EasyLOB.Identity.PersistenceEntityFramework\EasyLOB.Identity.PersistenceEntityFramework.csproj">
+      <Project>{a180a6b6-1543-4e97-b37e-43a33ecfe07a}</Project>
+      <Name>EasyLOB.Identity.PersistenceEntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Identity\EasyLOB.Identity\EasyLOB.Identity.csproj">
+      <Project>{9416c420-cd94-44df-9e0c-55dd7c0077aa}</Project>
+      <Name>EasyLOB.Identity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Library\EasyLOB.Library\EasyLOB.Library.csproj">
+      <Project>{55B7716B-36A3-442D-9E9E-9CAAB7DB592E}</Project>
+      <Name>EasyLOB.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Log\EasyLOB.LogNLog\EasyLOB.LogNLog.csproj">
+      <Project>{81e6e9d2-e870-46ee-9fcb-3ee959479a87}</Project>
+      <Name>EasyLOB.LogNLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Log\EasyLOB.Log\EasyLOB.Log.csproj">
+      <Project>{0352f43e-27df-4fce-86bc-da3f6ead005a}</Project>
+      <Name>EasyLOB.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Security\EasyLOB.Security\EasyLOB.Security.csproj">
+      <Project>{cd519bed-67d7-4be8-a3a5-7ddad88ceed5}</Project>
+      <Name>EasyLOB.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB\EasyLOB.csproj">
+      <Project>{6706907a-8932-46e7-a1c8-7575130ff8f7}</Project>
+      <Name>EasyLOB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EasyLOB-Template\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{52DF21CD-3CCA-4AA4-A013-785E4BC8CAC2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EasyLOB.Environment</RootNamespace>
+    <AssemblyName>EasyLOB.Environment</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Menu\AppMenu.cs" />
+    <Compile Include="Menu\MenuHelper.cs" />
+    <Compile Include="MultiTenant\AppTenant.cs" />
+    <Compile Include="MultiTenant\MultiTenantHelper.cs" />
+    <Compile Include="Profile\AppProfile.cs" />
+    <Compile Include="Profile\ProfileHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourcesManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\EasyLOB.AuditTrail\EasyLOB.AuditTrail.Data\EasyLOB.AuditTrail.Data.csproj">
+      <Project>{c1271aa6-876d-4d3f-af2e-3f5097c232d3}</Project>
+      <Name>EasyLOB.AuditTrail.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.AuditTrail\EasyLOB.AuditTrail\EasyLOB.AuditTrail.csproj">
+      <Project>{68555183-7e6f-4b6c-a908-63276d1ac73d}</Project>
+      <Name>EasyLOB.AuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.Data\EasyLOB.Data\EasyLOB.Data.csproj">
+      <Project>{1f89f104-c08b-4537-a9a8-5c51c53376f0}</Project>
+      <Name>EasyLOB.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.Extensions\EasyLOB.Extensions.Ini\EasyLOB.Extensions.Ini.csproj">
+      <Project>{7a3b48cd-b1ef-494e-8692-6d8a26997f07}</Project>
+      <Name>EasyLOB.Extensions.Ini</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.Library\EasyLOB.Library\EasyLOB.Library.csproj">
+      <Project>{55b7716b-36a3-442d-9e9e-9caab7db592e}</Project>
+      <Name>EasyLOB.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB\EasyLOB.csproj">
+      <Project>{6706907a-8932-46e7-a1c8-7575130ff8f7}</Project>
+      <Name>EasyLOB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

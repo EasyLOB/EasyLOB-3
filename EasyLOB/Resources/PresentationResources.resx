@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="Delete_Confirmation" xml:space="preserve">
+    <value>Delete [{0}] ?</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="SearchOrder" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="SearchOrderBy" xml:space="preserve">
+    <value>Order by</value>
+  </data>
+  <data name="SearchRecordsByPage" xml:space="preserve">
+    <value>Record by Page</value>
+  </data>
+  <data name="SearchRecordsBySearch" xml:space="preserve">
+    <value>Records by Search</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SearchBy" xml:space="preserve">
+    <value>Search by</value>
+  </data>
+  <data name="SearchOperator" xml:space="preserve">
+    <value>Operator</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="Read" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="Execute" xml:space="preserve">
+    <value>Execute</value>
+  </data>
+  <data name="Operator_Contains" xml:space="preserve">
+    <value>contains</value>
+  </data>
+  <data name="Operator_Equal" xml:space="preserve">
+    <value>equal</value>
+  </data>
+  <data name="Operator_GreaterOrEqualThan" xml:space="preserve">
+    <value>greater or equal</value>
+  </data>
+  <data name="Operator_GreaterThan" xml:space="preserve">
+    <value>greater than</value>
+  </data>
+  <data name="Operator_IsNotNull" xml:space="preserve">
+    <value>with content</value>
+  </data>
+  <data name="Operator_IsNull" xml:space="preserve">
+    <value>without content</value>
+  </data>
+  <data name="Operator_LessOrEqualThan" xml:space="preserve">
+    <value>less or equal</value>
+  </data>
+  <data name="Operator_LessThan" xml:space="preserve">
+    <value>less than</value>
+  </data>
+  <data name="Operator_NotEqual" xml:space="preserve">
+    <value>not equal</value>
+  </data>
+  <data name="Sort_Ascending" xml:space="preserve">
+    <value>ascending</value>
+  </data>
+  <data name="Sort_Descending" xml:space="preserve">
+    <value>descending</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Navigate</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Entity</value>
+  </data>
+  <data name="Property" xml:space="preserve">
+    <value>Property</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="Task" xml:space="preserve">
+    <value>Task</value>
+  </data>
+  <data name="Tasks" xml:space="preserve">
+    <value>Tasks</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="Dashboards" xml:space="preserve">
+    <value>Dashboards</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="SelectDirectory" xml:space="preserve">
+    <value>Select a directory</value>
+  </data>
+  <data name="SelectFile" xml:space="preserve">
+    <value>Select a file</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="DayOfWeek1" xml:space="preserve">
+    <value>Sunday</value>
+  </data>
+  <data name="DayOfWeek2" xml:space="preserve">
+    <value>Monday</value>
+  </data>
+  <data name="DayOfWeek3" xml:space="preserve">
+    <value>Tuesday</value>
+  </data>
+  <data name="DayOfWeek4" xml:space="preserve">
+    <value>Wednesday</value>
+  </data>
+  <data name="DayOfWeek5" xml:space="preserve">
+    <value>Thursday</value>
+  </data>
+  <data name="DayOfWeek6" xml:space="preserve">
+    <value>Friday</value>
+  </data>
+  <data name="DayOfWeek7" xml:space="preserve">
+    <value>Saturday</value>
+  </data>
+  <data name="EMail" xml:space="preserve">
+    <value>e-mail</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Exportar</value>
+  </data>
+  <data name="TaskStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Colar</value>
+  </data>
+  <data name="CreateToUpdate" xml:space="preserve">
+    <value>Successful "CREATE" redirected to "UPDATE"</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SaveAndExit" xml:space="preserve">
+    <value>Save &amp; Exit</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Upload123" xml:space="preserve">
+    <value>Upload pdf|doc|docx|txt|xls|xlsx jpg|png mp3 avi|mov|mp4|mpeg|wmv</value>
+  </data>
+  <data name="Lock" xml:space="preserve">
+    <value>Lock</value>
+  </data>
+  <data name="Unlock" xml:space="preserve">
+    <value>Unlock</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Directory" xml:space="preserve">
+    <value>Directory</value>
+  </data>
+  <data name="DirectoryDoesNotExist" xml:space="preserve">
+    <value>Directory {0} does not exist</value>
+  </data>
+  <data name="FileDoesNotExist" xml:space="preserve">
+    <value>File {0} does not exist</value>
+  </data>
+  <data name="Directories" xml:space="preserve">
+    <value>Directory(ies)</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>File(s)</value>
+  </data>
+</root>

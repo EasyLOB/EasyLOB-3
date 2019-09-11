@@ -1,0 +1,12 @@
+[
+  {
+    "Name": "MyLOB",
+    "Description": "MyLOB",
+    "Connections": [
+      {
+        "Name": "MyLOB",
+        "ConnectionName": "MyLOB"
+      }
+    ]
+  }
+]

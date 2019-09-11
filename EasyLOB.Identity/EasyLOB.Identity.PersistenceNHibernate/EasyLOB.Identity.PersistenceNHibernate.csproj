@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{25223AEF-D330-40E5-A60F-36D481558681}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EasyLOB.Identity.Persistence</RootNamespace>
+    <AssemblyName>EasyLOB.Identity.PersistenceNHibernate</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\EasyLOB.Identity.PersistenceNHibernate.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Maps\RoleMap.cs" />
+    <Compile Include="Maps\UserClaimMap.cs" />
+    <Compile Include="Maps\UserLoginMap.cs" />
+    <Compile Include="Maps\UserMap.cs" />
+    <Compile Include="Maps\UserRoleMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IdentityFactory.cs" />
+    <Compile Include="UnitOfWork\IdentityGenericRepositoryNH.cs" />
+    <Compile Include="UnitOfWork\IdentityRoleRepository.cs" />
+    <Compile Include="UnitOfWork\IdentityUnitOfWorkNH.cs" />
+    <Compile Include="UnitOfWork\IdentityUserRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Iesi.Collections.4.0.4\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NHibernate.4.1.2.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.AspNet.Identity, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NHibernate.AspNet.Identity.2.2.1.0\lib\net45\NHibernate.AspNet.Identity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\EasyLOB.Environment\EasyLOB.Environment\EasyLOB.Environment.csproj">
+      <Project>{52DF21CD-3CCA-4AA4-A013-785E4BC8CAC2}</Project>
+      <Name>EasyLOB.Environment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.Identity\EasyLOB.Identity\EasyLOB.Identity.csproj">
+      <Project>{9416c420-cd94-44df-9e0c-55dd7c0077aa}</Project>
+      <Name>EasyLOB.Identity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.Library\EasyLOB.Library\EasyLOB.Library.csproj">
+      <Project>{55b7716b-36a3-442d-9e9e-9caab7db592e}</Project>
+      <Name>EasyLOB.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.Data\EasyLOB.Data\EasyLOB.Data.csproj">
+      <Project>{1f89f104-c08b-4537-a9a8-5c51c53376f0}</Project>
+      <Name>EasyLOB.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.Persistence\EasyLOB.PersistenceNHibernate\EasyLOB.PersistenceNHibernate.csproj">
+      <Project>{fe71a014-1922-476c-a27a-f0a819c38e7e}</Project>
+      <Name>EasyLOB.PersistenceNHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.Persistence\EasyLOB.Persistence\EasyLOB.Persistence.csproj">
+      <Project>{35433610-cb14-4909-b890-2150b6443a25}</Project>
+      <Name>EasyLOB.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB\EasyLOB.csproj">
+      <Project>{6706907a-8932-46e7-a1c8-7575130ff8f7}</Project>
+      <Name>EasyLOB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Identity.Data\EasyLOB.Identity.Data.csproj">
+      <Project>{637e4c69-daf3-4c5d-99ac-241ef3fcee31}</Project>
+      <Name>EasyLOB.Identity.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.IdentityNHibernate\EasyLOB.IdentityNHibernate.csproj">
+      <Project>{6e467e81-5c4b-4b97-822a-df8d4e1b3c07}</Project>
+      <Name>EasyLOB.IdentityNHibernate</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

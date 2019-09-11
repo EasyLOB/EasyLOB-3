@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{87A7E2EE-A7AB-4B8C-865C-C534D5E622F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EasyLOB.AuditTrail.Application</RootNamespace>
+    <AssemblyName>EasyLOB.AuditTrail.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>1591</NoWarn>
+    <DocumentationFile>bin\Debug\EasyLOB.AuditTrail.Application.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.2.0.4\lib\net46\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuditTrailGenericApplication.cs" />
+    <Compile Include="AuditTrailGenericApplicationDTO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\EasyLOB.Application\EasyLOB.Application\EasyLOB.Application.csproj">
+      <Project>{90d108e3-3dea-45ac-84a5-53de6ffa9ff5}</Project>
+      <Name>EasyLOB.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.Data\EasyLOB.Data\EasyLOB.Data.csproj">
+      <Project>{1f89f104-c08b-4537-a9a8-5c51c53376f0}</Project>
+      <Name>EasyLOB.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.Library\EasyLOB.Library\EasyLOB.Library.csproj">
+      <Project>{55b7716b-36a3-442d-9e9e-9caab7db592e}</Project>
+      <Name>EasyLOB.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.Persistence\EasyLOB.Persistence\EasyLOB.Persistence.csproj">
+      <Project>{35433610-cb14-4909-b890-2150b6443a25}</Project>
+      <Name>EasyLOB.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.Log\EasyLOB.Log\EasyLOB.Log.csproj">
+      <Project>{0352f43e-27df-4fce-86bc-da3f6ead005a}</Project>
+      <Name>EasyLOB.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB\EasyLOB.csproj">
+      <Project>{6706907a-8932-46e7-a1c8-7575130ff8f7}</Project>
+      <Name>EasyLOB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.AuditTrail\EasyLOB.AuditTrail.csproj">
+      <Project>{68555183-7e6f-4b6c-a908-63276d1ac73d}</Project>
+      <Name>EasyLOB.AuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.AuditTrail.Data\EasyLOB.AuditTrail.Data.csproj">
+      <Project>{c1271aa6-876d-4d3f-af2e-3f5097c232d3}</Project>
+      <Name>EasyLOB.AuditTrail.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

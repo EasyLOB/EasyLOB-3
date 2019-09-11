@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8A988B8-206E-4EAA-B450-08073E56AE32}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EasyLOB.Activity.Application</RootNamespace>
+    <AssemblyName>EasyLOB.Activity.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\EasyLOB.Activity.Application.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ActivityGenericApplication.cs" />
+    <Compile Include="ActivityGenericApplicationDTO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\EasyLOB.AuditTrail\EasyLOB.AuditTrailManager\EasyLOB.AuditTrailManager.csproj">
+      <Project>{3acd8d6b-b302-477a-aaf6-3383f3990f10}</Project>
+      <Name>EasyLOB.AuditTrailManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.AuditTrail\EasyLOB.AuditTrail\EasyLOB.AuditTrail.csproj">
+      <Project>{68555183-7e6f-4b6c-a908-63276d1ac73d}</Project>
+      <Name>EasyLOB.AuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.Log\EasyLOB.LogNLog\EasyLOB.LogNLog.csproj">
+      <Project>{81e6e9d2-e870-46ee-9fcb-3ee959479a87}</Project>
+      <Name>EasyLOB.LogNLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.Log\EasyLOB.Log\EasyLOB.Log.csproj">
+      <Project>{0352f43e-27df-4fce-86bc-da3f6ead005a}</Project>
+      <Name>EasyLOB.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.Library\EasyLOB.Library\EasyLOB.Library.csproj">
+      <Project>{55b7716b-36a3-442d-9e9e-9caab7db592e}</Project>
+      <Name>EasyLOB.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.Application\EasyLOB.Application\EasyLOB.Application.csproj">
+      <Project>{90d108e3-3dea-45ac-84a5-53de6ffa9ff5}</Project>
+      <Name>EasyLOB.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.Data\EasyLOB.Data\EasyLOB.Data.csproj">
+      <Project>{1f89f104-c08b-4537-a9a8-5c51c53376f0}</Project>
+      <Name>EasyLOB.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB.Persistence\EasyLOB.Persistence\EasyLOB.Persistence.csproj">
+      <Project>{35433610-cb14-4909-b890-2150b6443a25}</Project>
+      <Name>EasyLOB.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EasyLOB\EasyLOB.csproj">
+      <Project>{6706907a-8932-46e7-a1c8-7575130ff8f7}</Project>
+      <Name>EasyLOB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Activity.Data\EasyLOB.Activity.Data.csproj">
+      <Project>{3fd320bd-301c-4702-807a-79bd097fee0f}</Project>
+      <Name>EasyLOB.Activity.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Activity\EasyLOB.Activity.csproj">
+      <Project>{d8fb9c93-4224-4eea-ac7a-68435da6065e}</Project>
+      <Name>EasyLOB.Activity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
