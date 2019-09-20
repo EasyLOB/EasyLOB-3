@@ -17,7 +17,6 @@ namespace EasyLOB.Application
         {
             get { return UnitOfWork.GetRepository<TEntity>(); }
         }
-        public IDIManager DIManager { get; }
 
         public IAuthenticationManager AuthenticationManager
         {
@@ -32,7 +31,7 @@ namespace EasyLOB.Application
             {
                 if (_authorizationManager == null)
                 {
-                    _authorizationManager = DIManager.GetService<IAuthorizationManager>();
+                    _authorizationManager = ManagerHelper.DIManager.GetService<IAuthorizationManager>();
                 }
 
                 return _authorizationManager;
@@ -47,7 +46,7 @@ namespace EasyLOB.Application
             {
                 if (_auditTrailManager == null)
                 {
-                    _auditTrailManager = DIManager.GetService<IAuditTrailManager>();
+                    _auditTrailManager = ManagerHelper.DIManager.GetService<IAuditTrailManager>();
                 }
 
                 return _auditTrailManager;
@@ -62,7 +61,7 @@ namespace EasyLOB.Application
             {
                 if (_logManager == null)
                 {
-                    _logManager = DIManager.GetService<ILogManager>();
+                    _logManager = ManagerHelper.DIManager.GetService<ILogManager>();
                 }
 
                 return _logManager;
@@ -81,10 +80,9 @@ namespace EasyLOB.Application
 
         #region Methods
 
-        public GenericApplication(IUnitOfWork unitOfWork, IDIManager diManager)
+        public GenericApplication(IUnitOfWork unitOfWork)
         {
             UnitOfWork = unitOfWork;
-            DIManager = diManager;
         }
 
         public int Count(ZOperationResult operationResult, Expression<Func<TEntity, bool>> where)

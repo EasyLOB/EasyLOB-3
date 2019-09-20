@@ -7,8 +7,8 @@ namespace EasyLOB.Identity.Application
     {
         #region Methods
 
-        public IdentityGenericApplication(IIdentityUnitOfWork unitOfWork, IDIManager diManager)
-            : base(unitOfWork, diManager)
+        public IdentityGenericApplication(IIdentityUnitOfWork unitOfWork)
+            : base(unitOfWork)
         {
         }
 

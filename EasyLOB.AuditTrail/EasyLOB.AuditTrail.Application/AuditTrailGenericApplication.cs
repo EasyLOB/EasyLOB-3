@@ -8,8 +8,8 @@ namespace EasyLOB.AuditTrail.Application
     {
         #region Methods
 
-        public AuditTrailGenericApplication(IAuditTrailUnitOfWork unitOfWork, IDIManager diManager)
-            : base(unitOfWork, diManager)
+        public AuditTrailGenericApplication(IAuditTrailUnitOfWork unitOfWork)
+            : base(unitOfWork)
         {
         }
 

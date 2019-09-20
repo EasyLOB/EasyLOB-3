@@ -9,8 +9,8 @@ namespace EasyLOB.Activity.Application
     {
         #region Methods
 
-        public ActivityGenericApplicationDTO(IActivityUnitOfWork unitOfWork, IDIManager diManager)
-            : base(unitOfWork, diManager)
+        public ActivityGenericApplicationDTO(IActivityUnitOfWork unitOfWork)
+            : base(unitOfWork)
         {
         }
 

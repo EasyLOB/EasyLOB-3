@@ -12,15 +12,12 @@ namespace EasyLOB.Shell
 
             try
             {
-                IDIManager diManager = ManagerHelper.DIManager.GetService<IDIManager>();
-                Console.WriteLine(diManager.ToString());
-
                 IIdentityUnitOfWork unitOfWork =
-                    diManager.GetService<IIdentityUnitOfWork>();
+                    ManagerHelper.DIManager.GetService<IIdentityUnitOfWork>();
                 Console.WriteLine(unitOfWork.ToString());
 
                 IIdentityGenericApplication<User> application =
-                    diManager.GetService<IIdentityGenericApplication<User>>();
+                    ManagerHelper.DIManager.GetService<IIdentityGenericApplication<User>>();
                 Console.WriteLine(application.ToString());
 
                 ZOperationResult operationResult = new ZOperationResult();

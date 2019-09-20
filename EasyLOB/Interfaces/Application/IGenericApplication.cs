@@ -14,8 +14,6 @@ namespace EasyLOB
 
         IUnitOfWork UnitOfWork { get; }
 
-        IDIManager DIManager { get; }
-
         IAuthenticationManager AuthenticationManager { get; }
 
         IAuthorizationManager AuthorizationManager { get; }

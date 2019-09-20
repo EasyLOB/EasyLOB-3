@@ -2,7 +2,7 @@
 
 namespace EasyLOB
 {
-    public class DIManager : IDIManager
+    public class DIManagerUnity : IDIManager
     {
         #region Fields
 
@@ -12,7 +12,7 @@ namespace EasyLOB
 
         #region Methods
 
-        public DIManager(IUnityContainer container)
+        public DIManagerUnity(IUnityContainer container)
         {
             _container = container;
         }

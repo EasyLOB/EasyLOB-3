@@ -12,8 +12,8 @@ namespace EasyLOB.Application
     {
         #region Methods
 
-        public GenericApplicationDTO(IUnitOfWork unitOfWork, IDIManager diManager)
-            : base(unitOfWork, diManager)
+        public GenericApplicationDTO(IUnitOfWork unitOfWork)
+            : base(unitOfWork)
         {
         }
 
