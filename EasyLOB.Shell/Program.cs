@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
+using Unity;
 
 namespace EasyLOB.Shell
 {
@@ -9,6 +10,7 @@ namespace EasyLOB.Shell
     {
         static void Main(string[] args)
         {
+            AppDIUnityHelper.Setup(new UnityContainer());
             AppHelper.Setup();
             MultiTenantHelper.Setup("MyLOB");
 

@@ -51,6 +51,7 @@ namespace EasyLOB
 
             SetupActivity();
             SetupAuditTrail();
+            SetupEasyLOB();
             SetupExtensions();
             SetupIdentity();
             SetupLog();

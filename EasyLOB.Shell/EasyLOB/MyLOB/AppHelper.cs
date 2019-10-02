@@ -3,7 +3,6 @@ using EasyLOB.Activity.Data;
 using EasyLOB.AuditTrail.Data;
 using EasyLOB.Data;
 using EasyLOB.Identity.Data;
-using Unity;
 
 namespace EasyLOB
 {
@@ -14,7 +13,7 @@ namespace EasyLOB
         public static void Setup()
         {
             // Unity
-            AppDIUnityHelper.Setup(new UnityContainer());
+            AppDIUnityHelper.SetupMyLOB(); // !!!
 
             // AutoMapper
             SetupMappers();
