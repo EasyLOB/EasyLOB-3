@@ -1,11 +1,5 @@
-﻿using AutoMapper;
-using EasyLOB.Activity.Data;
-using EasyLOB.AuditTrail.Data;
-using EasyLOB.Data;
-using EasyLOB.Environment;
-using EasyLOB.Identity.Data;
+﻿using EasyLOB.Environment;
 using Newtonsoft.Json;
-using Unity;
 
 namespace EasyLOB
 {
@@ -46,45 +40,6 @@ namespace EasyLOB
                     + ProfileHelper.Profile.UserName;
                 (ManagerHelper.DIManager.GetService<ILogManager>()).OperationResult(operationResult, header);
             }
-        }
-
-        public static void Setup()
-        {
-            // AutoMapper
-            SetupMappers();
-            // Profile
-            SetupProfiles();
-
-            // Unity
-            // EasyLOB.DIService
-            AppDIUnityHelper.Setup(new UnityContainer());
-        }
-
-        public static void SetupMappers()
-        {
-            Mapper.Initialize(cfg => {
-                // ZDataModel
-                // Activity
-                cfg.AddProfile<ActivityDataAutoMapper>();
-                // Audit Trail
-                cfg.AddProfile<AuditTrailDataAutoMapper>();
-                // Identity
-                cfg.AddProfile<IdentityDataAutoMapper>();
-            });
-
-            Mapper.Configuration.CompileMappings();
-            Mapper.Configuration.AssertConfigurationIsValid();
-        }
-
-        public static void SetupProfiles()
-        {
-            // ZDataModel
-            // Activity
-            DataHelper.SetupDataProfile("EasyLOB.Activity.Data");
-            // Audit Trail
-            DataHelper.SetupDataProfile("EasyLOB.AuditTrail.Data");
-            // Identity
-            DataHelper.SetupDataProfile("EasyLOB.Identity.Data");
         }
 
         #endregion Methods
