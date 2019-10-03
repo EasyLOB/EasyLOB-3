@@ -99,8 +99,8 @@
     <Compile Include="EasyLOB\DI\AppDIUnityHelper.cs" />
     <Compile Include="EasyLOB\EasyLOB\AppDIUnityHelperEasyLOB.cs" />
     <Compile Include="EasyLOB\EasyLOB\AppDIUnityHelperExtensions.cs" />
-    <Compile Include="EasyLOB\MyLOB\AppDIUnityHelperMyLOB.cs" />
-    <Compile Include="EasyLOB\MyLOB\AppHelper.cs" />
+    <Compile Include="EasyLOB\Console\AppDIUnityHelperConsole.cs" />
+    <Compile Include="EasyLOB\Console\AppHelper.cs" />
     <Compile Include="EasyLOB\Identity\AppDIUnityHelperIdentity.cs" />
     <Compile Include="EasyLOB\EasyLOB\AppDIUnityHelperLog.cs" />
     <Compile Include="EDM\EDM.cs" />

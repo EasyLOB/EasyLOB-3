@@ -13,7 +13,7 @@ namespace EasyLOB
         public static void Setup()
         {
             // Unity
-            AppDIUnityHelper.SetupMyLOB(); // !!!
+            AppDIUnityHelper.SetupConsole(); // !!!
 
             // AutoMapper
             SetupMappers();
