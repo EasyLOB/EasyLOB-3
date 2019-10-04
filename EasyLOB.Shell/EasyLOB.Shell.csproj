@@ -101,6 +101,7 @@
     <Compile Include="EasyLOB\Activity\AppDIUnityHelperActivity.cs" />
     <Compile Include="EasyLOB\AuditTrail\AppDIAutofacHelperAuditTrail.cs" />
     <Compile Include="EasyLOB\AuditTrail\AppDIUnityHelperAuditTrail.cs" />
+    <Compile Include="EasyLOB\Console\AppDIAutofacConsole.cs" />
     <Compile Include="EasyLOB\DI\AppDIAutofacHelper.cs" />
     <Compile Include="EasyLOB\DI\AppDIUnityHelper.cs" />
     <Compile Include="EasyLOB\EasyLOB\AppDIAutofacHelperEasyLOB.cs" />

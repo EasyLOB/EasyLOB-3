@@ -12,8 +12,10 @@ namespace EasyLOB
 
         public static void Setup()
         {
+            // Autofac
+            AppDIAutofacHelper.SetupConsole(); // !!!
             // Unity
-            AppDIUnityHelper.SetupConsole(); // !!!
+            //AppDIUnityHelper.SetupConsole(); // !!!
 
             // AutoMapper
             SetupMappers();
