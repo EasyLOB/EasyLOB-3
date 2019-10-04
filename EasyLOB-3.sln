@@ -125,6 +125,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyLOB.Environment.Web", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyLOB.Environment", "EasyLOB.Environment\EasyLOB.Environment\EasyLOB.Environment.csproj", "{52DF21CD-3CCA-4AA4-A013-785E4BC8CAC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyLOB.DIAutofac", "EasyLOB.DI\EasyLOB.DIAutofac\EasyLOB.DIAutofac.csproj", "{4FA40B90-1C03-4F4D-962B-CC4F4E6D8B5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -303,6 +305,10 @@ Global
 		{52DF21CD-3CCA-4AA4-A013-785E4BC8CAC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52DF21CD-3CCA-4AA4-A013-785E4BC8CAC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52DF21CD-3CCA-4AA4-A013-785E4BC8CAC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FA40B90-1C03-4F4D-962B-CC4F4E6D8B5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FA40B90-1C03-4F4D-962B-CC4F4E6D8B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FA40B90-1C03-4F4D-962B-CC4F4E6D8B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FA40B90-1C03-4F4D-962B-CC4F4E6D8B5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -366,6 +372,7 @@ Global
 		{1C591ACF-69AF-4296-BACD-2C3FF278D6C5} = {DBDEDCFA-EB00-46F0-8485-AE89E8D4B215}
 		{050FC4D2-38B7-43B4-B6C5-267D07E87799} = {DBDEDCFA-EB00-46F0-8485-AE89E8D4B215}
 		{52DF21CD-3CCA-4AA4-A013-785E4BC8CAC2} = {DBDEDCFA-EB00-46F0-8485-AE89E8D4B215}
+		{4FA40B90-1C03-4F4D-962B-CC4F4E6D8B5E} = {A4605EC3-B183-426D-A6FA-076B2E3D3249}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C473CC3E-36BE-4BE7-9866-EBDED23810BB}

@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.4.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.9.4\lib\net45\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
@@ -93,14 +96,21 @@
     <Compile Include="Demo\Log.cs" />
     <Compile Include="Demo\Demo.cs" />
     <Compile Include="Demo\EnvironmentSession.cs" />
+    <Compile Include="EasyLOB\Activity\AppDIAutofacHelperActivity.cs" />
     <Compile Include="EasyLOB\AppHelper.cs" />
     <Compile Include="EasyLOB\Activity\AppDIUnityHelperActivity.cs" />
+    <Compile Include="EasyLOB\AuditTrail\AppDIAutofacHelperAuditTrail.cs" />
     <Compile Include="EasyLOB\AuditTrail\AppDIUnityHelperAuditTrail.cs" />
+    <Compile Include="EasyLOB\DI\AppDIAutofacHelper.cs" />
     <Compile Include="EasyLOB\DI\AppDIUnityHelper.cs" />
+    <Compile Include="EasyLOB\EasyLOB\AppDIAutofacHelperEasyLOB.cs" />
+    <Compile Include="EasyLOB\EasyLOB\AppDIAutofacHelperExtensions.cs" />
+    <Compile Include="EasyLOB\EasyLOB\AppDIAutofacHelperLog.cs" />
     <Compile Include="EasyLOB\EasyLOB\AppDIUnityHelperEasyLOB.cs" />
     <Compile Include="EasyLOB\EasyLOB\AppDIUnityHelperExtensions.cs" />
     <Compile Include="EasyLOB\Console\AppDIUnityHelperConsole.cs" />
     <Compile Include="EasyLOB\Console\AppHelper.cs" />
+    <Compile Include="EasyLOB\Identity\AppDIAutofacHelperIdentity.cs" />
     <Compile Include="EasyLOB\Identity\AppDIUnityHelperIdentity.cs" />
     <Compile Include="EasyLOB\EasyLOB\AppDIUnityHelperLog.cs" />
     <Compile Include="EDM\EDM.cs" />
@@ -165,6 +175,10 @@
     <ProjectReference Include="..\EasyLOB.Data\EasyLOB.Data\EasyLOB.Data.csproj">
       <Project>{1f89f104-c08b-4537-a9a8-5c51c53376f0}</Project>
       <Name>EasyLOB.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.DI\EasyLOB.DIAutofac\EasyLOB.DIAutofac.csproj">
+      <Project>{4fa40b90-1c03-4f4d-962b-cc4f4e6d8b5e}</Project>
+      <Name>EasyLOB.DIAutofac</Name>
     </ProjectReference>
     <ProjectReference Include="..\EasyLOB.DI\EasyLOB.DIUnity\EasyLOB.DIUnity.csproj">
       <Project>{7b6433b4-6151-4bf5-af3f-9bb76ce96d75}</Project>

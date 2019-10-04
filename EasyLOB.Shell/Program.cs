@@ -1,4 +1,5 @@
-﻿using EasyLOB.Environment;
+﻿using Autofac;
+using EasyLOB.Environment;
 using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
@@ -10,7 +11,10 @@ namespace EasyLOB.Shell
     {
         static void Main(string[] args)
         {
-            AppDIUnityHelper.Setup(new UnityContainer());
+            // Autofac
+            AppDIAutofacHelper.Setup(new ContainerBuilder());
+            // Unity
+            //AppDIUnityHelper.Setup(new UnityContainer());
             AppHelper.Setup();
             MultiTenantHelper.Setup("MyLOB");
 
