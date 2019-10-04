@@ -7,8 +7,8 @@
     <ProjectGuid>{050FC4D2-38B7-43B4-B6C5-267D07E87799}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EasyLOB.Environment.Web</RootNamespace>
-    <AssemblyName>EasyLOB.Environment.Web</AssemblyName>
+    <RootNamespace>EasyLOB.Environment</RootNamespace>
+    <AssemblyName>EasyLOB.EnvironmentWeb</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

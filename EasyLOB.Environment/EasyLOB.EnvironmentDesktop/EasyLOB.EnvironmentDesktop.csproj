@@ -7,8 +7,8 @@
     <ProjectGuid>{1C591ACF-69AF-4296-BACD-2C3FF278D6C5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EasyLOB.Environment.Desktop</RootNamespace>
-    <AssemblyName>EasyLOB.Environment.Desktop</AssemblyName>
+    <RootNamespace>EasyLOB.Environment</RootNamespace>
+    <AssemblyName>EasyLOB.EnvironmentDesktop</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

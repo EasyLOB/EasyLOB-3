@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EasyLOB.Environment.Desktop")]
+[assembly: AssemblyTitle("EasyLOB.EnvironmentWeb")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("EasyLOB.Environment.Desktop")]
+[assembly: AssemblyProduct("EasyLOB.EnvironmentWeb")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1c591acf-69af-4296-bacd-2c3ff278d6c5")]
+[assembly: Guid("050fc4d2-38b7-43b4-b6c5-267d07e87799")]
 
 // Version information for an assembly consists of the following four values:
 //

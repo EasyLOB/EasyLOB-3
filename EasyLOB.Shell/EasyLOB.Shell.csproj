@@ -38,6 +38,12 @@
     <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="EasyLOB.DIAutofac, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EasyLOB.DIAutofac.3.0.1\lib\net46\EasyLOB.DIAutofac.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyLOB.EnvironmentDesktop, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EasyLOB.EnvironmentDesktop.3.0.1\lib\net46\EasyLOB.EnvironmentDesktop.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -176,18 +182,6 @@
     <ProjectReference Include="..\EasyLOB.Data\EasyLOB.Data\EasyLOB.Data.csproj">
       <Project>{1f89f104-c08b-4537-a9a8-5c51c53376f0}</Project>
       <Name>EasyLOB.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EasyLOB.DI\EasyLOB.DIAutofac\EasyLOB.DIAutofac.csproj">
-      <Project>{4fa40b90-1c03-4f4d-962b-cc4f4e6d8b5e}</Project>
-      <Name>EasyLOB.DIAutofac</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EasyLOB.DI\EasyLOB.DIUnity\EasyLOB.DIUnity.csproj">
-      <Project>{7b6433b4-6151-4bf5-af3f-9bb76ce96d75}</Project>
-      <Name>EasyLOB.DIUnity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EasyLOB.Environment\EasyLOB.Environment.Desktop\EasyLOB.Environment.Desktop.csproj">
-      <Project>{1c591acf-69af-4296-bacd-2c3ff278d6c5}</Project>
-      <Name>EasyLOB.Environment.Desktop</Name>
     </ProjectReference>
     <ProjectReference Include="..\EasyLOB.Environment\EasyLOB.Environment\EasyLOB.Environment.csproj">
       <Project>{52df21cd-3cca-4aa4-a013-785e4bc8cac2}</Project>

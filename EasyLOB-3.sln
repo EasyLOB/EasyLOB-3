@@ -119,9 +119,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Unit Test", "0 - Unit T
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Environment", "Environment", "{DBDEDCFA-EB00-46F0-8485-AE89E8D4B215}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyLOB.Environment.Desktop", "EasyLOB.Environment\EasyLOB.Environment.Desktop\EasyLOB.Environment.Desktop.csproj", "{1C591ACF-69AF-4296-BACD-2C3FF278D6C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyLOB.EnvironmentDesktop", "EasyLOB.Environment\EasyLOB.EnvironmentDesktop\EasyLOB.EnvironmentDesktop.csproj", "{1C591ACF-69AF-4296-BACD-2C3FF278D6C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyLOB.Environment.Web", "EasyLOB.Environment\EasyLOB.Environment.Web\EasyLOB.Environment.Web.csproj", "{050FC4D2-38B7-43B4-B6C5-267D07E87799}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyLOB.EnvironmentWeb", "EasyLOB.Environment\EasyLOB.EnvironmentWeb\EasyLOB.EnvironmentWeb.csproj", "{050FC4D2-38B7-43B4-B6C5-267D07E87799}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyLOB.Environment", "EasyLOB.Environment\EasyLOB.Environment\EasyLOB.Environment.csproj", "{52DF21CD-3CCA-4AA4-A013-785E4BC8CAC2}"
 EndProject

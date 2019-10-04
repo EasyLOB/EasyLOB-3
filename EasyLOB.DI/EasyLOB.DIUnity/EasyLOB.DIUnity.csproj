@@ -7,7 +7,7 @@
     <ProjectGuid>{7B6433B4-6151-4BF5-AF3F-9BB76CE96D75}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EasyLOB.DIUnity</RootNamespace>
+    <RootNamespace>EasyLOB.DI</RootNamespace>
     <AssemblyName>EasyLOB.DIUnity</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
