@@ -19,7 +19,7 @@ namespace EasyLOB.Application
 
         public virtual bool Create(ZOperationResult operationResult, TEntityDTO entityDTO, bool beginTransaction = true)
         {
-            //bool inTransaction = false;
+            bool inTransaction = false;
 
             try
             {
@@ -27,14 +27,14 @@ namespace EasyLOB.Application
                 {
                     TEntity entity = (TEntity)entityDTO.ToData();
 
-                    //inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
-                    //if (inTransaction)
+                    inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
+                    if (inTransaction)
                     {
                         if (Repository.Create(operationResult, entity))
                         {
                             if (UnitOfWork.Save(operationResult))
                             {
-                                //if (UnitOfWork.CommitTransaction(operationResult, beginTransaction))
+                                if (UnitOfWork.CommitTransaction(operationResult, beginTransaction))
                                 {
                                     entityDTO.FromData(entity);
 
@@ -58,10 +58,10 @@ namespace EasyLOB.Application
             }
             finally
             {
-                //if (inTransaction && !operationResult.Ok)
-                //{
-                //    UnitOfWork.RollbackTransaction(operationResult, beginTransaction);
-                //}
+                if (inTransaction && !operationResult.Ok)
+                {
+                    UnitOfWork.RollbackTransaction(operationResult, beginTransaction);
+                }
             }
 
             return operationResult.Ok;
@@ -69,7 +69,7 @@ namespace EasyLOB.Application
 
         public virtual bool Delete(ZOperationResult operationResult, TEntityDTO entityDTO, bool beginTransaction = true)
         {
-            //bool inTransaction = false;
+            bool inTransaction = false;
 
             try
             {
@@ -77,8 +77,8 @@ namespace EasyLOB.Application
                 {
                     TEntity entity = (TEntity)entityDTO.ToData();
 
-                    //inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
-                    //if (inTransaction)
+                    inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
+                    if (inTransaction)
                     {
                         if (Repository.Delete(operationResult, entity))
                         {
@@ -106,10 +106,10 @@ namespace EasyLOB.Application
             }
             finally
             {
-                //if (inTransaction && !operationResult.Ok)
-                //{
-                //    UnitOfWork.RollbackTransaction(operationResult, beginTransaction);
-                //}
+                if (inTransaction && !operationResult.Ok)
+                {
+                    UnitOfWork.RollbackTransaction(operationResult, beginTransaction);
+                }
             }
 
             return operationResult.Ok;
@@ -254,7 +254,7 @@ namespace EasyLOB.Application
 
         public virtual bool Update(ZOperationResult operationResult, TEntityDTO entityDTO, bool beginTransaction = true)
         {
-            //bool inTransaction = false;
+            bool inTransaction = false;
 
             try
             {
@@ -262,8 +262,8 @@ namespace EasyLOB.Application
                 {
                     TEntity entity = (TEntity)entityDTO.ToData();
 
-                    //inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
-                    //if (inTransaction)
+                    inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
+                    if (inTransaction)
                     {
                         string logOperation = "U";
                         string logMode;
@@ -278,7 +278,7 @@ namespace EasyLOB.Application
                         {
                             if (UnitOfWork.Save(operationResult))
                             {
-                                //if (UnitOfWork.CommitTransaction(operationResult, beginTransaction))
+                                if (UnitOfWork.CommitTransaction(operationResult, beginTransaction))
                                 {
                                     entityDTO.FromData(entity);
 
@@ -304,10 +304,10 @@ namespace EasyLOB.Application
             }
             finally
             {
-                //if (inTransaction && !operationResult.Ok)
-                //{
-                //    UnitOfWork.RollbackTransaction(operationResult, beginTransaction);
-                //}
+                if (inTransaction && !operationResult.Ok)
+                {
+                    UnitOfWork.RollbackTransaction(operationResult, beginTransaction);
+                }
             }
 
             return operationResult.Ok;

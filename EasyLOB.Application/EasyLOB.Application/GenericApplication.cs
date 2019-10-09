@@ -144,20 +144,20 @@ namespace EasyLOB.Application
 
         public virtual bool Create(ZOperationResult operationResult, TEntity entity, bool beginTransaction = true)
         {
-            //bool inTransaction = false;
+            bool inTransaction = false;
 
             try
             {
                 if (IsCreate(operationResult))
                 {
-                    //inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
-                    //if (inTransaction)
+                    inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
+                    if (inTransaction)
                     {
                         if (Repository.Create(operationResult, entity))
                         {
                             if (UnitOfWork.Save(operationResult))
                             {
-                                //if (UnitOfWork.CommitTransaction(operationResult, beginTransaction))
+                                if (UnitOfWork.CommitTransaction(operationResult, beginTransaction))
                                 {
                                     string logOperation = "C";
                                     AuditTrailManager.AuditTrail(operationResult,
@@ -179,10 +179,10 @@ namespace EasyLOB.Application
             }
             finally
             {
-                //if (inTransaction && !operationResult.Ok)
-                //{
-                //    UnitOfWork.RollbackTransaction(operationResult, beginTransaction);
-                //}
+                if (inTransaction && !operationResult.Ok)
+                {
+                    UnitOfWork.RollbackTransaction(operationResult, beginTransaction);
+                }
             }
 
             return operationResult.Ok;
@@ -190,20 +190,20 @@ namespace EasyLOB.Application
 
         public virtual bool Delete(ZOperationResult operationResult, TEntity entity, bool beginTransaction = true)
         {
-            //bool inTransaction = false;
+            bool inTransaction = false;
 
             try
             {
                 if (IsDelete(operationResult))
                 {
-                    //inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
-                    //if (inTransaction)
+                    inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
+                    if (inTransaction)
                     {
                         if (Repository.Delete(operationResult, entity))
                         {
                             if (UnitOfWork.Save(operationResult))
                             {
-                                //if (UnitOfWork.CommitTransaction(operationResult, beginTransaction))
+                                if (UnitOfWork.CommitTransaction(operationResult, beginTransaction))
                                 {
                                     string logOperation = "D";
                                     AuditTrailManager.AuditTrail(operationResult,
@@ -225,10 +225,10 @@ namespace EasyLOB.Application
             }
             finally
             {
-                //if (inTransaction && !operationResult.Ok)
-                //{
-                //    UnitOfWork.RollbackTransaction(operationResult, beginTransaction);
-                //}
+                if (inTransaction && !operationResult.Ok)
+                {
+                    UnitOfWork.RollbackTransaction(operationResult, beginTransaction);
+                }
             }
 
             return operationResult.Ok;
@@ -368,14 +368,14 @@ namespace EasyLOB.Application
 
         public bool Update(ZOperationResult operationResult, TEntity entity, bool beginTransaction = true)
         {
-            //bool inTransaction = false;
+            bool inTransaction = false;
 
             try
             {
                 if (IsUpdate(operationResult))
                 {
-                    //inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
-                    //if (inTransaction)
+                    inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
+                    if (inTransaction)
                     {
                         string logOperation = "U";
                         string logMode;
@@ -390,7 +390,7 @@ namespace EasyLOB.Application
                         {
                             if (UnitOfWork.Save(operationResult))
                             {
-                                //if (UnitOfWork.CommitTransaction(operationResult, beginTransaction))
+                                if (UnitOfWork.CommitTransaction(operationResult, beginTransaction))
                                 {
                                     if (isAuditTrail)
                                     {
@@ -414,10 +414,10 @@ namespace EasyLOB.Application
             }
             finally
             {
-                //if (inTransaction && !operationResult.Ok)
-                //{
-                //    UnitOfWork.RollbackTransaction(operationResult, beginTransaction);
-                //}
+                if (inTransaction && !operationResult.Ok)
+                {
+                    UnitOfWork.RollbackTransaction(operationResult, beginTransaction);
+                }
             }
 
             return operationResult.Ok;
