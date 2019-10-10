@@ -96,12 +96,15 @@ namespace EasyLOB.Persistence
             {
                 if (beginTransaction && PersistenceHelper.IsTransaction)
                 {
-                    if (Transaction != null
-                        && Transaction.UnderlyingTransaction != null
-                        && Transaction.UnderlyingTransaction.Connection != null
-                        && Transaction.UnderlyingTransaction.Connection.State == ConnectionState.Open)
+                    if (Transaction != null)
                     {
-                        Transaction.Commit();
+                        if (Transaction.UnderlyingTransaction != null
+                            && Transaction.UnderlyingTransaction.Connection != null
+                            && Transaction.UnderlyingTransaction.Connection.State == ConnectionState.Open)
+                        {
+                            Transaction.Commit();
+                        }
+
                         Transaction.Dispose();
                         Transaction = null;
                     }
@@ -157,12 +160,15 @@ namespace EasyLOB.Persistence
             {
                 if (beginTransaction && PersistenceHelper.IsTransaction)
                 {
-                    if (Transaction != null
-                        && Transaction.UnderlyingTransaction != null
-                        && Transaction.UnderlyingTransaction.Connection != null
-                        && Transaction.UnderlyingTransaction.Connection.State == ConnectionState.Open)
+                    if (Transaction != null)
                     {
-                        Transaction.Rollback();
+                        if (Transaction.UnderlyingTransaction != null
+                            && Transaction.UnderlyingTransaction.Connection != null
+                            && Transaction.UnderlyingTransaction.Connection.State == ConnectionState.Open)
+                        {
+                            Transaction.Rollback();
+                        }
+
                         Transaction.Dispose();
                         Transaction = null;
                     }
