@@ -4,7 +4,7 @@ namespace EasyLOB.Shell
 {
     partial class Program
     {
-        private static void EnvironmentApplicationDemo()
+        private static void DemoEnvironmentApplication()
         {
             Console.WriteLine("\nAppDomain.CurrentDomain.BaseDirectory: {0}", AppDomain.CurrentDomain.BaseDirectory);
 

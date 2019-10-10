@@ -31,27 +31,27 @@ namespace EasyLOB.Shell
                         break;
 
                     case ('1'):
-                        DIManagerDemo();
+                        DemoDIManager();
                         break;
 
                     case ('2'):
-                        EMailDemo();
+                        DemoEMail();
                         break;
 
                     case ('3'):
-                        EnvironmentApplicationDemo();
+                        DemoEnvironmentApplication();
                         break;
 
                     case ('4'):
-                        EnvironmentSessionDemo();
+                        DemoEnvironmentSession();
                         break;
 
                     case ('5'):
-                        MultiTenantDemo();
+                        DemoMultiTenant();
                         break;
 
                     case ('6'):
-                        LogDemo();
+                        DemoLog();
                         break;
                 }
 

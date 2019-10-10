@@ -6,7 +6,7 @@ namespace EasyLOB.Shell
     partial class Program
     {
 
-        private static void CodeSmithDemo()
+        private static void DemoCodeSmith()
         {
             Console.WriteLine("\nCodeSmith Demo\n");
 

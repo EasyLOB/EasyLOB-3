@@ -6,7 +6,7 @@ namespace EasyLOB.Shell
 {
     partial class Program
     {
-        private static void DIManagerDemo()
+        private static void DemoDIManager()
         {
             Console.WriteLine("\nUnityManager Demo\n");
 

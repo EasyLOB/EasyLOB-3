@@ -91,7 +91,9 @@
     <Compile Include="AutoMapper\Activity.cs" />
     <Compile Include="AutoMapper\AutoMapperDemo.cs" />
     <Compile Include="AutoMapper\Identity.cs" />
-    <Compile Include="Demo\CodeSmithDemo.cs" />
+    <Compile Include="CRUD\CRUD.cs" />
+    <Compile Include="Demo\CodeSmith.cs" />
+    <Compile Include="CRUD\CRUDPersistence.cs" />
     <Compile Include="Demo\EnvironmentApplication.cs" />
     <Compile Include="Demo\DIManager.cs" />
     <Compile Include="Demo\EMail.cs" />
@@ -235,6 +237,10 @@
     <ProjectReference Include="..\EasyLOB.Log\EasyLOB.Log\EasyLOB.Log.csproj">
       <Project>{0352f43e-27df-4fce-86bc-da3f6ead005a}</Project>
       <Name>EasyLOB.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyLOB.Persistence\EasyLOB.PersistenceEntityFramework\EasyLOB.PersistenceEntityFramework.csproj">
+      <Project>{97a09b32-5d2f-448a-b114-68a85ad2499e}</Project>
+      <Name>EasyLOB.PersistenceEntityFramework</Name>
     </ProjectReference>
     <ProjectReference Include="..\EasyLOB.Security\EasyLOB.Security\EasyLOB.Security.csproj">
       <Project>{cd519bed-67d7-4be8-a3a5-7ddad88ceed5}</Project>

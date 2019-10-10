@@ -5,7 +5,7 @@ namespace EasyLOB.Shell
 {
     partial class Program
     {
-        private static void LogDemo()
+        private static void DemoLog()
         {
             Console.WriteLine("\nLog Demo");
 

@@ -5,7 +5,7 @@ namespace EasyLOB.Shell
 {
     partial class Program
     {
-        private static void MultiTenantDemo()
+        private static void DemoMultiTenant()
         {
             Console.WriteLine("\nMulti-Tenant Demo");
             AppTenant tenant = MultiTenantHelper.Tenant;

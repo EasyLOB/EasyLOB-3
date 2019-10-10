@@ -27,14 +27,14 @@ namespace EasyLOB.Application
                 {
                     TEntity entity = (TEntity)entityDTO.ToData();
 
-                    inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
-                    if (inTransaction)
+                    //inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
+                    //if (inTransaction)
                     {
                         if (Repository.Create(operationResult, entity))
                         {
                             if (UnitOfWork.Save(operationResult))
                             {
-                                if (UnitOfWork.CommitTransaction(operationResult, beginTransaction))
+                                //if (UnitOfWork.CommitTransaction(operationResult, beginTransaction))
                                 {
                                     entityDTO.FromData(entity);
 
@@ -77,14 +77,14 @@ namespace EasyLOB.Application
                 {
                     TEntity entity = (TEntity)entityDTO.ToData();
 
-                    inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
-                    if (inTransaction)
+                    //inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
+                    //if (inTransaction)
                     {
                         if (Repository.Delete(operationResult, entity))
                         {
                             if (UnitOfWork.Save(operationResult))
                             {
-                                if (UnitOfWork.CommitTransaction(operationResult, beginTransaction))
+                                //if (UnitOfWork.CommitTransaction(operationResult, beginTransaction))
                                 {
                                     string logOperation = "D";
                                     AuditTrailManager.AuditTrail(operationResult,
@@ -262,8 +262,8 @@ namespace EasyLOB.Application
                 {
                     TEntity entity = (TEntity)entityDTO.ToData();
 
-                    inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
-                    if (inTransaction)
+                    //inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
+                    //if (inTransaction)
                     {
                         string logOperation = "U";
                         string logMode;
@@ -278,7 +278,7 @@ namespace EasyLOB.Application
                         {
                             if (UnitOfWork.Save(operationResult))
                             {
-                                if (UnitOfWork.CommitTransaction(operationResult, beginTransaction))
+                                //if (UnitOfWork.CommitTransaction(operationResult, beginTransaction))
                                 {
                                     entityDTO.FromData(entity);
 

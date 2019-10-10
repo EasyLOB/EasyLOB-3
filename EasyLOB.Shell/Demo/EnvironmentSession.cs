@@ -4,7 +4,7 @@ namespace EasyLOB.Shell
 {
     partial class Program
     {
-        private static void EnvironmentSessionDemo()
+        private static void DemoEnvironmentSession()
         {
             Console.WriteLine("\nSession Demo");
             Console.WriteLine("\nIs Web ? " + ManagerHelper.EnvironmentManager.IsWeb.ToString());

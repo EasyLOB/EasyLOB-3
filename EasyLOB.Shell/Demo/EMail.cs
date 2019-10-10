@@ -5,7 +5,7 @@ namespace EasyLOB.Shell
 {
     partial class Program
     {
-        private static void EMailDemo()
+        private static void DemoEMail()
         {
             Console.WriteLine("\ne-mail Demo");
 
