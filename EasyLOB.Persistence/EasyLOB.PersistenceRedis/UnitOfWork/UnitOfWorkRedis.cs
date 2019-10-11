@@ -77,41 +77,11 @@ namespace EasyLOB.Persistence
 
         public virtual bool BeginTransaction(ZOperationResult operationResult, bool isTransaction = true, IsolationLevel isolationLevel = IsolationLevel.ReadCommitted)
         {
-            //try
-            //{
-            //    if (isTransaction && PersistenceHelper.IsTransaction)
-            //    {
-            //        if (Transaction == null || ?)
-            //        {
-            //            Transaction = Client.CreateTransaction();
-            //        }
-            //    }
-            //}
-            //catch (Exception exception)
-            //{
-            //    operationResult.ParseExceptionRedis(exception);
-            //}
-
             return operationResult.Ok;
         }
 
         public virtual bool CommitTransaction(ZOperationResult operationResult, bool isTransaction = true)
         {
-            //try
-            //{
-            //    if (isTransaction && PersistenceHelper.IsTransaction)
-            //    {
-            //        if (Transaction != null)
-            //        {
-            //            Transaction.Commit();
-            //        }
-            //    }
-            //}
-            //catch (Exception exception)
-            //{
-            //    operationResult.ParseExceptionRedis(exception);
-            //}
-
             return operationResult.Ok;
         }
 
@@ -141,47 +111,15 @@ namespace EasyLOB.Persistence
             where TEntity : class, IZDataBase
         {
             throw new NotImplementedException("abstract class Redis UnitOfWork.GetRepository()");
-
-            //if (!Repositories.Keys.Contains(typeof(TEntity)))
-            //{
-            //    var repository = new GenericRepository<TEntity>(Context);
-            //    Repositories.Add(typeof(TEntity), repository);
-            //}
-
-            //return Repositories[typeof(TEntity)] as IGenericRepository<TEntity>;
         }
 
         public virtual bool RollbackTransaction(ZOperationResult operationResult, bool isTransaction = true)
         {
-            //try
-            //{
-            //    if (isTransaction && PersistenceHelper.IsTransaction)
-            //    {
-            //        if (Transaction != null)
-            //        {
-            //            Transaction.Rollback();
-            //        }
-            //    }
-            //}
-            //catch (Exception exception)
-            //{
-            //    operationResult.ParseExceptionRedis(exception);
-            //}
-
             return operationResult.Ok;
         }
 
         public virtual bool Save(ZOperationResult operationResult)
         {
-            //try
-            //{
-            //    Client.Save();
-            //}
-            //catch (Exception exception)
-            //{
-            //    operationResult.ParseExceptionRedis(exception);
-            //}
-
             return operationResult.Ok;
         }
 

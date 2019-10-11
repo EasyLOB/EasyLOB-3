@@ -121,14 +121,6 @@ namespace EasyLOB.Persistence
             where TEntity : class, IZDataBase
         {
             throw new NotImplementedException("abstract class RavenDB UnitOfWork.GetRepository()");
-
-            //if (!Repositories.Keys.Contains(typeof(TEntity)))
-            //{
-            //    var repository = new GenericRepository<TEntity>(Context);
-            //    Repositories.Add(typeof(TEntity), repository);
-            //}
-
-            //return Repositories[typeof(TEntity)] as IGenericRepository<TEntity>;
         }
 
         public virtual bool RollbackTransaction(ZOperationResult operationResult, bool isTransaction = true)

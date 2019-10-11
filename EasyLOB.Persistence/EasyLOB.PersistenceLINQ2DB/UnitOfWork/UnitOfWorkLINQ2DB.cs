@@ -76,7 +76,15 @@ namespace EasyLOB.Persistence
                 {
                     if (Transaction != null)
                     {
-                        Transaction.Commit();
+                        if (Transaction.DataConnection != null
+                            && Transaction.DataConnection.Connection != null
+                            && Transaction.DataConnection.Connection.State == ConnectionState.Open)
+                        {
+                            Transaction.Commit();
+                        }
+
+                        Transaction.Dispose();
+                        Transaction = null;
                     }
                 }
             }
@@ -132,7 +140,15 @@ namespace EasyLOB.Persistence
                 {
                     if (Transaction != null)
                     {
-                        Transaction.Rollback();
+                        if (Transaction.DataConnection != null
+                            && Transaction.DataConnection.Connection != null
+                            && Transaction.DataConnection.Connection.State == ConnectionState.Open)
+                        {
+                            Transaction.Commit();
+                        }
+
+                        Transaction.Dispose();
+                        Transaction = null;
                     }
                 }
             }
