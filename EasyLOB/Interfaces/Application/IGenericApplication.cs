@@ -34,9 +34,9 @@ namespace EasyLOB
 
         int CountAll(ZOperationResult operationResult);
 
-        bool Create(ZOperationResult operationResult, TEntity entity, bool beginTransaction = true);
+        bool Create(ZOperationResult operationResult, TEntity entity);
 
-        bool Delete(ZOperationResult operationResult, TEntity entity, bool beginTransaction = true);
+        bool Delete(ZOperationResult operationResult, TEntity entity);
 
         TEntity Get(ZOperationResult operationResult, Expression<Func<TEntity, bool>> where);
 
@@ -65,7 +65,7 @@ namespace EasyLOB
 
         IEnumerable<TEntity> SearchAll(ZOperationResult operationResult);
 
-        bool Update(ZOperationResult operationResult, TEntity entity, bool beginTransaction = true);
+        bool Update(ZOperationResult operationResult, TEntity entity);
 
         #endregion Methods
     }

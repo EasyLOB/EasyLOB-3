@@ -45,18 +45,16 @@ namespace EasyLOB
         /// Begin Transaction.
         /// </summary>
         /// <param name="operationResult">Operation Result</param>
-        /// <param name="beginTransaction">Begin Transaction ?</param>
         /// <param name="isolationLevel">Isolation Level</param>
         /// <returns>Ok ?</returns>
-        bool BeginTransaction(ZOperationResult operationResult, bool beginTransaction = true, IsolationLevel isolationLevel = IsolationLevel.ReadCommitted);
+        bool BeginTransaction(ZOperationResult operationResult, IsolationLevel isolationLevel = IsolationLevel.ReadCommitted);
 
         /// <summary>
         /// Commit Transaction.
         /// </summary>
         /// <param name="operationResult">Operation Result</param>
-        /// <param name="beginTransaction">Begin Transaction ?</param>
         /// <returns>Ok ?</returns>
-        bool CommitTransaction(ZOperationResult operationResult, bool beginTransaction = true);
+        bool CommitTransaction(ZOperationResult operationResult);
 
         /// <summary>
         /// Execute SQL Command.
@@ -100,9 +98,8 @@ namespace EasyLOB
         /// Rollback Transaction.
         /// </summary>
         /// <param name="operationResult">Operation Result</param>
-        /// <param name="beginTransaction">Begin Transaction ?</param>
         /// <returns>Ok ?</returns>
-        bool RollbackTransaction(ZOperationResult operationResult, bool beginTransaction = true);
+        bool RollbackTransaction(ZOperationResult operationResult);
 
         /// <summary>
         /// Save.

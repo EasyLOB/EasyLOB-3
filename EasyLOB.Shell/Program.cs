@@ -31,8 +31,9 @@ namespace EasyLOB.Shell
                 Console.WriteLine("<2> Persistence Demo");
                 Console.WriteLine("<3> AutoMapper Demo");
                 Console.WriteLine("<4> CRUD Demo");
-                Console.WriteLine("<5> EDM Demo");
-                Console.WriteLine("<6> Demo");
+                Console.WriteLine("<5> LINQ Demo");
+                Console.WriteLine("<6> EDM Demo");
+                Console.WriteLine("<7> Demo");
                 Console.Write("\nChoose an option... ");
 
                 ConsoleKeyInfo key = Console.ReadKey();
@@ -61,10 +62,14 @@ namespace EasyLOB.Shell
                         break;
 
                     case ('5'):
-                        EDMDemo();
+                        LINQDemo();
                         break;
 
                     case ('6'):
+                        EDMDemo();
+                        break;
+
+                    case ('7'):
                         Demo();
                         break;
                 }

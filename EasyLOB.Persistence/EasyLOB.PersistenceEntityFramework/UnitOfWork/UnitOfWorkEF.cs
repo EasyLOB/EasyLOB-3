@@ -70,11 +70,11 @@ namespace EasyLOB.Persistence
             Repositories = new Dictionary<Type, object>();
         }
 
-        public virtual bool BeginTransaction(ZOperationResult operationResult, bool beginTransaction = true, IsolationLevel isolationLevel = IsolationLevel.ReadCommitted)
+        public virtual bool BeginTransaction(ZOperationResult operationResult, IsolationLevel isolationLevel = IsolationLevel.ReadCommitted)
         {
             try
             {
-                if (beginTransaction && PersistenceHelper.IsTransaction)
+                if (PersistenceHelper.IsTransaction)
                 {
                     if (Transaction == null || Transaction.UnderlyingTransaction.Connection == null)
                     {
@@ -90,11 +90,11 @@ namespace EasyLOB.Persistence
             return operationResult.Ok;
         }
 
-        public virtual bool CommitTransaction(ZOperationResult operationResult, bool beginTransaction = true)
+        public virtual bool CommitTransaction(ZOperationResult operationResult)
         {
             try
             {
-                if (beginTransaction && PersistenceHelper.IsTransaction)
+                if (PersistenceHelper.IsTransaction)
                 {
                     if (Transaction != null)
                     {
@@ -154,11 +154,11 @@ namespace EasyLOB.Persistence
             //return Repositories[typeof(TEntity)] as IGenericRepository<TEntity>;
         }
 
-        public virtual bool RollbackTransaction(ZOperationResult operationResult, bool beginTransaction = true)
+        public virtual bool RollbackTransaction(ZOperationResult operationResult)
         {
             try
             {
-                if (beginTransaction && PersistenceHelper.IsTransaction)
+                if (PersistenceHelper.IsTransaction)
                 {
                     if (Transaction != null)
                     {

@@ -85,12 +85,12 @@ namespace EasyLOB.Persistence
         {
         }
 
-        public virtual bool BeginTransaction(ZOperationResult operationResult, bool isTransaction = true, IsolationLevel isolationLevel = IsolationLevel.ReadCommitted)
+        public virtual bool BeginTransaction(ZOperationResult operationResult, IsolationLevel isolationLevel = IsolationLevel.ReadCommitted)
         {
             return operationResult.Ok;
         }
 
-        public virtual bool CommitTransaction(ZOperationResult operationResult, bool isTransaction = true)
+        public virtual bool CommitTransaction(ZOperationResult operationResult)
         {
             return operationResult.Ok;
         }
@@ -123,7 +123,7 @@ namespace EasyLOB.Persistence
             throw new NotImplementedException("abstract class RavenDB UnitOfWork.GetRepository()");
         }
 
-        public virtual bool RollbackTransaction(ZOperationResult operationResult, bool isTransaction = true)
+        public virtual bool RollbackTransaction(ZOperationResult operationResult)
         {
             return operationResult.Ok;
         }

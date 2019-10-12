@@ -17,37 +17,28 @@ namespace EasyLOB.Application
         {
         }
 
-        public virtual bool Create(ZOperationResult operationResult, TEntityDTO entityDTO, bool beginTransaction = true)
+        public virtual bool Create(ZOperationResult operationResult, TEntityDTO entityDTO)
         {
-            bool inTransaction = false;
-
             try
             {
                 if (IsCreate(operationResult))
                 {
                     TEntity entity = (TEntity)entityDTO.ToData();
 
-                    //inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
-                    //if (inTransaction)
+                    if (Repository.Create(operationResult, entity))
                     {
-                        if (Repository.Create(operationResult, entity))
+                        if (UnitOfWork.Save(operationResult))
                         {
-                            if (UnitOfWork.Save(operationResult))
-                            {
-                                //if (UnitOfWork.CommitTransaction(operationResult, beginTransaction))
-                                {
-                                    entityDTO.FromData(entity);
+                            entityDTO.FromData(entity);
 
-                                    string logOperation = "C";
-                                    AuditTrailManager.AuditTrail(operationResult,
-                                            AuthenticationManager.UserName,
-                                            UnitOfWork.Domain,
-                                            Repository.Entity,
-                                            logOperation,
-                                            null,
-                                            entity);
-                                }
-                            }
+                            string logOperation = "C";
+                            AuditTrailManager.AuditTrail(operationResult,
+                                    AuthenticationManager.UserName,
+                                    UnitOfWork.Domain,
+                                    Repository.Entity,
+                                    logOperation,
+                                    null,
+                                    entity);
                         }
                     }
                 }
@@ -56,46 +47,30 @@ namespace EasyLOB.Application
             {
                 operationResult.ParseException(exception);
             }
-            finally
-            {
-                if (inTransaction && !operationResult.Ok)
-                {
-                    UnitOfWork.RollbackTransaction(operationResult, beginTransaction);
-                }
-            }
 
             return operationResult.Ok;
         }
 
-        public virtual bool Delete(ZOperationResult operationResult, TEntityDTO entityDTO, bool beginTransaction = true)
+        public virtual bool Delete(ZOperationResult operationResult, TEntityDTO entityDTO)
         {
-            bool inTransaction = false;
-
             try
             {
                 if (IsDelete(operationResult))
                 {
                     TEntity entity = (TEntity)entityDTO.ToData();
 
-                    //inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
-                    //if (inTransaction)
+                    if (Repository.Delete(operationResult, entity))
                     {
-                        if (Repository.Delete(operationResult, entity))
+                        if (UnitOfWork.Save(operationResult))
                         {
-                            if (UnitOfWork.Save(operationResult))
-                            {
-                                //if (UnitOfWork.CommitTransaction(operationResult, beginTransaction))
-                                {
-                                    string logOperation = "D";
-                                    AuditTrailManager.AuditTrail(operationResult,
-                                        AuthenticationManager.UserName,
-                                        UnitOfWork.Domain,
-                                        Repository.Entity,
-                                        logOperation,
-                                        entity,
-                                        null);
-                                }
-                            }
+                            string logOperation = "D";
+                            AuditTrailManager.AuditTrail(operationResult,
+                                AuthenticationManager.UserName,
+                                UnitOfWork.Domain,
+                                Repository.Entity,
+                                logOperation,
+                                entity,
+                                null);
                         }
                     }
                 }
@@ -103,13 +78,6 @@ namespace EasyLOB.Application
             catch (Exception exception)
             {
                 operationResult.ParseException(exception);
-            }
-            finally
-            {
-                if (inTransaction && !operationResult.Ok)
-                {
-                    UnitOfWork.RollbackTransaction(operationResult, beginTransaction);
-                }
             }
 
             return operationResult.Ok;
@@ -252,47 +220,38 @@ namespace EasyLOB.Application
             return result;
         }
 
-        public virtual bool Update(ZOperationResult operationResult, TEntityDTO entityDTO, bool beginTransaction = true)
+        public virtual bool Update(ZOperationResult operationResult, TEntityDTO entityDTO)
         {
-            bool inTransaction = false;
-
             try
             {
                 if (IsUpdate(operationResult))
                 {
                     TEntity entity = (TEntity)entityDTO.ToData();
 
-                    //inTransaction = UnitOfWork.BeginTransaction(operationResult, beginTransaction);
-                    //if (inTransaction)
+                    string logOperation = "U";
+                    string logMode;
+                    bool isAuditTrail = AuditTrailManager.IsAuditTrail(UnitOfWork.Domain, Repository.Entity, logOperation, out logMode);
+                    TEntity entityBefore = null;
+                    if (isAuditTrail)
                     {
-                        string logOperation = "U";
-                        string logMode;
-                        bool isAuditTrail = AuditTrailManager.IsAuditTrail(UnitOfWork.Domain, Repository.Entity, logOperation, out logMode);
-                        TEntity entityBefore = null;
-                        if (isAuditTrail)
-                        {
-                            entityBefore = Repository.GetById(entity.GetId());
-                        }
+                        entityBefore = Repository.GetById(entity.GetId());
+                    }
 
-                        if (Repository.Update(operationResult, entity))
+                    if (Repository.Update(operationResult, entity))
+                    {
+                        if (UnitOfWork.Save(operationResult))
                         {
-                            if (UnitOfWork.Save(operationResult))
+                            entityDTO.FromData(entity);
+
+                            if (isAuditTrail)
                             {
-                                //if (UnitOfWork.CommitTransaction(operationResult, beginTransaction))
-                                {
-                                    entityDTO.FromData(entity);
-
-                                    if (isAuditTrail)
-                                    {
-                                        AuditTrailManager.AuditTrail(operationResult,
-                                            AuthenticationManager.UserName,
-                                            UnitOfWork.Domain,
-                                            Repository.Entity,
-                                            logOperation,
-                                            entityBefore,
-                                            entity);
-                                    }
-                                }
+                                AuditTrailManager.AuditTrail(operationResult,
+                                    AuthenticationManager.UserName,
+                                    UnitOfWork.Domain,
+                                    Repository.Entity,
+                                    logOperation,
+                                    entityBefore,
+                                    entity);
                             }
                         }
                     }
@@ -301,13 +260,6 @@ namespace EasyLOB.Application
             catch (Exception exception)
             {
                 operationResult.ParseException(exception);
-            }
-            finally
-            {
-                if (inTransaction && !operationResult.Ok)
-                {
-                    UnitOfWork.RollbackTransaction(operationResult, beginTransaction);
-                }
             }
 
             return operationResult.Ok;

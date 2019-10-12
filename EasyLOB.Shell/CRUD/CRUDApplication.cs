@@ -1,6 +1,5 @@
 ﻿using EasyLOB.AuditTrail;
 using EasyLOB.AuditTrail.Data;
-using EasyLOB.AuditTrail.Persistence;
 using System;
 using System.Collections.Generic;
 
@@ -8,14 +7,14 @@ namespace EasyLOB.Shell
 {
     partial class Program
     {
-        private static void CRUDPersistence()
+        private static void CRUDApplication()
         {
             bool exit = false;
 
             while (!exit)
             {
                 Console.Clear();
-                Console.WriteLine("CRUD Persistence Demo\n");
+                Console.WriteLine("CRUD Application Demo\n");
                 Console.WriteLine("<0> RETURN");
                 Console.WriteLine("<1> CREATE AuditTrailLog");
                 Console.WriteLine("<2> UPDATE AuditTrailLog");
@@ -30,10 +29,8 @@ namespace EasyLOB.Shell
 
                 ZOperationResult operationResult = new ZOperationResult();
 
-                AuditTrailUnitOfWorkEF unitOfWork =
-                    (AuditTrailUnitOfWorkEF)ManagerHelper.DIManager.GetService<IAuditTrailUnitOfWork>();
-                AuditTrailGenericRepositoryEF<AuditTrailLog> repository =
-                    (AuditTrailGenericRepositoryEF<AuditTrailLog>)unitOfWork.GetRepository<AuditTrailLog>();
+                IAuditTrailGenericApplication<AuditTrailLog> application = 
+                    ManagerHelper.DIManager.GetService<IAuditTrailGenericApplication<AuditTrailLog>>();
                 AuditTrailLog auditTrailLog;
 
                 switch (key.KeyChar) // <ENTER> = '\r'
@@ -46,10 +43,7 @@ namespace EasyLOB.Shell
                         auditTrailLog = new AuditTrailLog();
                         auditTrailLog.LogDate = DateTime.Today;
                         auditTrailLog.LogTime = DateTime.Now;
-                        if (repository.Create(operationResult, auditTrailLog))
-                        {
-                            unitOfWork.Save(operationResult);
-                        }
+                        application.Create(operationResult, auditTrailLog);
 
                         break;
 
@@ -57,17 +51,11 @@ namespace EasyLOB.Shell
                         auditTrailLog = new AuditTrailLog();
                         auditTrailLog.LogDate = DateTime.Today;
                         auditTrailLog.LogTime = DateTime.Now;
-                        if (repository.Create(operationResult, auditTrailLog))
+                        if (application.Create(operationResult, auditTrailLog))
                         {
-                            if (unitOfWork.Save(operationResult))
-                            {
-                                auditTrailLog.LogDate = DateTime.Today.AddMonths(1);
-                                auditTrailLog.LogTime = DateTime.Now.AddMonths(1);
-                                if (repository.Update(operationResult, auditTrailLog))
-                                {
-                                    unitOfWork.Save(operationResult);
-                                }
-                            }
+                            auditTrailLog.LogDate = DateTime.Today.AddMonths(1);
+                            auditTrailLog.LogTime = DateTime.Now.AddMonths(1);
+                            application.Update(operationResult, auditTrailLog);
                         }
 
                         break;
@@ -76,15 +64,9 @@ namespace EasyLOB.Shell
                         auditTrailLog = new AuditTrailLog();
                         auditTrailLog.LogDate = DateTime.Today;
                         auditTrailLog.LogTime = DateTime.Now;
-                        if (repository.Create(operationResult, auditTrailLog))
+                        if (application.Create(operationResult, auditTrailLog))
                         {
-                            if (unitOfWork.Save(operationResult))
-                            {
-                                if (repository.Delete(operationResult, auditTrailLog))
-                                {
-                                    unitOfWork.Save(operationResult);
-                                }
-                            }
+                            application.Delete(operationResult, auditTrailLog);
                         }
 
                         break;
@@ -92,24 +74,18 @@ namespace EasyLOB.Shell
                     case ('4'):
                         try
                         {
-                            if (unitOfWork.BeginTransaction(operationResult))
+                            if (application.UnitOfWork.BeginTransaction(operationResult))
                             {
                                 auditTrailLog = new AuditTrailLog();
                                 auditTrailLog.LogDate = DateTime.Today;
                                 auditTrailLog.LogTime = DateTime.Now;
-                                if (repository.Create(operationResult, auditTrailLog))
+                                if (application.Create(operationResult, auditTrailLog))
                                 {
-                                    if (unitOfWork.Save(operationResult))
+                                    auditTrailLog.LogDate = DateTime.Today.AddMonths(1);
+                                    auditTrailLog.LogTime = DateTime.Now.AddMonths(1);
+                                    if (application.Update(operationResult, auditTrailLog))
                                     {
-                                        auditTrailLog.LogDate = DateTime.Today.AddMonths(1);
-                                        auditTrailLog.LogTime = DateTime.Now.AddMonths(1);
-                                        if (repository.Update(operationResult, auditTrailLog))
-                                        {
-                                            if (unitOfWork.Save(operationResult))
-                                            {
-                                                unitOfWork.CommitTransaction(operationResult);
-                                            }
-                                        }
+                                        application.UnitOfWork.CommitTransaction(operationResult);
                                     }
                                 }
                             }
@@ -121,7 +97,7 @@ namespace EasyLOB.Shell
 
                         if (!operationResult.Ok)
                         {
-                            unitOfWork.RollbackTransaction(operationResult);
+                            application.UnitOfWork.RollbackTransaction(operationResult);
                         }
 
                         break;
@@ -129,24 +105,18 @@ namespace EasyLOB.Shell
                     case ('5'):
                         try
                         {
-                            if (unitOfWork.BeginTransaction(operationResult))
+                            if (application.UnitOfWork.BeginTransaction(operationResult))
                             {
                                 auditTrailLog = new AuditTrailLog();
                                 auditTrailLog.LogDate = DateTime.Today;
                                 auditTrailLog.LogTime = DateTime.Now;
-                                if (repository.Create(operationResult, auditTrailLog))
+                                if (application.Create(operationResult, auditTrailLog))
                                 {
-                                    if (unitOfWork.Save(operationResult))
+                                    auditTrailLog.LogDate = DateTime.Today.AddMonths(1);
+                                    auditTrailLog.LogTime = DateTime.Now.AddMonths(1);
+                                    if (application.Update(operationResult, auditTrailLog))
                                     {
-                                        auditTrailLog.LogDate = DateTime.Today.AddMonths(1);
-                                        auditTrailLog.LogTime = DateTime.Now.AddMonths(1);
-                                        if (repository.Update(operationResult, auditTrailLog))
-                                        {
-                                            if (unitOfWork.Save(operationResult))
-                                            {
-                                                unitOfWork.RollbackTransaction(operationResult);
-                                            }
-                                        }
+                                        application.UnitOfWork.RollbackTransaction(operationResult);
                                     }
                                 }
                             }
@@ -158,14 +128,14 @@ namespace EasyLOB.Shell
 
                         if (!operationResult.Ok)
                         {
-                            unitOfWork.RollbackTransaction(operationResult);
+                            application.UnitOfWork.RollbackTransaction(operationResult);
                         }
 
                         break;
 
                     case ('t'):
                     case ('T'):
-                        unitOfWork.SQLCommand("TRUNCATE TABLE EasyLOBAuditTrailLog");
+                        application.UnitOfWork.SQLCommand("TRUNCATE TABLE EasyLOBAuditTrailLog");
                         break;
                 }
 
@@ -173,10 +143,13 @@ namespace EasyLOB.Shell
                 {
                     if (operationResult.Ok)
                     {
-                        List<AuditTrailLog> list = (List<AuditTrailLog>)repository.SearchAll();
-                        foreach (AuditTrailLog entity in list)
+                        List<AuditTrailLog> list = (List<AuditTrailLog>)application.SearchAll(operationResult);
+                        if (operationResult.Ok)
                         {
-                            Console.WriteLine("{0} {1} {2}", entity.Id, entity.LogDate, entity.LogTime);
+                            foreach (AuditTrailLog entity in list)
+                            {
+                                Console.WriteLine("{0} {1} {2}", entity.Id, entity.LogDate, entity.LogTime);
+                            }
                         }
                     }
 

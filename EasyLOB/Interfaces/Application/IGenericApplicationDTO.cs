@@ -11,9 +11,9 @@ namespace EasyLOB
     {
         #region Methods
 
-        bool Create(ZOperationResult operationResult, TEntityDTO entityDTO, bool beginTransaction = true);
+        bool Create(ZOperationResult operationResult, TEntityDTO entityDTO);
 
-        bool Delete(ZOperationResult operationResult, TEntityDTO entityDTO, bool beginTransaction = true);
+        bool Delete(ZOperationResult operationResult, TEntityDTO entityDTO);
 
         new TEntityDTO Get(ZOperationResult operationResult, Expression<Func<TEntity, bool>> where);
 
@@ -42,7 +42,7 @@ namespace EasyLOB
 
         new IEnumerable<TEntityDTO> SearchAll(ZOperationResult operationResult);
 
-        bool Update(ZOperationResult operationResult, TEntityDTO entityDTO, bool beginTransaction = true);
+        bool Update(ZOperationResult operationResult, TEntityDTO entityDTO);
 
         #endregion Methods
     }

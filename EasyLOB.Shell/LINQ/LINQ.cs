@@ -4,17 +4,18 @@ namespace EasyLOB.Shell
 {
     partial class Program
     {
-        private static void CRUDDemo()
+        private static void LINQDemo()
         {
             bool exit = false;
 
             while (!exit)
             {
                 Console.Clear();
-                Console.WriteLine("CRUD Demo\n");
+                Console.WriteLine("Demo\n");
                 Console.WriteLine("<0> RETURN");
-                Console.WriteLine("<1> CRUD Application Demo");
-                Console.WriteLine("<2> CRUD Persistence Demo");
+                Console.WriteLine("<1> LINQ Application Demo");
+                Console.WriteLine("<2> LINQ Persistence Demo");
+                Console.WriteLine("<3> LINQ Entity Framework Demo");
                 Console.Write("\nChoose an option... ");
 
                 ConsoleKeyInfo key = Console.ReadKey();
@@ -27,18 +28,16 @@ namespace EasyLOB.Shell
                         break;
 
                     case ('1'):
-                        CRUDApplication();
+                        LINQApplication();
                         break;
 
                     case ('2'):
-                        CRUDPersistence();
+                        LINQPersistence();
                         break;
-                }
 
-                if (!exit)
-                {
-                    Console.Write("\nPress <KEY> to continue... ");
-                    Console.ReadKey();
+                    case ('3'):
+                        LINQEF();
+                        break;
                 }
             }
         }
