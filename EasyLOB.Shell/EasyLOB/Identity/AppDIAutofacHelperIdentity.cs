@@ -3,8 +3,6 @@ using EasyLOB.Identity;
 using EasyLOB.Identity.Application;
 using EasyLOB.Identity.Persistence;
 using EasyLOB.Security;
-using System.Security.Principal;
-using System.Threading;
 
 namespace EasyLOB
 {
@@ -13,7 +11,7 @@ namespace EasyLOB
         public static void SetupIdentity()
         {
             ContainerBuilder.RegisterType<AuthenticationManagerMock>().As<IAuthenticationManager>().SingleInstance();
-            //ContainerBuilder.RegisterType<AuthenticationManager>().As<IAuthenticationManager>().SingleInstance();
+            //ContainerBuilder.RegisterType<AuthenticationManager>().As<IAuthenticationManager>();
 
             ContainerBuilder.RegisterGeneric(typeof(IdentityGenericApplication<>)).As(typeof(IIdentityGenericApplication<>)).SingleInstance();
             ContainerBuilder.RegisterGeneric(typeof(IdentityGenericApplicationDTO<,>)).As(typeof(IIdentityGenericApplicationDTO<,>)).SingleInstance();
