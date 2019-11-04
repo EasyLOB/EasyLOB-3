@@ -8,7 +8,7 @@ namespace EasyLOB.AuditTrail.Persistence
     {
         #region Methods
 
-        public AuditTrailGenericRepositoryEF(IUnitOfWork unitOfWork)
+        public AuditTrailGenericRepositoryEF(IAuditTrailUnitOfWork unitOfWork)
             : base(unitOfWork)
         {
             Context = (unitOfWork as AuditTrailUnitOfWorkEF).Context;

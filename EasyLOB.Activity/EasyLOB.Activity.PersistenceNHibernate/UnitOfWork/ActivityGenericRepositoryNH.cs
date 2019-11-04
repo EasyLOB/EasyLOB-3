@@ -8,7 +8,7 @@ namespace EasyLOB.Activity.Persistence
     {
         #region Methods
 
-        public ActivityGenericRepositoryNH(IUnitOfWork unitOfWork)
+        public ActivityGenericRepositoryNH(IActivityUnitOfWork unitOfWork)
             : base(unitOfWork)
         {
             Session = (unitOfWork as ActivityUnitOfWorkNH).Session;

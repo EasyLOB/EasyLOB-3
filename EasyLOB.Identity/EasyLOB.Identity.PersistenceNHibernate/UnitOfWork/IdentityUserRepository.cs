@@ -9,7 +9,7 @@ namespace EasyLOB.Identity.Persistence
     {
         #region Methods
 
-        public IdentityUserRepository(IUnitOfWork unitOfWork)
+        public IdentityUserRepository(IIdentityUnitOfWork unitOfWork)
             : base(unitOfWork)
         {
         }

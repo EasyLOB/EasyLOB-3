@@ -8,7 +8,7 @@ namespace EasyLOB.Activity.Persistence
     {
         #region Methods
 
-        public ActivityActivityRoleRepositoryLINQ2DB(IUnitOfWork unitOfWork)
+        public ActivityActivityRoleRepositoryLINQ2DB(IActivityUnitOfWork unitOfWork)
             : base(unitOfWork)
         {
         }

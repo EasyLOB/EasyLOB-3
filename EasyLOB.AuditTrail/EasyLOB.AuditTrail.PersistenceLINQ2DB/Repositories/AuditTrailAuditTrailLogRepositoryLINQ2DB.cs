@@ -8,7 +8,7 @@ namespace EasyLOB.AuditTrail.Persistence
     {
         #region Methods
 
-        public AuditTrailAuditTrailLogRepositoryLINQ2DB(IUnitOfWork unitOfWork)
+        public AuditTrailAuditTrailLogRepositoryLINQ2DB(IAuditTrailUnitOfWork unitOfWork)
             : base(unitOfWork)
         {
         }

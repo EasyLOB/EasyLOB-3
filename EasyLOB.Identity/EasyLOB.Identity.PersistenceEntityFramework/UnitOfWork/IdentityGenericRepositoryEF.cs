@@ -7,7 +7,7 @@ namespace EasyLOB.Identity.Persistence
     {
         #region Methods
 
-        public IdentityGenericRepositoryEF(IUnitOfWork unitOfWork)
+        public IdentityGenericRepositoryEF(IIdentityUnitOfWork unitOfWork)
             : base(unitOfWork)
         {
             Context = (unitOfWork as IdentityUnitOfWorkEF).Context;

@@ -8,7 +8,7 @@ namespace EasyLOB.AuditTrail.Persistence
     {
         #region Methods
 
-        public AuditTrailGenericRepositoryNH(IUnitOfWork unitOfWork)
+        public AuditTrailGenericRepositoryNH(IAuditTrailUnitOfWork unitOfWork)
             : base(unitOfWork)
         {
             Session = (unitOfWork as AuditTrailUnitOfWorkNH).Session;

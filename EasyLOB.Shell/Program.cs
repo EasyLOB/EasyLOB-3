@@ -13,8 +13,10 @@ namespace EasyLOB.Shell
         {
             // Autofac
             AppDIAutofacHelper.Setup(new ContainerBuilder());
+
             // Unity
             //AppDIUnityHelper.Setup(new UnityContainer());
+
             AppHelper.Setup();
             MultiTenantHelper.Setup("MyLOB");
 

@@ -8,7 +8,7 @@ namespace EasyLOB.Activity.Persistence
     {
         #region Methods
 
-        public ActivityGenericRepositoryLINQ2DB(IUnitOfWork unitOfWork)
+        public ActivityGenericRepositoryLINQ2DB(IActivityUnitOfWork unitOfWork)
             : base(unitOfWork)
         {
             Connection = (unitOfWork as ActivityUnitOfWorkLINQ2DB).Connection;

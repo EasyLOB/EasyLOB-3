@@ -8,7 +8,7 @@ namespace EasyLOB.AuditTrail.Persistence
     {
         #region Methods
 
-        public AuditTrailGenericRepositoryLINQ2DB(IUnitOfWork unitOfWork)
+        public AuditTrailGenericRepositoryLINQ2DB(IAuditTrailUnitOfWork unitOfWork)
             : base(unitOfWork)
         {
             Connection = (unitOfWork as AuditTrailUnitOfWorkLINQ2DB).Connection;

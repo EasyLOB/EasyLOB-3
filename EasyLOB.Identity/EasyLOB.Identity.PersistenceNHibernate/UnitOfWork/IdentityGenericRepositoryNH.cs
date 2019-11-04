@@ -8,7 +8,7 @@ namespace EasyLOB.Identity.Persistence
     {
         #region Methods
 
-        public IdentityGenericRepositoryNH(IUnitOfWork unitOfWork)
+        public IdentityGenericRepositoryNH(IIdentityUnitOfWork unitOfWork)
             : base(unitOfWork)
         {
             Session = (unitOfWork as IdentityUnitOfWorkNH).Session;

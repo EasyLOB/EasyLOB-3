@@ -8,7 +8,7 @@ namespace EasyLOB.Activity.Persistence
     {
         #region Methods
 
-        public ActivityGenericRepositoryEF(IUnitOfWork unitOfWork)
+        public ActivityGenericRepositoryEF(IActivityUnitOfWork unitOfWork)
             : base(unitOfWork)
         {
             Context = (unitOfWork as ActivityUnitOfWorkEF).Context;

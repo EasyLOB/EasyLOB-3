@@ -99,7 +99,7 @@
     <Compile Include="Demo\CodeSmith.cs" />
     <Compile Include="CRUD\CRUDPersistence.cs" />
     <Compile Include="Demo\EnvironmentApplication.cs" />
-    <Compile Include="Demo\DIManager.cs" />
+    <Compile Include="Demo\DI.cs" />
     <Compile Include="Demo\EMail.cs" />
     <Compile Include="Demo\MultiTenant.cs" />
     <Compile Include="Demo\Log.cs" />

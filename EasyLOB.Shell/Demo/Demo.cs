@@ -13,7 +13,7 @@ namespace EasyLOB.Shell
                 Console.Clear();
                 Console.WriteLine("Demo\n");
                 Console.WriteLine("<0> RETURN");
-                Console.WriteLine("<1> DIManager Demo");
+                Console.WriteLine("<1> DI Demo");
                 Console.WriteLine("<2> e-mail Demo");
                 Console.WriteLine("<3> Environment Application Demo");
                 Console.WriteLine("<4> Environment Session Demo");
@@ -31,7 +31,7 @@ namespace EasyLOB.Shell
                         break;
 
                     case ('1'):
-                        DemoDIManager();
+                        DemoDI();
                         break;
 
                     case ('2'):
