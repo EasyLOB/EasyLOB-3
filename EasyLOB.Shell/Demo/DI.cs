@@ -1,5 +1,4 @@
 ﻿using EasyLOB.Activity;
-using EasyLOB.Activity.Data;
 using EasyLOB.AuditTrail;
 using EasyLOB.AuditTrail.Data;
 using EasyLOB.Identity;
