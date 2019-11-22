@@ -3,7 +3,6 @@ using EasyLOB.Environment;
 using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
-using Unity;
 
 namespace EasyLOB.Shell
 {

@@ -38,7 +38,7 @@ namespace EasyLOB
         /// <summary>
         /// Exception.
         /// </summary>
-        [DataMember]
+        //[DataMember]
         public Exception ErrorException { get; }
 
         /// <summary>

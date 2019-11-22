@@ -99,7 +99,7 @@ namespace EasyLOB
         /// <summary>
         /// Exception.
         /// </summary>
-        [DataMember]
+        //[DataMember]
         public ZOperationResultException Exception
         {
             get
