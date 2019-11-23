@@ -75,7 +75,9 @@ namespace EasyLOB.Library
                     { ZFileTypes.ftMOV, "video/quicktime" },
                     { ZFileTypes.ftMP4, "video/mp4" },
                     { ZFileTypes.ftMPEG, "video/mpeg" },
-                    { ZFileTypes.ftWMV, "video/x-ms-wmv" }
+                    { ZFileTypes.ftWMV, "video/x-ms-wmv" },
+                    // Mail
+                    { ZFileTypes.ftMSG, "application/vnd.ms-outlook" }
                 };
             }
         }
@@ -105,7 +107,9 @@ namespace EasyLOB.Library
                     { ZFileTypes.ftMOV, ".mov" },
                     { ZFileTypes.ftMP4, ".mp4" },
                     { ZFileTypes.ftMPEG, ".mpeg" },
-                    { ZFileTypes.ftWMV, ".wmv" }
+                    { ZFileTypes.ftWMV, ".wmv" },
+                    // Mail
+                    { ZFileTypes.ftMSG, ".msg" },
                 };
             }
         }

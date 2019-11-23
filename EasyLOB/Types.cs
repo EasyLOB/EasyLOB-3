@@ -32,10 +32,10 @@
 
     #endregion Types Data
 
-    #region Types Files
+    #region Types File
 
     /// <summary>
-    /// Z File Types.
+    /// Z File Type.
     /// </summary>
     public enum ZFileTypes
     {
@@ -61,14 +61,16 @@
 
         // Video
         ftAVI = 41,
-
         ftMOV = 42,
         ftMP4 = 43,
         ftMPEG = 44,
-        ftWMV = 45
+        ftWMV = 45,
+
+        // Mail
+        ftMSG = 51
     };
 
-    #endregion Types Files
+    #endregion Types File
 
     #region Types Security
 

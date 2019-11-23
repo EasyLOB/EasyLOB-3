@@ -301,7 +301,7 @@
     <value>Language</value>
   </data>
   <data name="Upload123" xml:space="preserve">
-    <value>Upload pdf|doc|docx|txt|xls|xlsx jpg|png mp3 avi|mov|mp4|mpeg|wmv</value>
+    <value>File Types   [   pdf|doc|docx|txt|xls|xlsx   jpg|png   mp3   avi|mov|mp4|mpeg|wmv   msg   ]</value>
   </data>
   <data name="Lock" xml:space="preserve">
     <value>Lock</value>
@@ -329,5 +329,8 @@
   </data>
   <data name="Files" xml:space="preserve">
     <value>File(s)</value>
+  </data>
+  <data name="UploadUnknown" xml:space="preserve">
+    <value>File Type unknown</value>
   </data>
 </root>
