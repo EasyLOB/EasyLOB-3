@@ -3,6 +3,9 @@ using EasyLOB.Environment;
 using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
+// EF 6.0 Log
+//using EasyLOB.Persistence;
+//using System.Data.Entity.Infrastructure.Interception;
 
 namespace EasyLOB.Shell
 {

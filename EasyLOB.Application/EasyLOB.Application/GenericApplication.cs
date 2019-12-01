@@ -148,20 +148,18 @@ namespace EasyLOB.Application
             {
                 if (IsCreate(operationResult))
                 {
+                    if (Repository.Create(operationResult, entity))
                     {
-                        if (Repository.Create(operationResult, entity))
+                        if (UnitOfWork.Save(operationResult))
                         {
-                            if (UnitOfWork.Save(operationResult))
-                            {
-                                string logOperation = "C";
-                                AuditTrailManager.AuditTrail(operationResult,
-                                    AuthenticationManager.UserName,
-                                    UnitOfWork.Domain,
-                                    Repository.Entity,
-                                    logOperation,
-                                    null,
-                                    entity);
-                            }
+                            string logOperation = "C";
+                            AuditTrailManager.AuditTrail(operationResult,
+                                AuthenticationManager.UserName,
+                                UnitOfWork.Domain,
+                                Repository.Entity,
+                                logOperation,
+                                null,
+                                entity);
                         }
                     }
                 }
