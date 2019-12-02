@@ -110,7 +110,7 @@
     <Compile Include="EasyLOB\Activity\AppDIUnityHelperActivity.cs" />
     <Compile Include="EasyLOB\AuditTrail\AppDIAutofacHelperAuditTrail.cs" />
     <Compile Include="EasyLOB\AuditTrail\AppDIUnityHelperAuditTrail.cs" />
-    <Compile Include="EasyLOB\Console\AppDIAutofacConsole.cs" />
+    <Compile Include="EasyLOB\Application\AppDIAutofacHelperApplication.cs" />
     <Compile Include="EasyLOB\DI\AppDIAutofacHelper.cs" />
     <Compile Include="EasyLOB\DI\AppDIUnityHelper.cs" />
     <Compile Include="EasyLOB\EasyLOB\AppDIAutofacHelperEasyLOB.cs" />
@@ -118,8 +118,8 @@
     <Compile Include="EasyLOB\EasyLOB\AppDIAutofacHelperLog.cs" />
     <Compile Include="EasyLOB\EasyLOB\AppDIUnityHelperEasyLOB.cs" />
     <Compile Include="EasyLOB\EasyLOB\AppDIUnityHelperExtensions.cs" />
-    <Compile Include="EasyLOB\Console\AppDIUnityHelperConsole.cs" />
-    <Compile Include="EasyLOB\Console\AppHelper.cs" />
+    <Compile Include="EasyLOB\Application\AppDIUnityHelperApplication.cs" />
+    <Compile Include="EasyLOB\Application\AppHelper.cs" />
     <Compile Include="EasyLOB\Identity\AppDIAutofacHelperIdentity.cs" />
     <Compile Include="EasyLOB\Identity\AppDIUnityHelperIdentity.cs" />
     <Compile Include="EasyLOB\EasyLOB\AppDIUnityHelperLog.cs" />

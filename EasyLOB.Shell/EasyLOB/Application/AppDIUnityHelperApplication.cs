@@ -2,8 +2,9 @@ namespace EasyLOB
 {
     public static partial class AppDIUnityHelper
     {
-        public static void SetupConsole() // !!!
+        public static void SetupApplication()
         {
+            // !!!
         }
     }
 }

@@ -56,8 +56,13 @@ namespace EasyLOB
             SetupIdentity();
             SetupLog();
 
+            SetupApplication(); // !!!
+
             Container.RegisterType(typeof(IEnvironmentManager), typeof(EnvironmentManagerDesktop), AppLifetimeManager);
             //Container.RegisterType(typeof(IEnvironmentManager), typeof(EnvironmentManagerWeb), AppLifetimeManager);
+
+            AppHelper.SetupMappers();
+            AppHelper.SetupProfiles();
 
             ManagerHelper.Setup(new DIManagerUnity(Container),
                 Container.Resolve<IEnvironmentManager>(),

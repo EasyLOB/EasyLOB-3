@@ -10,20 +10,6 @@ namespace EasyLOB
     {
         #region Methods
 
-        public static void Setup()
-        {
-            // Autofac
-            AppDIAutofacHelper.SetupConsole(); // !!!
-            // Unity
-            //AppDIUnityHelper.SetupConsole(); // !!!
-
-            // AutoMapper
-            SetupMappers();
-
-            // Profile
-            SetupProfiles();
-        }
-
         public static void SetupMappers()
         {
             Mapper.Initialize(cfg => {
@@ -34,6 +20,8 @@ namespace EasyLOB
                 cfg.AddProfile<AuditTrailDataAutoMapper>();
                 // Identity
                 cfg.AddProfile<IdentityDataAutoMapper>();
+                // Application 
+                // !!!
             });
 
             Mapper.Configuration.CompileMappings();
@@ -49,6 +37,8 @@ namespace EasyLOB
             DataHelper.SetupDataProfile("EasyLOB.AuditTrail.Data");
             // Identity
             DataHelper.SetupDataProfile("EasyLOB.Identity.Data");
+            // Application 
+            // !!!
         }
 
         #endregion Methods

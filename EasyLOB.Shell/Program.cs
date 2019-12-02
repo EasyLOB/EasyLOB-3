@@ -13,17 +13,15 @@ namespace EasyLOB.Shell
     {
         static void Main(string[] args)
         {
+            // EF 6.0 Log
+            //DbInterception.Add(new NLogCommandInterceptor());
+
             // Autofac
             AppDIAutofacHelper.Setup(new ContainerBuilder());
-
             // Unity
             //AppDIUnityHelper.Setup(new UnityContainer());
 
-            AppHelper.Setup();
             MultiTenantHelper.Setup("MyLOB");
-
-            // EF 6.0 Log
-            //DbInterception.Add(new NLogCommandInterceptor());
 
             bool exit = false;
             while (!exit)

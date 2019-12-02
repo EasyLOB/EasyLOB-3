@@ -36,10 +36,15 @@ namespace EasyLOB
             SetupIdentity();
             SetupLog();
 
+            SetupApplication(); // !!!
+
             ContainerBuilder.RegisterType<EnvironmentManagerDesktop>().As<IEnvironmentManager>().SingleInstance();
             //ContainerBuilder.RegisterType<EnvironmentManagerWeb>().As<IEnvironmentManager>().SingleInstance();
 
             _container = _containerBuilder.Build();
+
+            AppHelper.SetupMappers();
+            AppHelper.SetupProfiles();
 
             ManagerHelper.Setup(new DIManagerAutofac(Container),
                 Container.Resolve<IEnvironmentManager>(),
