@@ -8,7 +8,7 @@
         #region Properties
 
         /// <summary>
-        /// Lookup text
+        /// Lookup text.
         /// </summary>
         string LookupText { get; set; } // ??? "LookupText" could be read-only, but OData needs "set"
 
@@ -17,18 +17,18 @@
         #region Methods
 
         /// <summary>
-        /// Get entity Id
+        /// Get entity Id.
         /// </summary>
         /// <returns></returns>
         object[] GetId();
 
         /// <summary>
-        /// On constructor ( called from Constructor )
+        /// On constructor ( called from Constructor ).
         /// </summary>
         void OnConstructor();
 
         /// <summary>
-        /// Set entity Id
+        /// Set entity Id.
         /// </summary>
         /// <param name="ids"></param>
         void SetId(object[] ids);
@@ -38,42 +38,42 @@
         #region Triggers
 
         /// <summary>
-        /// Before create "trigger"
+        /// Before create Trigger.
         /// </summary>
         /// <param name="operationResult">Operation Result</param>
         /// <returns></returns>
         bool BeforeCreate(ZOperationResult operationResult);
 
         /// <summary>
-        /// After create "trigger"
+        /// After create Trigger.
         /// </summary>
         /// <param name="operationResult">Operation result</param>
         /// <returns></returns>
         bool AfterCreate(ZOperationResult operationResult);
 
         /// <summary>
-        /// Before delete "trigger"
+        /// Before delete Trigger.
         /// </summary>
         /// <param name="operationResult">Operation result</param>
         /// <returns></returns>
         bool BeforeDelete(ZOperationResult operationResult);
 
         /// <summary>
-        /// After delete "trigger"
+        /// After delete Trigger.
         /// </summary>
         /// <param name="operationResult">Operation result</param>
         /// <returns></returns>
         bool AfterDelete(ZOperationResult operationResult);
 
         /// <summary>
-        /// Before update "trigger"
+        /// Before update Trigger.
         /// </summary>
         /// <param name="operationResult">Operation result</param>
         /// <returns></returns>
         bool BeforeUpdate(ZOperationResult operationResult);
 
         /// <summary>
-        /// After update "trigger"
+        /// After update Trigger.
         /// </summary>
         /// <param name="operationResult">Operation result</param>
         /// <returns></returns>

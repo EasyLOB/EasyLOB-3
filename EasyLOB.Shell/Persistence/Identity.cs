@@ -1,7 +1,6 @@
 ﻿using EasyLOB.Data;
 using EasyLOB.Identity;
 using EasyLOB.Identity.Data;
-using EasyLOB.Persistence;
 using System;
 using System.Linq;
 
@@ -13,7 +12,7 @@ namespace EasyLOB.Shell
         {
             Console.WriteLine("\nPersistence Identity Demo\n");
 
-            IUnitOfWork unitOfWork = ManagerHelper.DIManager.GetService<IIdentityUnitOfWork>();
+            IIdentityUnitOfWork unitOfWork = DIHelper.DIManager.GetService<IIdentityUnitOfWork>();
             Console.WriteLine(unitOfWork.GetType().FullName + " with " + unitOfWork.DBMS.ToString() + "\n");
 
             PersistenceIdentityData<Role>(unitOfWork);
@@ -23,7 +22,7 @@ namespace EasyLOB.Shell
             PersistenceIdentityData<User>(unitOfWork);
         }
 
-        private static void PersistenceIdentityData<TEntity>(IUnitOfWork unitOfWork)
+        private static void PersistenceIdentityData<TEntity>(IIdentityUnitOfWork unitOfWork)
             where TEntity : ZDataBase
         {
             IGenericRepository<TEntity> repository = unitOfWork.GetRepository<TEntity>();

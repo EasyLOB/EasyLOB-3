@@ -30,7 +30,7 @@ namespace EasyLOB.Shell
                 ZOperationResult operationResult = new ZOperationResult();
 
                 AuditTrailUnitOfWorkEF unitOfWork =
-                    (AuditTrailUnitOfWorkEF)ManagerHelper.DIManager.GetService<IAuditTrailUnitOfWork>();
+                    (AuditTrailUnitOfWorkEF)DIHelper.DIManager.GetService<IAuditTrailUnitOfWork>();
                 IQueryable<AuditTrailLog> query =
                     unitOfWork.GetQuery<AuditTrailLog>();
                 IEnumerable<AuditTrailLog> enumerable;

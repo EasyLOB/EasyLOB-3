@@ -1,7 +1,7 @@
 ﻿namespace EasyLOB
 {
     /// <summary>
-    /// IDImanager.
+    /// IDIManager.
     /// </summary>
     public interface IDIManager
     {

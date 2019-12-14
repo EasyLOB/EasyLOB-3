@@ -27,7 +27,7 @@ namespace EasyLOB.Shell
                 ZOperationResult operationResult = new ZOperationResult();
 
                 IAuditTrailGenericApplication<AuditTrailLog> application = 
-                    ManagerHelper.DIManager.GetService<IAuditTrailGenericApplication<AuditTrailLog>>();
+                    DIHelper.DIManager.GetService<IAuditTrailGenericApplication<AuditTrailLog>>();
                 IEnumerable<AuditTrailLog> enumerable;
                 Expression<Func<AuditTrailLog, bool>> where;
                 Func<IQueryable<AuditTrailLog>, IOrderedQueryable<AuditTrailLog>> orderBy;

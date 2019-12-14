@@ -1,5 +1,4 @@
 using EasyLOB.Application;
-using EasyLOB.Data;
 
 namespace EasyLOB.Activity.Application
 {
@@ -9,8 +8,10 @@ namespace EasyLOB.Activity.Application
     {
         #region Methods
 
-        public ActivityGenericApplicationDTO(IActivityUnitOfWork unitOfWork)
-            : base(unitOfWork)
+        public ActivityGenericApplicationDTO(IActivityUnitOfWork unitOfWork,
+            IAuditTrailManager auditTrailManager,
+            IAuthorizationManager authorizationManager)
+            : base(unitOfWork, auditTrailManager, authorizationManager)
         {
         }
 

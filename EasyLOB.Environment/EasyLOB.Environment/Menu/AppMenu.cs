@@ -22,7 +22,7 @@ namespace EasyLOB.Environment
             Id = id;
             Text = text;
             ParentId = parentId;
-            Url = (String.IsNullOrEmpty(url) ? "" : ManagerHelper.EnvironmentManager.WebPath + "/" + url).Replace("//", "/"); // Url.Content()
+            Url = (String.IsNullOrEmpty(url) ? "" : DIHelper.EnvironmentManager.WebPath + "/" + url).Replace("//", "/"); // Url.Content()
         }
 
         #endregion Methods

@@ -18,55 +18,14 @@ namespace EasyLOB.Application
             get { return UnitOfWork.GetRepository<TEntity>(); }
         }
 
+        public IAuditTrailManager AuditTrailManager { get; }
+
         public IAuthenticationManager AuthenticationManager
         {
             get { return AuthorizationManager.AuthenticationManager; }
         }
 
-        private IAuthorizationManager _authorizationManager;
-
-        public IAuthorizationManager AuthorizationManager // { get; }
-        {
-            get
-            {
-                if (_authorizationManager == null)
-                {
-                    _authorizationManager = ManagerHelper.DIManager.GetService<IAuthorizationManager>();
-                }
-
-                return _authorizationManager;
-            }
-        }
-
-        private IAuditTrailManager _auditTrailManager;
-
-        public IAuditTrailManager AuditTrailManager // { get; }
-        {
-            get
-            {
-                if (_auditTrailManager == null)
-                {
-                    _auditTrailManager = ManagerHelper.DIManager.GetService<IAuditTrailManager>();
-                }
-
-                return _auditTrailManager;
-            }
-        }
-
-        public ILogManager _logManager;
-
-        public ILogManager LogManager // { get; }
-        {
-            get
-            {
-                if (_logManager == null)
-                {
-                    _logManager = ManagerHelper.DIManager.GetService<ILogManager>();
-                }
-
-                return _logManager;
-            }
-        }
+        public IAuthorizationManager AuthorizationManager { get; }
 
         public ZActivityOperations ActivityOperations
         {
@@ -80,9 +39,14 @@ namespace EasyLOB.Application
 
         #region Methods
 
-        public GenericApplication(IUnitOfWork unitOfWork)
+        public GenericApplication(IUnitOfWork unitOfWork,
+            IAuditTrailManager auditTrailManager,
+            IAuthorizationManager authorizationManager)
         {
             UnitOfWork = unitOfWork;
+
+            AuditTrailManager = auditTrailManager;
+            AuthorizationManager = authorizationManager;
         }
 
         public int Count(ZOperationResult operationResult, Expression<Func<TEntity, bool>> where)

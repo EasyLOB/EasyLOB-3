@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using AutoMapper;
 using EasyLOB.Environment;
 
 namespace EasyLOB
@@ -38,17 +39,20 @@ namespace EasyLOB
 
             SetupApplication(); // !!!
 
-            ContainerBuilder.RegisterType<EnvironmentManagerDesktop>().As<IEnvironmentManager>().SingleInstance();
-            //ContainerBuilder.RegisterType<EnvironmentManagerWeb>().As<IEnvironmentManager>().SingleInstance();
+            // DIHelper
+            ContainerBuilder.RegisterType<EnvironmentManagerDesktop>().As<IEnvironmentManager>();
+            //ContainerBuilder.RegisterType<EnvironmentManagerWeb>().As<IEnvironmentManager>();
 
             _container = _containerBuilder.Build();
 
-            AppHelper.SetupMappers();
+            IMapper mapper = AppHelper.SetupMappers();
             AppHelper.SetupProfiles();
 
-            ManagerHelper.Setup(new DIManagerAutofac(Container),
+            DIHelper.Setup(new DIManagerAutofac(Container),
                 Container.Resolve<IEnvironmentManager>(),
-                Container.Resolve<ILogManager>());
+                Container.Resolve<ILogManager>(),
+                Container.Resolve<IMailManager>(),
+                mapper);
         }
 
         public static T Resolve<T>()

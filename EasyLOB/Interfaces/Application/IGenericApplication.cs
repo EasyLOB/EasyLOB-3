@@ -10,17 +10,15 @@ namespace EasyLOB
     {
         #region Properties
 
+        IUnitOfWork UnitOfWork { get; }
+
         IGenericRepository<TEntity> Repository { get; }
 
-        IUnitOfWork UnitOfWork { get; }
+        IAuditTrailManager AuditTrailManager { get; }
 
         IAuthenticationManager AuthenticationManager { get; }
 
         IAuthorizationManager AuthorizationManager { get; }
-
-        IAuditTrailManager AuditTrailManager { get; }
-
-        ILogManager LogManager { get; }
 
         ZActivityOperations ActivityOperations { get; }
 

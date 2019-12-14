@@ -11,7 +11,7 @@ namespace EasyLOB.Environment
     public class ODataHelper
     {
         /// <summary>
-        /// Get exception from operation result
+        /// Get exception from operation result.
         /// </summary>
         /// <param name="request">Request</param>
         /// <param name="operationResult">Operation result</param>

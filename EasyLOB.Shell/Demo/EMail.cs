@@ -1,5 +1,4 @@
-﻿using EasyLOB.Extensions.Mail;
-using System;
+﻿using System;
 
 namespace EasyLOB.Shell
 {
@@ -11,7 +10,7 @@ namespace EasyLOB.Shell
 
             try
             {
-                MailManager mailManager = new MailManager();
+                IMailManager mailManager = DIHelper.DIManager.GetService<IMailManager>();
 
                 mailManager.Mail("siegmar@siegmar.com.br", "Subject", "<b>Body</b>", true);
             }

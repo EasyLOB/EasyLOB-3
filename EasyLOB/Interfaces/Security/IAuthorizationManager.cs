@@ -10,7 +10,7 @@ namespace EasyLOB
         #region Properties
 
         /// <summary>
-        /// Authentication manager
+        /// Authentication manager.
         /// </summary>
         IAuthenticationManager AuthenticationManager { get; }
 
@@ -19,7 +19,7 @@ namespace EasyLOB
         #region Methods
 
         /// <summary>
-        /// Get operations
+        /// Get operations.
         /// </summary>
         /// <param name="activity">Activity name</param>
         /// <returns></returns>
@@ -152,7 +152,7 @@ namespace EasyLOB
         #region Methods Message
 
         /// <summary>
-        /// Message authorized
+        /// Message authorized.
         /// </summary>
         /// <param name="activity">Activity name</param>
         /// <param name="operation">Operation</param>
@@ -160,7 +160,7 @@ namespace EasyLOB
         string MessageAuthorized(string activity, ZOperations operation);
 
         /// <summary>
-        /// Message NOT authorized
+        /// Message NOT authorized.
         /// </summary>
         /// <param name="activity">Activity name</param>
         /// <param name="operation">Operation</param>

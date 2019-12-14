@@ -28,7 +28,7 @@ namespace EasyLOB.Shell
                 ZOperationResult operationResult = new ZOperationResult();
 
                 AuditTrailUnitOfWorkEF unitOfWork =
-                    (AuditTrailUnitOfWorkEF)ManagerHelper.DIManager.GetService<IAuditTrailUnitOfWork>();
+                    (AuditTrailUnitOfWorkEF)DIHelper.DIManager.GetService<IAuditTrailUnitOfWork>();
                 AuditTrailGenericRepositoryEF<AuditTrailLog> repository =
                     (AuditTrailGenericRepositoryEF<AuditTrailLog>)unitOfWork.GetRepository<AuditTrailLog>();
                 IEnumerable<AuditTrailLog> enumerable;

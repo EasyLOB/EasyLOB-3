@@ -42,7 +42,7 @@ namespace EasyLOB
         public Exception ErrorException { get; }
 
         /// <summary>
-        /// Error Members.
+        /// Error members.
         /// </summary>
         [DataMember]
         public List<string> ErrorMembers { get; }

@@ -1,9 +1,7 @@
-﻿using EasyLOB.Library;
-
-namespace EasyLOB.AuditTrail
+﻿namespace EasyLOB.AuditTrail
 {
     /// <summary>
-    /// Audit Trail helper.
+    /// Audit Trail Helper.
     /// </summary>
     public static partial class AuditTrailHelper
     {

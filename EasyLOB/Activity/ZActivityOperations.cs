@@ -8,7 +8,7 @@
         #region Properties
 
         /// <summary>
-        /// Activity name
+        /// Activity name.
         /// </summary>
         public string Activity { get; set; }
 

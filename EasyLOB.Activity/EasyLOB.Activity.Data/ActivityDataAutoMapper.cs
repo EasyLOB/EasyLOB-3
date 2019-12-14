@@ -14,7 +14,7 @@ namespace EasyLOB.Activity.Data
             Type[] types = dataAssembly.GetTypes();
             foreach (Type type in types)
             {
-                if (type.IsSubclassOf(typeof(ZDataBase)))
+                if (type.IsSubclassOf(typeof(ZDataBase)) && !type.IsAbstract)
                 {
                     string dto = type.FullName + "DTO";
                     Type typeDTO = dataAssembly.GetType(dto);

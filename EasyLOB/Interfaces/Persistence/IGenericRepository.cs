@@ -260,10 +260,20 @@ namespace EasyLOB
 
         #endregion Methods
 
+        #region Methods *AndSave
+
+        bool CreateAndSave(ZOperationResult operationResult, TEntity entity);
+
+        bool DeleteAndSave(ZOperationResult operationResult, TEntity entity);
+
+        bool UpdateAndSave(ZOperationResult operationResult, TEntity entity);
+
+        #endregion Methods *AndSave
+
         #region Triggers
 
         /// <summary>
-        /// Before create Trigger
+        /// Before create Trigger.
         /// </summary>
         /// <param name="operationResult">Operation Result</param>
         /// <param name="entity">Entity</param>
@@ -271,7 +281,7 @@ namespace EasyLOB
         bool BeforeCreate(ZOperationResult operationResult, TEntity entity);
 
         /// <summary>
-        /// After create Trigger
+        /// After create Trigger.
         /// </summary>
         /// <param name="operationResult">Operation Result</param>
         /// <param name="entity">Entity</param>
@@ -279,7 +289,7 @@ namespace EasyLOB
         bool AfterCreate(ZOperationResult operationResult, TEntity entity);
 
         /// <summary>
-        /// Before delete Trigger
+        /// Before delete Trigger.
         /// </summary>
         /// <param name="operationResult">Operation Result</param>
         /// <param name="entity">Entity</param>
@@ -287,7 +297,7 @@ namespace EasyLOB
         bool BeforeDelete(ZOperationResult operationResult, TEntity entity);
 
         /// <summary>
-        /// After delete Trigger
+        /// After delete Trigger.
         /// </summary>
         /// <param name="operationResult">Operation Result</param>
         /// <param name="entity">Entity</param>
@@ -295,7 +305,7 @@ namespace EasyLOB
         bool AfterDelete(ZOperationResult operationResult, TEntity entity);
 
         /// <summary>
-        /// Before update Trigger
+        /// Before update Trigger.
         /// </summary>
         /// <param name="operationResult">Operation Result</param>
         /// <param name="entity">Entity</param>
@@ -303,7 +313,7 @@ namespace EasyLOB
         bool BeforeUpdate(ZOperationResult operationResult, TEntity entity);
 
         /// <summary>
-        /// After update Trigger
+        /// After update Trigger.
         /// </summary>
         /// <param name="operationResult">Operation Result</param>
         /// <param name="entity">Entity</param>

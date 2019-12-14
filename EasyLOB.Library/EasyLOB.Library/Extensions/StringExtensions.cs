@@ -147,10 +147,10 @@ namespace EasyLOB.Library
         #region To... | To..Nullable
 
         /// <summary>
-        /// Convert String to Byte[] (Binary).
+        /// Convert String to byte[] (Binary).
         /// </summary>
         /// <param name="s">String value</param>
-        /// <returns>Byte[] (Binary) value</returns>
+        /// <returns>byte[] (Binary) value</returns>
         public static byte[] ToBinary(this string s)
         {
             if (String.IsNullOrEmpty(s))
@@ -166,10 +166,10 @@ namespace EasyLOB.Library
         }
 
         /// <summary>
-        /// Convert String to nullable Byte[] (Binary)
+        /// Convert String to nullable byte[] (Binary).
         /// </summary>
         /// <param name="s">String value</param>
-        /// <returns>Nullable Byte[] (Binary) value</returns>
+        /// <returns>Nullable byte[] (Binary) value</returns>
         public static byte[] ToBinaryNullable(this string s)
         {
             return ToBinary(s);

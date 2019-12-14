@@ -15,7 +15,7 @@ namespace EasyLOB.Data
         #region Methods
 
         /// <summary>
-        /// Convert data list to view list
+        /// Convert data list to view list.
         /// </summary>
         /// <param name="dataModels"></param>
         /// <returns></returns>
@@ -32,7 +32,7 @@ namespace EasyLOB.Data
         }
 
         /// <summary>
-        /// Convert view list to data list
+        /// Convert view list to data list.
         /// </summary>
         /// <param name="viewModels"></param>
         /// <returns></returns>

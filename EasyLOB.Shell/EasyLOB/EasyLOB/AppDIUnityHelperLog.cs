@@ -7,6 +7,7 @@ namespace EasyLOB
     {
         public static void SetupLog()
         {
+            // DIHelper
             //Container.RegisterType(typeof(ILogManager), typeof(LogManagerMock), AppLifetimeManager);
             Container.RegisterType(typeof(ILogManager), typeof(LogManagerNLog), AppLifetimeManager);
         }

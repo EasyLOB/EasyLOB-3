@@ -25,15 +25,15 @@ namespace EasyLOB.Environment
         public ResourcesManager()
         {
             IniManagerDashboard =
-                new IniManager(Path.Combine(ManagerHelper.EnvironmentManager.ApplicationPath(ConfigurationHelper.AppSettings<string>("EasyLOB.Directory.Configuration")),
+                new IniManager(Path.Combine(DIHelper.EnvironmentManager.ApplicationPath(ConfigurationHelper.AppSettings<string>("EasyLOB.Directory.Configuration")),
                     "INI/DashboardResources.ini"));
 
             IniManagerMenu =
-                new IniManager(Path.Combine(ManagerHelper.EnvironmentManager.ApplicationPath(ConfigurationHelper.AppSettings<string>("EasyLOB.Directory.Configuration")),
+                new IniManager(Path.Combine(DIHelper.EnvironmentManager.ApplicationPath(ConfigurationHelper.AppSettings<string>("EasyLOB.Directory.Configuration")),
                     "INI/MenuResources.ini"));
 
             IniManagerReport =
-                new IniManager(Path.Combine(ManagerHelper.EnvironmentManager.ApplicationPath(ConfigurationHelper.AppSettings<string>("EasyLOB.Directory.Configuration")),
+                new IniManager(Path.Combine(DIHelper.EnvironmentManager.ApplicationPath(ConfigurationHelper.AppSettings<string>("EasyLOB.Directory.Configuration")),
                     "INI/ReportResources.ini"));
         }
 

@@ -548,7 +548,7 @@ namespace EasyLOB
         }
 
         /// <summary>
-        /// Convert ZOperationResult to List[IZOperationMessage]
+        /// Convert ZOperationResult to List[IZOperationMessage].
         /// </summary>
         /// <returns>List</returns>
         public List<ZOperationMessage> ToDataSet()
@@ -565,7 +565,7 @@ namespace EasyLOB
         }
 
         /// <summary>
-        /// Convert ZOperationResult to List[string]
+        /// Convert ZOperationResult to List[string].
         /// </summary>
         /// <returns>List</returns>
         public List<string> ToList()

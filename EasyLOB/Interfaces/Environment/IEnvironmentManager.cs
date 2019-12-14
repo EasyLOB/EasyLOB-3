@@ -1,14 +1,14 @@
 ﻿namespace EasyLOB
 {
     /// <summary>
-    /// IEnvironmentManager
+    /// IEnvironmentManager.
     /// </summary>
     public interface IEnvironmentManager
     {
         #region Properties Application
 
         /// <summary>
-        /// Application directory
+        /// Application directory.
         /// </summary>
         string ApplicationDirectory { get; }
 
@@ -18,22 +18,22 @@
         bool IsWeb { get; }
 
         /// <summary>
-        /// Web path
+        /// Web path.
         /// </summary>
         string WebPath { get; }
 
         /// <summary>
-        /// Web URL
+        /// Web URL.
         /// </summary>
         string WebUrl { get; }
 
         /// <summary>
-        /// Web domain
+        /// Web domain.
         /// </summary>
         string WebDomain { get; }
 
         /// <summary>
-        /// Web sub-domain
+        /// Web sub-domain.
         /// </summary>
         string WebSubDomain { get; }
 
@@ -42,7 +42,7 @@
         #region Methods Application
 
         /// <summary>
-        /// Application path
+        /// Application path.
         /// </summary>
         /// <param name="path">Path</param>
         /// <returns></returns>
@@ -53,30 +53,30 @@
         #region Methods Session
 
         /// <summary>
-        /// Abandon session
+        /// Abandon session.
         /// </summary>
         void SessionAbandon();
 
         /// <summary>
-        /// Clear session
+        /// Clear session.
         /// </summary>
         void SessionClear();
 
         /// <summary>
-        /// Clear session by name
+        /// Clear session by name.
         /// </summary>
         /// <param name="sessionName"></param>
         void SessionClear(string sessionName);
 
         /// <summary>
-        /// Read session by name
+        /// Read session by name.
         /// </summary>
         /// <param name="sessionName"></param>
         /// <returns></returns>
         object SessionRead(string sessionName);
 
         /// <summary>
-        /// Write session by name
+        /// Write session by name.
         /// </summary>
         /// <param name="sessionName"></param>
         /// <param name="value"></param>

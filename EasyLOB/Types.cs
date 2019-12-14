@@ -35,7 +35,7 @@
     #region Types File
 
     /// <summary>
-    /// Z File Type.
+    /// Z File Types.
     /// </summary>
     public enum ZFileTypes
     {

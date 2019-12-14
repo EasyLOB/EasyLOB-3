@@ -15,7 +15,7 @@ namespace EasyLOB.Data
         #region Methods
 
         /// <summary>
-        /// Convert data list to DTO list
+        /// Convert data list to DTO list.
         /// </summary>
         /// <param name="dataModels">Data list</param>
         /// <returns></returns>
@@ -32,7 +32,7 @@ namespace EasyLOB.Data
         }
 
         /// <summary>
-        /// Convert DTO list to data list
+        /// Convert DTO list to data list.
         /// </summary>
         /// <param name="dtos">DTO list</param>
         /// <returns></returns>

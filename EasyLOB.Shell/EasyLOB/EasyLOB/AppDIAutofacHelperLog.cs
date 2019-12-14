@@ -7,8 +7,9 @@ namespace EasyLOB
     {
         public static void SetupLog()
         {
-            //ContainerBuilder.RegisterType<LogManagerMock>().As<ILogManager>().SingleInstance();
-            ContainerBuilder.RegisterType<LogManagerNLog>().As<ILogManager>().SingleInstance();
+            // DIHelper
+            //ContainerBuilder.RegisterType<LogManagerMock>().As<ILogManager>();
+            ContainerBuilder.RegisterType<LogManagerNLog>().As<ILogManager>();
         }
     }
 }

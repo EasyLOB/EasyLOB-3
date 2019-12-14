@@ -1,5 +1,4 @@
-﻿using EasyLOB.Library;
-using EasyLOB.Resources;
+﻿using EasyLOB.Resources;
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using MimeKit;
@@ -11,39 +10,39 @@ namespace EasyLOB.Extensions.Mail
     {
         #region Properties
 
-        public string FromAddress { get; set; }
+        public string FromName { get; private set; }
 
-        public string UserName { get; set; }
+        public string FromAddress { get; private set; }
 
-        public string Password { get; set; }
+        public string UserName { get; private set; }
+
+        public string Password { get; private set; }
 
         #endregion Properties
 
-        #region Methods
-
-        public MailManager()
-        {
-            FromAddress = "";
-            UserName = "";
-            Password = "";
-        }
-
-        #endregion Methods
-
         #region Methods Interface
+
+        public void Clear(string fromName = null,
+            string fromAddress = null,
+            string userName = null,
+            string password = null)
+        {
+            FromName = fromName;
+            FromAddress = fromAddress;
+            UserName = userName;
+            Password = password;
+        }
 
         public void Mail(string toAddress,
             string subject, string body, bool isHtml = false)
         {
-            Mail("", "", toAddress,
+            Mail(null, toAddress,
                 subject, body, isHtml);
         }
 
-        public void Mail(string fromName,
-            string toName, string toAddress,
+        public void Mail(string toName, string toAddress,
             string subject, string body, bool isHtml = false, string[] fileAttachmentPaths = null)
         {
-            fromName = fromName ?? "";
             toName = toName ?? "";
             toAddress = toAddress ?? "";
             subject = subject ?? "";
@@ -52,6 +51,12 @@ namespace EasyLOB.Extensions.Mail
             if (String.IsNullOrEmpty(toAddress))
             {
                 throw new Exception(String.Format(ErrorResources.EMailInvalidTo, toAddress));
+            }
+
+            string fromName = null;
+            if (!String.IsNullOrEmpty(FromName))
+            {
+                fromName = FromName;
             }
 
             string fromAddress;
@@ -115,7 +120,7 @@ namespace EasyLOB.Extensions.Mail
             Mail(message);
         }
 
-        public void Mail(MimeMessage message)
+        private void Mail(MimeMessage message)
         {
             if (message != null)
             {
@@ -130,7 +135,7 @@ namespace EasyLOB.Extensions.Mail
             }
         }
 
-        public void Mail(MimeMessage message,
+        private void Mail(MimeMessage message,
             string host, int port, string userName, string password, bool ssl)
         {
             host = host ?? "";

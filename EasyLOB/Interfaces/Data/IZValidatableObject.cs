@@ -8,7 +8,7 @@
         #region Methods
 
         /// <summary>
-        /// Validate
+        /// Validate.
         /// </summary>
         /// <param name="operationResult">Operation result</param>
         /// <returns></returns>

@@ -13,7 +13,7 @@ namespace EasyLOB.Environment
         #region Fields
 
         /// <summary>
-        /// Session name
+        /// Session name.
         /// </summary>
         private static string _sessionName = "EasyLOB.MultiTenant";
 
@@ -38,13 +38,13 @@ namespace EasyLOB.Environment
         }
 
         /// <summary>
-        /// Tenant
+        /// Tenant.
         /// </summary>
         public static AppTenant Tenant
         {
             get
             {
-                string tenantName = ManagerHelper.EnvironmentManager.WebSubDomain;
+                string tenantName = DIHelper.EnvironmentManager.WebSubDomain;
 
                 return GetTenant(String.IsNullOrEmpty(tenantName) ? TenantName : tenantName);
             }
@@ -53,7 +53,7 @@ namespace EasyLOB.Environment
         private static string _tenantName = "";
 
         /// <summary>
-        /// Tenant name
+        /// Tenant name.
         /// </summary>
         public static string TenantName
         {
@@ -61,7 +61,7 @@ namespace EasyLOB.Environment
             {
                 if (String.IsNullOrEmpty(_tenantName))
                 {
-                    _tenantName = ManagerHelper.EnvironmentManager.WebSubDomain;
+                    _tenantName = DIHelper.EnvironmentManager.WebSubDomain;
                 }
 
                 return _tenantName;
@@ -69,18 +69,18 @@ namespace EasyLOB.Environment
         }
 
         /// <summary>
-        /// Tenants
+        /// Tenants.
         /// </summary>
         public static List<AppTenant> Tenants
         {
             get
             {
-                List<AppTenant> tenants = (List<AppTenant>)ManagerHelper.EnvironmentManager.SessionRead(_sessionName);
+                List<AppTenant> tenants = (List<AppTenant>)DIHelper.EnvironmentManager.SessionRead(_sessionName);
                 if (tenants == null || tenants.Count == 0)
                 {
                     try
                     {
-                        string filePath = Path.Combine(ManagerHelper.EnvironmentManager.ApplicationPath(ConfigurationHelper.AppSettings<string>("EasyLOB.Directory.Configuration")),
+                        string filePath = Path.Combine(DIHelper.EnvironmentManager.ApplicationPath(ConfigurationHelper.AppSettings<string>("EasyLOB.Directory.Configuration")),
                             "JSON/MultiTenant.json");
                         string json = File.ReadAllText(filePath);
                         tenants = JsonConvert.DeserializeObject<List<AppTenant>>(json);
@@ -88,7 +88,7 @@ namespace EasyLOB.Environment
                     catch { }
                     tenants = tenants ?? new List<AppTenant>();
 
-                    ManagerHelper.EnvironmentManager.SessionWrite(_sessionName, tenants);
+                    DIHelper.EnvironmentManager.SessionWrite(_sessionName, tenants);
                 }
 
                 return tenants;
@@ -100,7 +100,7 @@ namespace EasyLOB.Environment
         #region Methods
 
         /// <summary>
-        /// Setup
+        /// Setup.
         /// </summary>
         /// <param name="tenantName"></param>
         public static void Setup(string tenantName)
@@ -109,7 +109,7 @@ namespace EasyLOB.Environment
         }
 
         /// <summary>
-        /// Get connection name
+        /// Get connection name.
         /// </summary>
         /// <param name="defaultConnectionName">Default connection name</param>
         /// <returns></returns>
@@ -133,7 +133,7 @@ namespace EasyLOB.Environment
         }
 
         /// <summary>
-        /// Get connection string
+        /// Get connection string.
         /// </summary>
         /// <param name="defaultConnectionName">Default connection string</param>
         /// <returns></returns>
@@ -143,7 +143,7 @@ namespace EasyLOB.Environment
         }
 
         /// <summary>
-        /// Get tenant by name
+        /// Get tenant by name.
         /// </summary>
         /// <param name="name">Tenant name</param>
         /// <returns></returns>

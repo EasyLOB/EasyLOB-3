@@ -29,7 +29,7 @@ namespace EasyLOB.Data
         {
             if (dataModel != null)
             {
-                LibraryHelper.Clone<TEntityView>(Mapper.Map<TEntityView>(dataModel as TEntity), this);
+                LibraryHelper.Clone<TEntityView>(DIHelper.Mapper.Map<TEntityView>(dataModel as TEntity), this);
             }
         }
 
@@ -39,7 +39,7 @@ namespace EasyLOB.Data
 
         public virtual IZDataBase ToData()
         {
-            return Mapper.Map<TEntity>(this);
+            return DIHelper.Mapper.Map<TEntity>(this);
         }
 
         #endregion Methods

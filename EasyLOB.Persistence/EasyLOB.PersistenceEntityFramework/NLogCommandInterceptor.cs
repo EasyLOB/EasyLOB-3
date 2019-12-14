@@ -1,5 +1,4 @@
-﻿using EasyLOB.Log;
-using System.Data.Common;
+﻿using System.Data.Common;
 using System.Data.Entity.Infrastructure.Interception;
 
 // Logging and Intercepting Database Operations
@@ -11,14 +10,17 @@ namespace EasyLOB.Persistence
     {
         #region Properties
 
-        private static ILogManager LogManager
-        {
-            get { return ManagerHelper.DIManager.GetService<ILogManager>(); }
-        }
+        private ILogManager LogManager { get; }
 
         #endregion Properties
 
         #region Methods
+
+        public NLogCommandInterceptor(ILogManager logManager)
+            : base()
+        {
+            LogManager = logManager;
+        }
 
         public void NonQueryExecuting(DbCommand command, DbCommandInterceptionContext<int> interceptionContext)
         {

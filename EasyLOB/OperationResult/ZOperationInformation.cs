@@ -29,6 +29,9 @@ namespace EasyLOB
         [DataMember]
         public string InformationMessage { get; }
 
+        /// <summary>
+        /// Information members.
+        /// </summary>
         [DataMember]
         public List<string> InformationMembers { get; }
 

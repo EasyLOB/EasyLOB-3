@@ -29,6 +29,9 @@ namespace EasyLOB
         [DataMember]
         public string WarningMessage { get; }
 
+        /// <summary>
+        /// Warning members.
+        /// </summary>
         [DataMember]
         public List<string> WarningMembers { get; }
 

@@ -13,15 +13,15 @@ namespace EasyLOB.Shell
             {
                 Console.WriteLine("AuditTrailConfiguration");
                 AuditTrailConfiguration data = new AuditTrailConfiguration();
-                AuditTrailConfigurationDTO dto = Mapper.Map<AuditTrailConfigurationDTO>(data);
-                data = Mapper.Map<AuditTrailConfiguration>(dto);
+                AuditTrailConfigurationDTO dto = DIHelper.Mapper.Map<AuditTrailConfigurationDTO>(data);
+                data = DIHelper.Mapper.Map<AuditTrailConfiguration>(dto);
             }
 
             {
                 Console.WriteLine("AuditTrailLog");
                 AuditTrailLog data = new AuditTrailLog();
-                AuditTrailLogDTO dto = Mapper.Map<AuditTrailLogDTO>(data);
-                data = Mapper.Map<AuditTrailLog>(dto);
+                AuditTrailLogDTO dto = DIHelper.Mapper.Map<AuditTrailLogDTO>(data);
+                data = DIHelper.Mapper.Map<AuditTrailLog>(dto);
             }
         }
     }

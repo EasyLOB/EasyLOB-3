@@ -10,7 +10,7 @@ namespace EasyLOB
         #region Properties
 
         /// <summary>
-        /// Name
+        /// Name.
         /// </summary>
         string Name { get; set; }
 
@@ -20,22 +20,22 @@ namespace EasyLOB
         bool IsIdentity { get; set; }
 
         /// <summary>
-        /// Key properties
+        /// Key properties.
         /// </summary>
         List<string> Keys { get; set; }
 
         /// <summary>
-        /// Lookup property
+        /// Lookup property.
         /// </summary>
         string Lookup { get; set; }
 
         /// <summary>
-        /// Order by clause
+        /// Order by clause.
         /// </summary>
         string LINQOrderBy { get; set; }
 
         /// <summary>
-        /// Where clause
+        /// Where clause.
         /// </summary>
         string LINQWhere { get; set; }
 
@@ -50,17 +50,17 @@ namespace EasyLOB
         //int RecordsBySearch { get; set; }
         
         /// <summary>
-        /// Associations
+        /// Associations.
         /// </summary>
         List<string> Associations { get; }
 
         /// <summary>
-        /// Collections
+        /// Collections.
         /// </summary>
         Dictionary<string, bool> Collections { get; }
 
         /// <summary>
-        /// Properties
+        /// Properties.
         /// </summary>
         List<IZProfileProperty> Properties { get; }
 
@@ -69,22 +69,22 @@ namespace EasyLOB
         #region Properties Helper Edit
 
         /// <summary>
-        /// Edit collections
+        /// Edit collections.
         /// </summary>
         List<string> EditCollections { get; }
 
         /// <summary>
-        /// Edit hidden collections
+        /// Edit hidden collections.
         /// </summary>
         List<string> EditHiddenCollections { get; }
 
         /// <summary>
-        /// Edit hidden properties
+        /// Edit hidden properties.
         /// </summary>
         List<string> EditHiddenProperties { get; }
 
         /// <summary>
-        /// Edit read-only properties
+        /// Edit read-only properties.
         /// </summary>
         List<string> EditReadOnlyProperties { get; }
 
@@ -93,12 +93,12 @@ namespace EasyLOB
         #region Properties Helper Grid
 
         /// <summary>
-        /// Grid properties
+        /// Grid properties.
         /// </summary>
         List<string> GridProperties { get; }
 
         /// <summary>
-        /// Grid search properties
+        /// Grid search properties.
         /// </summary>
         List<string> GridSearchProperties { get; }
 
@@ -107,7 +107,7 @@ namespace EasyLOB
         #region Methods
 
         /// <summary>
-        /// Get profile property
+        /// Get profile property.
         /// </summary>
         /// <param name="name">Property name</param>
         /// <returns></returns>
@@ -128,31 +128,31 @@ namespace EasyLOB
         bool IsRequiredView(string property);
 
         /// <summary>
-        /// Set edit read-only
+        /// Set edit read-only.
         /// </summary>
         /// <param name="value">Value</param>
         void SetEditReadOnly(bool value);
 
         /// <summary>
-        /// Set edit visible
+        /// Set edit visible.
         /// </summary>
         /// <param name="value">Value</param>
         void SetEditVisible(bool value);
 
         /// <summary>
-        /// Set grid search
+        /// Set grid search.
         /// </summary>
         /// <param name="value">Value</param>
         void SetGridSearch(bool value);
 
         /// <summary>
-        /// Set grid visible
+        /// Set grid visible.
         /// </summary>
         /// <param name="value">Value</param>
         void SetGridVisible(bool value);
 
         /// <summary>
-        /// Set profile property
+        /// Set profile property.
         /// </summary>
         /// <param name="name">Property name</param>
         /// <param name="isGridVisible">Is grid visible ?</param>
@@ -174,70 +174,70 @@ namespace EasyLOB
         #region Methods Helper Edit
 
         /// <summary>
-        /// Edit CSS for property
+        /// Edit CSS for property.
         /// </summary>
         /// <param name="property">Property name</param>
         /// <returns></returns>
         string EditCSSFor(string property);
 
         /// <summary>
-        /// Edit CSS Editor
+        /// Edit CSS Editor.
         /// </summary>
         /// <param name="required">Required ?</param>
         /// <returns></returns>
         string EditCSSEditor(bool required);
 
         /// <summary>
-        /// Edit CSS Editor for property
+        /// Edit CSS Editor for property.
         /// </summary>
         /// <param name="property">Property name</param>
         /// <returns></returns>
         string EditCSSEditorFor(string property);
 
         /// <summary>
-        /// Edit CSS Editor Date
+        /// Edit CSS Editor Date.
         /// </summary>
         /// <param name="required">Required ?</param>
         /// <returns></returns>
         string EditCSSEditorDate(bool required);
 
         /// <summary>
-        /// Edit CSS Editor Date for property
+        /// Edit CSS Editor Date for property.
         /// </summary>
         /// <param name="property">Property name</param>
         /// <returns></returns>
         string EditCSSEditorDateFor(string property);
 
         /// <summary>
-        /// Edit CSS Editor DateTime
+        /// Edit CSS Editor DateTime.
         /// </summary>
         /// <param name="required">Required ?</param>
         /// <returns></returns>
         string EditCSSEditorDateTime(bool required);
 
         /// <summary>
-        /// Edit CSS Editor DateTime for property
+        /// Edit CSS Editor DateTime for property.
         /// </summary>
         /// <param name="property">Property name</param>
         /// <returns></returns>
         string EditCSSEditorDateTimeFor(string property);
 
         /// <summary>
-        /// Edit CSS Label
+        /// Edit CSS Label.
         /// </summary>
         /// <param name="required">Required ?</param>
         /// <returns></returns>
         string EditCSSLabel(bool required);
 
         /// <summary>
-        /// Edit CSS Label for property
+        /// Edit CSS Label for property.
         /// </summary>
         /// <param name="property">Property name</param>
         /// <returns></returns>
         string EditCSSLabelFor(string property);
 
         /// <summary>
-        /// Edit CSS Lookup Editor
+        /// Edit CSS Lookup Editor.
         /// </summary>
         /// <param name="required">Required ?</param>
         /// <returns></returns>
@@ -262,7 +262,7 @@ namespace EasyLOB
         bool IsGridVisibleFor(string property);
 
         /// <summary>
-        /// Grid width
+        /// Grid width.
         /// </summary>
         /// <param name="property">Property name</param>
         /// <returns></returns>

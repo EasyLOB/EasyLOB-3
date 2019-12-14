@@ -30,7 +30,7 @@ namespace EasyLOB.Shell
                 ZOperationResult operationResult = new ZOperationResult();
 
                 IAuditTrailGenericApplication<AuditTrailLog> application = 
-                    ManagerHelper.DIManager.GetService<IAuditTrailGenericApplication<AuditTrailLog>>();
+                    DIHelper.DIManager.GetService<IAuditTrailGenericApplication<AuditTrailLog>>();
                 AuditTrailLog auditTrailLog;
 
                 switch (key.KeyChar) // <ENTER> = '\r'

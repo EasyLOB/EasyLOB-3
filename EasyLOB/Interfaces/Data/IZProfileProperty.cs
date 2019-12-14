@@ -8,7 +8,7 @@
         #region Properties
 
         /// <summary>
-        /// Name
+        /// Name.
         /// </summary>
         string Name { get; set; }
 
@@ -43,7 +43,7 @@
         bool IsGridSearch { get; set; }
 
         /// <summary>
-        /// Grid width
+        /// Grid width.
         /// </summary>
         int GridWidth { get; set; }
 
@@ -58,7 +58,7 @@
         bool IsEditReadOnly { get; set; }
 
         /// <summary>
-        /// Edit CSS
+        /// Edit CSS.
         /// </summary>
         string EditCSS { get; set; }
 

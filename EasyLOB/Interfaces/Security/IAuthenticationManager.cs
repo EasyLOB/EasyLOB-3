@@ -22,17 +22,17 @@ namespace EasyLOB
         bool IsAuthenticated { get; }
 
         /// <summary>
-        /// Principal
+        /// Principal.
         /// </summary>
         IPrincipal Principal { get; }
 
         /// <summary>
-        /// Roles
+        /// Roles.
         /// </summary>
         List<string> Roles { get; }
 
         /// <summary>
-        /// User name
+        /// User name.
         /// </summary>
         string UserName { get; }
 
@@ -41,7 +41,7 @@ namespace EasyLOB
         #region Methods
 
         /// <summary>
-        /// Is in role
+        /// Is in role.
         /// </summary>
         /// <param name="role">Role name</param>
         /// <returns></returns>

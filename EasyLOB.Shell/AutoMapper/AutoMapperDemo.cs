@@ -18,7 +18,7 @@ namespace EasyLOB.Shell
                 Console.WriteLine("<1> Activity DTO -> Data -> DTO");
                 Console.WriteLine("<2> Audit Trail DTO -> Data -> DTO");
                 Console.WriteLine("<3> Identity DTO -> Data -> DTO");
-                Console.WriteLine("<3> EasyLOB Export");
+                Console.WriteLine("<4> EasyLOB Export");
                 Console.Write("\nChoose an option... ");
 
                 ConsoleKeyInfo key = Console.ReadKey();
@@ -50,7 +50,7 @@ namespace EasyLOB.Shell
 
                         using (StreamWriter stream = new StreamWriter(filePath))
                         {
-                            TypeMap[] typeMaps = Mapper.Configuration.GetAllTypeMaps();
+                            TypeMap[] typeMaps = DIHelper.Mapper.ConfigurationProvider.GetAllTypeMaps();
                             foreach (TypeMap typeMap in typeMaps)
                             {
                                 stream.WriteLine("{0} -> {1}", typeMap.SourceType.ToString(), typeMap.DestinationType.ToString());

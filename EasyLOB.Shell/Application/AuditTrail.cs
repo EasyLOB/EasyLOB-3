@@ -27,7 +27,7 @@ namespace EasyLOB.Shell
             ZOperationResult operationResult = new ZOperationResult();
 
             IAuditTrailGenericApplication<TEntity> application =
-                ManagerHelper.DIManager.GetService<IAuditTrailGenericApplication<TEntity>>();
+                DIHelper.DIManager.GetService<IAuditTrailGenericApplication<TEntity>>();
             IEnumerable<TEntity> enumerable = application.SearchAll(operationResult);
             if (operationResult.Ok)
             {
@@ -46,7 +46,7 @@ namespace EasyLOB.Shell
             ZOperationResult operationResult = new ZOperationResult();
 
             IAuditTrailGenericApplicationDTO<TEntityDTO, TEntity> application =
-                ManagerHelper.DIManager.GetService<IAuditTrailGenericApplicationDTO<TEntityDTO, TEntity>>();
+                DIHelper.DIManager.GetService<IAuditTrailGenericApplicationDTO<TEntityDTO, TEntity>>();
             IEnumerable<TEntityDTO> enumerable = application.SearchAll(operationResult);
             if (operationResult.Ok)
             {

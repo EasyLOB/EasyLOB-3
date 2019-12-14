@@ -10,9 +10,9 @@ namespace EasyLOB
     {
         #region Methods
 
-        public static void SetupMappers()
+        public static IMapper SetupMappers()
         {
-            Mapper.Initialize(cfg => {
+            MapperConfiguration config = new MapperConfiguration(cfg => {
                 // ZDataModel
                 // Activity
                 cfg.AddProfile<ActivityDataAutoMapper>();
@@ -24,8 +24,10 @@ namespace EasyLOB
                 // !!!
             });
 
-            Mapper.Configuration.CompileMappings();
-            Mapper.Configuration.AssertConfigurationIsValid();
+            config.CompileMappings();
+            config.AssertConfigurationIsValid();
+
+            return config.CreateMapper();
         }
 
         public static void SetupProfiles()

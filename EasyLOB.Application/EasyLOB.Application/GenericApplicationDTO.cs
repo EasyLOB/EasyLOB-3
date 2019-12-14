@@ -12,8 +12,10 @@ namespace EasyLOB.Application
     {
         #region Methods
 
-        public GenericApplicationDTO(IUnitOfWork unitOfWork)
-            : base(unitOfWork)
+        public GenericApplicationDTO(IUnitOfWork unitOfWork,
+            IAuditTrailManager auditTrailManager,
+            IAuthorizationManager authorizationManager)
+            : base(unitOfWork, auditTrailManager, authorizationManager)
         {
         }
 

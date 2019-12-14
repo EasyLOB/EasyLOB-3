@@ -259,6 +259,16 @@ namespace EasyLOB
 
         #endregion Methods
 
+        #region Methods *AndSave
+
+        bool CreateAndSave(ZOperationResult operationResult, TEntityDTO entity);
+
+        bool DeleteAndSave(ZOperationResult operationResult, TEntityDTO entity);
+
+        bool UpdateAndSave(ZOperationResult operationResult, TEntityDTO entity);
+
+        #endregion Methods *AndSave
+
         #region Triggers
 
         /// <summary>

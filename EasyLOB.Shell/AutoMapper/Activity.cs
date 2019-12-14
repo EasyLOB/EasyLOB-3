@@ -13,15 +13,15 @@ namespace EasyLOB.Shell
             {
                 Console.WriteLine("Activity");
                 EasyLOB.Activity.Data.Activity data = new EasyLOB.Activity.Data.Activity();
-                ActivityDTO dto = Mapper.Map<ActivityDTO>(data);
-                data = Mapper.Map<EasyLOB.Activity.Data.Activity>(dto);
+                ActivityDTO dto = DIHelper.Mapper.Map<ActivityDTO>(data);
+                data = DIHelper.Mapper.Map<EasyLOB.Activity.Data.Activity>(dto);
             }
 
             {
                 Console.WriteLine("ActivityRole");
                 ActivityRole data = new ActivityRole();
-                ActivityRoleDTO dto = Mapper.Map<ActivityRoleDTO>(data);
-                data = Mapper.Map<ActivityRole>(dto);
+                ActivityRoleDTO dto = DIHelper.Mapper.Map<ActivityRoleDTO>(data);
+                data = DIHelper.Mapper.Map<ActivityRole>(dto);
             }
         }
     }

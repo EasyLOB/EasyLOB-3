@@ -10,7 +10,7 @@ namespace EasyLOB.Security
         #region Properties
 
         /// <summary>
-        /// Operations acronyms
+        /// Operations acronyms.
         /// </summary>
         public static string[] OperationAcronyms
         {
@@ -30,7 +30,7 @@ namespace EasyLOB.Security
         }
 
         /// <summary>
-        /// Operations names
+        /// Operations names.
         /// </summary>
         public static string[] OperationNames
         {
@@ -54,7 +54,7 @@ namespace EasyLOB.Security
         #region Methods Activity
 
         /// <summary>
-        /// Get dashboard activity name
+        /// Get dashboard activity name.
         /// </summary>
         /// <param name="domain">Domain</param>
         /// <param name="dashboardDirectory">Directory</param>
@@ -88,7 +88,7 @@ namespace EasyLOB.Security
         }
 
         /// <summary>
-        /// Get entity activity name
+        /// Get entity activity name.
         /// </summary>
         /// <param name="domain">Domain</param>
         /// <param name="entity">Entity</param>
@@ -113,7 +113,7 @@ namespace EasyLOB.Security
         }
 
         /// <summary>
-        /// Get report activity name
+        /// Get report activity name.
         /// </summary>
         /// <param name="domain">Domain</param>
         /// <param name="reportDirectory">Directory</param>
@@ -147,7 +147,7 @@ namespace EasyLOB.Security
         }
 
         /// <summary>
-        /// Get task activity name
+        /// Get task activity name.
         /// </summary>
         /// <param name="domain">Domain</param>
         /// <param name="taskName">Task</param>
@@ -178,7 +178,7 @@ namespace EasyLOB.Security
         #region Methods GetSecurityOperations
 
         /// <summary>
-        /// Get acronym from operation
+        /// Get acronym from operation.
         /// </summary>
         /// <param name="operation">Operation</param>
         /// <returns></returns>
@@ -199,7 +199,7 @@ namespace EasyLOB.Security
         }
 
         /// <summary>
-        /// Get operation from acronym
+        /// Get operation from acronym.
         /// </summary>
         /// <param name="acronym">Acronym</param>
         /// <returns></returns>
@@ -223,7 +223,7 @@ namespace EasyLOB.Security
         }
 
         /// <summary>
-        /// Get operation from name
+        /// Get operation from name.
         /// </summary>
         /// <param name="name">Name</param>
         /// <returns></returns>
@@ -247,7 +247,7 @@ namespace EasyLOB.Security
         }
 
         /// <summary>
-        /// Get name from operation
+        /// Get name from operation.
         /// </summary>
         /// <param name="operation"></param>
         /// <returns></returns>
@@ -272,7 +272,7 @@ namespace EasyLOB.Security
         #region Methods GetIsSecurityOperation
 
         /// <summary>
-        /// Get "Is Operation" from activity operations
+        /// Get "Is Operation" from activity operations.
         /// </summary>
         /// <param name="activityOperations">Activity operations</param>
         /// <param name="operation">Operation</param>
@@ -320,7 +320,7 @@ namespace EasyLOB.Security
         }
 
         /// <summary>
-        /// Get "Is Operation" from activity operations by acronym
+        /// Get "Is Operation" from activity operations by acronym.
         /// </summary>
         /// <param name="activityOperations">Activity operations</param>
         /// <param name="acronym">Acronym</param>
@@ -331,7 +331,7 @@ namespace EasyLOB.Security
         }
 
         /// <summary>
-        /// Get "Is Operation" from activity operations by name
+        /// Get "Is Operation" from activity operations by name.
         /// </summary>
         /// <param name="activityOperations">Activity operations</param>
         /// <param name="name">Name</param>

@@ -3,56 +3,56 @@
 namespace EasyLOB
 {
     /// <summary>
-    /// ILogManager
+    /// ILogManager.
     /// </summary>
     public interface ILogManager : IDisposable
     {
         #region Methods
 
         /// <summary>
-        /// Trace
+        /// Trace.
         /// </summary>
         /// <param name="message">Message</param>
         /// <param name="args">Arguments</param>
         void Trace(string message, params object[] args);
 
         /// <summary>
-        /// Debug
+        /// Debug.
         /// </summary>
         /// <param name="message">Message</param>
         /// <param name="args">Arguments</param>
         void Debug(string message, params object[] args);
 
         /// <summary>
-        /// Information
+        /// Information.
         /// </summary>
         /// <param name="message">Message</param>
         /// <param name="args">Arguments</param>
         void Information(string message, params object[] args);
 
         /// <summary>
-        /// Warning
+        /// Warning.
         /// </summary>
         /// <param name="message">Message</param>
         /// <param name="args">Arguments</param>
         void Warning(string message, params object[] args);
 
         /// <summary>
-        /// Error
+        /// Error.
         /// </summary>
         /// <param name="message">Message</param>
         /// <param name="args">Arguments</param>
         void Error(string message, params object[] args);
 
         /// <summary>
-        /// Fatal
+        /// Fatal.
         /// </summary>
         /// <param name="message">Message</param>
         /// <param name="args">Arguments</param>
         void Fatal(string message, params object[] args);
 
         /// <summary>
-        /// Exception
+        /// Exception.
         /// </summary>
         /// <param name="exception">Exception</param>
         /// <param name="message">Message</param>
@@ -60,7 +60,7 @@ namespace EasyLOB
         void Exception(Exception exception, string message, params object[] args);
 
         /// <summary>
-        /// OperationResult
+        /// OperationResult.
         /// </summary>
         /// <param name="operationResult">Operation result</param>
         /// <param name="header">Header</param>

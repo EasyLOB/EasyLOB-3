@@ -10,14 +10,14 @@ using System.Linq;
 namespace EasyLOB.Environment
 {
     /// <summary>
-    /// Menu helper.
+    /// Menu Helper.
     /// </summary>
     public static partial class MenuHelper
     {
         #region Fields
 
         /// <summary>
-        /// Session name
+        /// Session name.
         /// </summary>
         private static string _sessionName = "EasyLOB.Menu";
 
@@ -26,13 +26,13 @@ namespace EasyLOB.Environment
         #region Methods
 
         /// <summary>
-        /// Get menu
+        /// Get menu.
         /// </summary>
         /// <param name="authenticationManager"></param>
         /// <returns></returns>
         public static List<AppMenu> Menu(IAuthenticationManager authenticationManager)
         {
-            List<AppMenu> menu = (List<AppMenu>)ManagerHelper.EnvironmentManager.SessionRead(_sessionName);
+            List<AppMenu> menu = (List<AppMenu>)DIHelper.EnvironmentManager.SessionRead(_sessionName);
             if (menu == null || menu.Count == 0)
             {
                 menu = new List<AppMenu>();
@@ -42,7 +42,7 @@ namespace EasyLOB.Environment
                     List<AppMenuJson> menuJson = new List<AppMenuJson>();
                     string tenantName = MultiTenantHelper.Tenant.Name;
                     // Menu.TenantName.json
-                    string filePath = Path.Combine(ManagerHelper.EnvironmentManager.ApplicationPath(ConfigurationHelper.AppSettings<string>("EasyLOB.Directory.Configuration")),
+                    string filePath = Path.Combine(DIHelper.EnvironmentManager.ApplicationPath(ConfigurationHelper.AppSettings<string>("EasyLOB.Directory.Configuration")),
                         "JSON/Menu" + "." + tenantName + ".json");
                     string json = File.ReadAllText(filePath);
                     menuJson = JsonConvert.DeserializeObject<List<AppMenuJson>>(json);
@@ -81,14 +81,14 @@ namespace EasyLOB.Environment
                     }
                 }
 
-                ManagerHelper.EnvironmentManager.SessionWrite(_sessionName, menu);
+                DIHelper.EnvironmentManager.SessionWrite(_sessionName, menu);
             }
 
             return menu;
         }
 
         /// <summary>
-        /// Parse menu
+        /// Parse menu.
         /// </summary>
         /// <param name="menu"></param>
         /// <param name="menuJson"></param>

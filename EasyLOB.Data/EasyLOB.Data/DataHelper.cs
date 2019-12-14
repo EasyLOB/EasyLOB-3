@@ -8,14 +8,14 @@ using System.Reflection;
 namespace EasyLOB.Data
 {
     /// <summary>
-    /// Data helper.
+    /// Data Helper.
     /// </summary>
     public static partial class DataHelper
     {
         #region Properties
 
         /// <summary>
-        /// Profiles
+        /// Profiles.
         /// </summary>
         public static Dictionary<Type, IZProfile> Profiles { get; }
 
@@ -29,7 +29,7 @@ namespace EasyLOB.Data
         }
 
         /// <summary>
-        /// Try validate
+        /// Try validate.
         /// </summary>
         /// <param name="object"></param>
         /// <param name="results"></param>
@@ -46,7 +46,7 @@ namespace EasyLOB.Data
         #region Methods IdTo...
 
         /// <summary>
-        /// Id to byte
+        /// Id to byte.
         /// </summary>
         /// <param name="value">Value</param>
         /// <returns></returns>
@@ -79,7 +79,17 @@ namespace EasyLOB.Data
         }
 
         /// <summary>
-        /// Id to DateTime
+        /// Id to byte[] (Binary).
+        /// </summary>
+        /// <param name="value">Value</param>
+        /// <returns></returns>
+        public static byte[] IdToBinary(object value)
+        {
+            return (byte[])value;
+        }
+
+        /// <summary>
+        /// Id to DateTime.
         /// </summary>
         /// <param name="value">Value</param>
         /// <returns></returns>
@@ -96,7 +106,7 @@ namespace EasyLOB.Data
         }
 
         /// <summary>
-        /// Id to Guid
+        /// Id to Guid.
         /// </summary>
         /// <param name="value">Value</param>
         /// <returns></returns>
@@ -113,7 +123,7 @@ namespace EasyLOB.Data
         }
 
         /// <summary>
-        /// Id to Int16
+        /// Id to Int16.
         /// </summary>
         /// <param name="value">Value</param>
         /// <returns></returns>
@@ -142,7 +152,7 @@ namespace EasyLOB.Data
         }
 
         /// <summary>
-        /// Id to Int32
+        /// Id to Int32.
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
@@ -171,7 +181,7 @@ namespace EasyLOB.Data
         }
 
         /// <summary>
-        /// Id to Int64
+        /// Id to Int64.
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
@@ -200,7 +210,7 @@ namespace EasyLOB.Data
         }
 
         /// <summary>
-        /// Id to String
+        /// Id to String.
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
@@ -221,7 +231,7 @@ namespace EasyLOB.Data
         #region Methods Profile
 
         /// <summary>
-        /// Get profile by type
+        /// Get profile by type.
         /// </summary>
         /// <param name="type">Type</param>
         /// <returns></returns>
@@ -242,7 +252,7 @@ namespace EasyLOB.Data
         }
 
         /// <summary>
-        /// Setup Data Profile for assembly
+        /// Setup Data Profile for assembly.
         /// </summary>
         /// <param name="dataAssemblyName">Data assembly</param>
         public static void SetupDataProfile(string dataAssemblyName)
@@ -253,7 +263,7 @@ namespace EasyLOB.Data
             Type[] types = dataAssembly.GetTypes();
             foreach (Type typeDataModel in types)
             {
-                if (typeDataModel.IsSubclassOf(typeof(ZDataBase)))
+                if (typeDataModel.IsSubclassOf(typeof(ZDataBase)) && !typeDataModel.IsAbstract)
                 {
                     IZProfile profile = SetDataProfile(typeDataModel);
 
@@ -263,7 +273,7 @@ namespace EasyLOB.Data
         }
 
         /// <summary>
-        /// Set Data Profile for type
+        /// Set Data Profile for type.
         /// </summary>
         /// <param name="typeDataModel">Type</param>
         /// <returns></returns>
@@ -292,7 +302,7 @@ namespace EasyLOB.Data
                 {
                     // Associations - ZDataBase
                     bool isAssociation = false;
-                    if (property.PropertyType.IsSubclassOf(typeof(ZDataBase)))
+                    if (property.PropertyType.IsSubclassOf(typeof(ZDataBase)) && !property.PropertyType.IsAbstract)
                     {
                         isAssociation = true;
                         profile.Associations.Add(property.Name);
@@ -301,7 +311,7 @@ namespace EasyLOB.Data
                     // Collections - IList<ZDataBase>
                     bool isCollection = false;
                     Type typeIList = IListType(property.PropertyType);
-                    if (typeIList.IsSubclassOf(typeof(ZDataBase)))
+                    if (typeIList.IsSubclassOf(typeof(ZDataBase)) && !typeIList.IsAbstract)
                     {
                         isCollection = true;
                         profile.Collections.Add(property.Name, true);
@@ -370,7 +380,7 @@ namespace EasyLOB.Data
         }
 
         /// <summary>
-        /// Get IListType from type
+        /// Get IListType from type.
         /// </summary>
         /// <param name="type">Type</param>
         /// <returns></returns>
@@ -396,7 +406,7 @@ namespace EasyLOB.Data
         }
 
         /// <summary>
-        /// Setup View Profile
+        /// Setup View Profile.
         /// </summary>
         /// <param name="dataAssemblyName">Data assembly</param>
         /// <param name="viewAssemblyName">View assembly</param>
@@ -410,7 +420,7 @@ namespace EasyLOB.Data
             Type[] types = dataAssembly.GetTypes();
             foreach (Type typeDataModel in types)
             {
-                if (typeDataModel.IsSubclassOf(typeof(ZDataBase)))
+                if (typeDataModel.IsSubclassOf(typeof(ZDataBase)) && !typeDataModel.IsAbstract)
                 {
                     string viewModel = typeDataModel.FullName + "ViewModel";
                     Type typeViewModel = viewAssembly.GetType(viewModel);
@@ -423,7 +433,7 @@ namespace EasyLOB.Data
         }
 
         /// <summary>
-        /// Set View Profile for types
+        /// Set View Profile for types.
         /// </summary>
         /// <param name="typeViewModel">View type</param>
         /// <param name="typeDataModel">Data type</param>

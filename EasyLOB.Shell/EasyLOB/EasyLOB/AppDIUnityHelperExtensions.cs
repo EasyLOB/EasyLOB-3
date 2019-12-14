@@ -16,6 +16,7 @@ namespace EasyLOB
             //Container.RegisterType(typeof(IIniManager), typeof(IniManagerMock), AppLifetimeManager);
             //Container.RegisterType(typeof(IIniManager), typeof(IniManager), AppLifetimeManager, new InjectionConstructor());
 
+            // DIHelper
             //Container.RegisterType(typeof(IMailManager), typeof(MailManagerMock), AppLifetimeManager);
             Container.RegisterType(typeof(IMailManager), typeof(MailManager), AppLifetimeManager, new InjectionConstructor());
         }

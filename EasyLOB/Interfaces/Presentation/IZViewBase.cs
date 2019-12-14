@@ -10,7 +10,7 @@
         #region Properties
 
         /// <summary>
-        /// Lookup text
+        /// Lookup text.
         /// </summary>
         string LookupText { get; set; }
 
@@ -19,7 +19,7 @@
         #region Methods
 
         /// <summary>
-        /// Convert data entity to view entity
+        /// Convert data entity to view entity.
         /// </summary>
         /// <param name="dataModel">Data entity</param>
         void FromData(IZDataBase dataModel);
@@ -27,7 +27,7 @@
         void OnConstructor();
 
         /// <summary>
-        /// Convert view entity to data entity
+        /// Convert view entity to data entity.
         /// </summary>
         /// <returns></returns>
         IZDataBase ToData();

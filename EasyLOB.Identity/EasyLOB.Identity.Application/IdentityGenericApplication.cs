@@ -7,8 +7,10 @@ namespace EasyLOB.Identity.Application
     {
         #region Methods
 
-        public IdentityGenericApplication(IIdentityUnitOfWork unitOfWork)
-            : base(unitOfWork)
+        public IdentityGenericApplication(IIdentityUnitOfWork unitOfWork,
+            IAuditTrailManager auditTrailManager,
+            IAuthorizationManager authorizationManager)
+            : base(unitOfWork, auditTrailManager, authorizationManager)
         {
         }
 

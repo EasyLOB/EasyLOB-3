@@ -7,7 +7,7 @@ namespace EasyLOB
     {
         public static void SetupEasyLOB()
         {
-            ContainerBuilder.RegisterType<EasyLOBApplication>().As<IEasyLOBApplication>().SingleInstance();
+            ContainerBuilder.RegisterType<EasyLOBApplication>().As<IEasyLOBApplication>();
         }
     }
 }

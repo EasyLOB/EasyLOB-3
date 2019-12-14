@@ -14,7 +14,7 @@ namespace EasyLOB.Environment
         #region Fields
 
         /// <summary>
-        /// Session name
+        /// Session name.
         /// </summary>
         private static string _sessionName = "EasyLOB.Profile";
 
@@ -23,13 +23,13 @@ namespace EasyLOB.Environment
         #region Properties
 
         /// <summary>
-        /// Profile
+        /// Profile.
         /// </summary>
         public static AppProfile Profile
         {
             get
             {
-                AppProfile profile = (AppProfile)ManagerHelper.EnvironmentManager.SessionRead(_sessionName);
+                AppProfile profile = (AppProfile)DIHelper.EnvironmentManager.SessionRead(_sessionName);
 
                 return profile ?? new AppProfile();
             }
@@ -40,13 +40,13 @@ namespace EasyLOB.Environment
         #region Methods
 
         /// <summary>
-        /// Login
+        /// Login.
         /// </summary>
         /// <param name="authenticationManager">Authentication manager</param>
         /// <param name="auditTrailunitOfWork">Authorization manager</param>
         public static void Login(IAuthenticationManager authenticationManager, IAuditTrailUnitOfWork auditTrailunitOfWork)
         {
-            AppProfile profile = (AppProfile)ManagerHelper.EnvironmentManager.SessionRead(_sessionName);
+            AppProfile profile = (AppProfile)DIHelper.EnvironmentManager.SessionRead(_sessionName);
             if (profile == null || String.IsNullOrEmpty(profile.UserName))
             {
                 // User
@@ -71,7 +71,7 @@ namespace EasyLOB.Environment
                     profile.AuditTrail.Add(auditTrail);
                 }
 
-                ManagerHelper.EnvironmentManager.SessionWrite(_sessionName, profile);
+                DIHelper.EnvironmentManager.SessionWrite(_sessionName, profile);
             }
         }
 

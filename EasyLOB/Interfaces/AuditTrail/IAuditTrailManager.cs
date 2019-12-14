@@ -3,14 +3,14 @@
 namespace EasyLOB
 {
     /// <summary>
-    /// Audit Trail Manager.
+    /// IAuditTrailManager.
     /// </summary>
     public interface IAuditTrailManager : IDisposable
     {
         #region Methods
 
         /// <summary>
-        /// Audit Trail
+        /// Audit Trail.
         /// </summary>
         /// <param name="operationResult">Operation result</param>
         /// <param name="logUserName">User name</param>

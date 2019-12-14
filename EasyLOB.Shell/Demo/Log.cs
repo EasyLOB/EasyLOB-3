@@ -11,7 +11,7 @@ namespace EasyLOB.Shell
 
             try
             {
-                ILogManager logManager = ManagerHelper.DIManager.GetService<ILogManager>();
+                ILogManager logManager = DIHelper.DIManager.GetService<ILogManager>();
 
                 logManager.Fatal("Fatal");
                 logManager.Fatal("Fatal {Parameter1} {Parameter2} {Parameter3}", new object[] { "ABC", 1.23, DateTime.Now });

@@ -30,7 +30,7 @@ namespace EasyLOB.Data
         {
             if (dataModel != null)
             {
-                LibraryHelper.Clone<TEntityView>(Mapper.Map<TEntityView>(dataModel as TEntity), this);
+                LibraryHelper.Clone<TEntityView>(DIHelper.Mapper.Map<TEntityView>(dataModel as TEntity), this);
             }
         }
 
@@ -38,7 +38,7 @@ namespace EasyLOB.Data
         {
             if (dto != null)
             {
-                LibraryHelper.Clone<TEntityView>(Mapper.Map<TEntityView>(dto as TEntityDTO), this);
+                LibraryHelper.Clone<TEntityView>(DIHelper.Mapper.Map<TEntityView>(dto as TEntityDTO), this);
             }
         }
 
@@ -46,7 +46,7 @@ namespace EasyLOB.Data
         {
             if (dto != null)
             {
-                LibraryHelper.Clone<TEntityView>(Mapper.Map<TEntityView>(dto), this);
+                LibraryHelper.Clone<TEntityView>(DIHelper.Mapper.Map<TEntityView>(dto), this);
             }
         }
 
@@ -56,17 +56,17 @@ namespace EasyLOB.Data
 
         public virtual IZDataBase ToData()
         {
-            return Mapper.Map<TEntity>(this);
+            return DIHelper.Mapper.Map<TEntity>(this);
         }
 
         public virtual TEntityDTO ToDTO()
         {
-            return Mapper.Map<TEntityDTO>(this);
+            return DIHelper.Mapper.Map<TEntityDTO>(this);
         }
 
         //public virtual IZDTOBase<TEntityDTO, TEntity> ToDTO()
         //{
-        //    return Mapper.Map<ZDTOBase<TEntityDTO, TEntity>>(this);
+        //    return DIHelper.Mapper.Map<ZDTOBase<TEntityDTO, TEntity>>(this);
         //}
 
         #endregion Methods

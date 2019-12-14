@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EasyLOB.Log</RootNamespace>
     <AssemblyName>EasyLOB.Log</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -61,10 +61,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\EasyLOB.Library\EasyLOB.Library\EasyLOB.Library.csproj">
-      <Project>{55b7716b-36a3-442d-9e9e-9caab7db592e}</Project>
-      <Name>EasyLOB.Library</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\EasyLOB\EasyLOB.csproj">
       <Project>{6706907a-8932-46e7-a1c8-7575130ff8f7}</Project>
       <Name>EasyLOB</Name>

@@ -9,8 +9,10 @@ namespace EasyLOB.AuditTrail.Application
     {
         #region Methods
 
-        public AuditTrailGenericApplicationDTO(IAuditTrailUnitOfWork unitOfWork)
-            : base(unitOfWork)
+        public AuditTrailGenericApplicationDTO(IAuditTrailUnitOfWork unitOfWork,
+            IAuditTrailManager auditTrailManager,
+            IAuthorizationManager authorizationManager)
+            : base(unitOfWork, auditTrailManager, authorizationManager)
         {
         }
 

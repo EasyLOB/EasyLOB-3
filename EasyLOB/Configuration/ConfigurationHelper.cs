@@ -5,14 +5,14 @@ using System.Configuration;
 namespace EasyLOB
 {
     /// <summary>
-    /// Configuration helper.
+    /// Configuration Helper.
     /// </summary>
     public static partial class ConfigurationHelper
     {
         #region Methods
 
         /// <summary>
-        /// Get AppSettings by setting name
+        /// Get AppSettings by setting name.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="name"></param>
@@ -26,7 +26,7 @@ namespace EasyLOB
         }
 
         /// <summary>
-        /// Get ConnectionStrings by connection name
+        /// Get ConnectionStrings by connection name.
         /// </summary>
         /// <param name="connectionName"></param>
         /// <returns></returns>

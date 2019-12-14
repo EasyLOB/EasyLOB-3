@@ -7,34 +7,35 @@ namespace EasyLOB.Extensions.Mail
     {
         #region Properties
 
-        public string FromAddress { get; set; }
+        public string FromName { get; private set; }
 
-        public string UserName { get; set; }
+        public string FromAddress { get; private set; }
 
-        public string Password { get; set; }
+        public string UserName { get; private set; }
+
+        public string Password { get; private set; }
 
         #endregion Properties
 
-        #region Methods
-
-        public MailManagerMock()
-        {
-            FromAddress = "";
-            UserName = "";
-            Password = "";
-        }
-
-        #endregion Methods
-
         #region Methods Interface
+
+        public void Clear(string fromName = null,
+            string fromAddress = null,
+            string userName = null,
+            string password = null)
+        {
+            FromName = fromName;
+            FromAddress = fromAddress;
+            UserName = userName;
+            Password = password;
+        }
 
         public void Mail(string toAddress,
             string subject, string body, bool isHtml = false)
         {
         }
 
-        public void Mail(string fromName,
-            string toName, string toAddress,
+        public void Mail(string toName, string toAddress,
             string subject, string body, bool isHtml = false, string[] fileAttachmentPaths = null)
         {
         }

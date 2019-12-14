@@ -17,7 +17,7 @@ public static partial class ZViewHelper<TEntityView, TEntityDTO, TEntity>
         #region Methods
 
         /// <summary>
-        /// Convert data list to view list
+        /// Convert data list to view list.
         /// </summary>
         /// <param name="dataModels"></param>
         /// <returns></returns>
@@ -37,7 +37,7 @@ public static partial class ZViewHelper<TEntityView, TEntityDTO, TEntity>
         }
 
         /// <summary>
-        /// Convert DTO list to view list
+        /// Convert DTO list to view list.
         /// </summary>
         /// <param name="dtos"></param>
         /// <returns></returns>
@@ -54,7 +54,7 @@ public static partial class ZViewHelper<TEntityView, TEntityDTO, TEntity>
         }
 
         /// <summary>
-        /// Convert view list to DTO list
+        /// Convert view list to DTO list.
         /// </summary>
         /// <param name="viewModels"></param>
         /// <returns></returns>
@@ -71,7 +71,7 @@ public static partial class ZViewHelper<TEntityView, TEntityDTO, TEntity>
         }
 
         /// <summary>
-        /// Convert view list to data list
+        /// Convert view list to data list.
         /// </summary>
         /// <param name="viewModels"></param>
         /// <returns></returns>

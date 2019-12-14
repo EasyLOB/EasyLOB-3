@@ -476,6 +476,40 @@ namespace EasyLOB.Persistence
 
         #endregion Methods
 
+        #region Methods *AndSave
+
+        public bool CreateAndSave(ZOperationResult operationResult, TEntity entity)
+        {
+            if (Create(operationResult, entity))
+            {
+                UnitOfWork.Save(operationResult);
+            }
+
+            return operationResult.Ok;
+        }
+
+        public bool DeleteAndSave(ZOperationResult operationResult, TEntity entity)
+        {
+            if (Delete(operationResult, entity))
+            {
+                UnitOfWork.Save(operationResult);
+            }
+
+            return operationResult.Ok;
+        }
+
+        public bool UpdateAndSave(ZOperationResult operationResult, TEntity entity)
+        {
+            if (Update(operationResult, entity))
+            {
+                UnitOfWork.Save(operationResult);
+            }
+
+            return operationResult.Ok;
+        }
+
+        #endregion Methods *AndSave
+
         #region Methods IDispose
 
         private bool disposed = false;

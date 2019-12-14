@@ -13,15 +13,16 @@ namespace EasyLOB.Shell
     {
         static void Main(string[] args)
         {
-            // EF 6.0 Log
-            //DbInterception.Add(new NLogCommandInterceptor());
-
             // Autofac
             AppDIAutofacHelper.Setup(new ContainerBuilder());
             // Unity
             //AppDIUnityHelper.Setup(new UnityContainer());
 
             MultiTenantHelper.Setup("MyLOB");
+
+            // EF 6.0 Log
+            //ILogManager logManager = DIHelper.DIManager.GetService<ILogManager>();
+            //DbInterception.Add(new NLogCommandInterceptor(logManager));
 
             bool exit = false;
             while (!exit)
@@ -76,7 +77,7 @@ namespace EasyLOB.Shell
                         break;
                 }
 
-                //if (!exit && "".IndexOf(key.KeyChar) >= 0)
+                //if (!exit)
                 //{
                 //    Console.Write("\nPress <KEY> to continue... ");
                 //    Console.ReadKey();

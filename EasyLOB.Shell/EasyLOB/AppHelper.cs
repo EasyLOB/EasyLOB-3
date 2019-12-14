@@ -38,7 +38,7 @@ namespace EasyLOB
                     url + System.Environment.NewLine
                     + MultiTenantHelper.Tenant.Name + System.Environment.NewLine
                     + ProfileHelper.Profile.UserName;
-                (ManagerHelper.DIManager.GetService<ILogManager>()).OperationResult(operationResult, header);
+                (DIHelper.DIManager.GetService<ILogManager>()).OperationResult(operationResult, header);
             }
         }
 

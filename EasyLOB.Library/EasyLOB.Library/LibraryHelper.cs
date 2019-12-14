@@ -1547,10 +1547,10 @@ namespace EasyLOB.Library
         // Binary
 
         /// <summary>
-        /// Convert Object to Byte[] (Binary).
+        /// Convert Object to byte[] (Binary).
         /// </summary>
         /// <param name="value">Object value</param>
-        /// <returns>Byte[] (Binary) value</returns>
+        /// <returns>byte[] (Binary) value</returns>
         public static byte[] ObjectToBinary(object value)
         {
             try
@@ -1564,10 +1564,10 @@ namespace EasyLOB.Library
         }
 
         /// <summary>
-        /// Convert Object to nullable Byte[] (Binary).
+        /// Convert Object to nullable byte[] (Binary).
         /// </summary>
         /// <param name="value">Object value</param>
-        /// <returns>Nullable Byte[] (Binary) value</returns>
+        /// <returns>Nullable byte[] (Binary) value</returns>
         public static byte[] ObjectToBinaryNullable(object value)
         {
             try

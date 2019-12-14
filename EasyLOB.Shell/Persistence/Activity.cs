@@ -1,7 +1,6 @@
 ﻿using EasyLOB.Activity;
 using EasyLOB.Activity.Data;
 using EasyLOB.Data;
-using EasyLOB.Persistence;
 using System;
 using System.Linq;
 
@@ -13,14 +12,14 @@ namespace EasyLOB.Shell
         {
             Console.WriteLine("\nPersistence Activity Demo\n");
 
-            IUnitOfWork unitOfWork = ManagerHelper.DIManager.GetService<IActivityUnitOfWork>();
+            IActivityUnitOfWork unitOfWork = DIHelper.DIManager.GetService<IActivityUnitOfWork>();
             Console.WriteLine(unitOfWork.GetType().FullName + " with " + unitOfWork.DBMS.ToString() + "\n");
 
-            PersistenceIdentityData<EasyLOB.Activity.Data.Activity>(unitOfWork);
-            PersistenceIdentityData<ActivityRole>(unitOfWork);
+            PersistenceActivityData<EasyLOB.Activity.Data.Activity>(unitOfWork);
+            PersistenceActivityData<ActivityRole>(unitOfWork);
         }
 
-        private static void PersistenceActivityData<TEntity>(IUnitOfWork unitOfWork)
+        private static void PersistenceActivityData<TEntity>(IActivityUnitOfWork unitOfWork)
             where TEntity : ZDataBase
         {
             IGenericRepository<TEntity> repository = unitOfWork.GetRepository<TEntity>();

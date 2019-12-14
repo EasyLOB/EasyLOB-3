@@ -1,7 +1,6 @@
-﻿using EasyLOB.Environment;
-using EasyLOB.Security;
+﻿using AutoMapper;
+using EasyLOB.Environment;
 using Unity;
-using Unity.Injection;
 using Unity.Lifetime;
 
 // UnityDependencyResolver :: ASP.NET MVC
@@ -15,7 +14,7 @@ namespace EasyLOB
 
         private static IUnityContainer Container { get; set; }
 
-        public static LifetimeManager AppLifetimeManager
+        public static ITypeLifetimeManager AppLifetimeManager
         {
             // A new object for every HttpRequest
             //get { return new HttpRequestLifetimeManager(); }
@@ -58,15 +57,18 @@ namespace EasyLOB
 
             SetupApplication(); // !!!
 
+            // DIHelper
             Container.RegisterType(typeof(IEnvironmentManager), typeof(EnvironmentManagerDesktop), AppLifetimeManager);
             //Container.RegisterType(typeof(IEnvironmentManager), typeof(EnvironmentManagerWeb), AppLifetimeManager);
 
-            AppHelper.SetupMappers();
+            IMapper mapper = AppHelper.SetupMappers();
             AppHelper.SetupProfiles();
 
-            ManagerHelper.Setup(new DIManagerUnity(Container),
+            DIHelper.Setup(new DIManagerUnity(Container),
                 Container.Resolve<IEnvironmentManager>(),
-                Container.Resolve<ILogManager>());
+                Container.Resolve<ILogManager>(),
+                Container.Resolve<IMailManager>(),
+                mapper);
         }
 
         #endregion Methods
