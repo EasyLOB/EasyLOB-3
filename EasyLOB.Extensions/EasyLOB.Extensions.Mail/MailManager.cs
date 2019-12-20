@@ -120,6 +120,10 @@ namespace EasyLOB.Extensions.Mail
             Mail(message);
         }
 
+        #endregion Methods Interface
+
+        #region Methods MailKit
+
         private void Mail(MimeMessage message)
         {
             if (message != null)
@@ -172,7 +176,7 @@ namespace EasyLOB.Extensions.Mail
             smtp.Disconnect(true);
         }
 
-        #endregion Methods Interface
+        #endregion Methods MailKit
 
         #region Methods IDispose
 

@@ -1,5 +1,4 @@
-﻿using MimeKit;
-using System;
+﻿using System;
 
 namespace EasyLOB.Extensions.Mail
 {
@@ -37,15 +36,6 @@ namespace EasyLOB.Extensions.Mail
 
         public void Mail(string toName, string toAddress,
             string subject, string body, bool isHtml = false, string[] fileAttachmentPaths = null)
-        {
-        }
-
-        public void Mail(MimeMessage message)
-        {
-        }
-
-        public void Mail(MimeMessage message,
-            string host, int port, string userName, string password, bool ssl)
         {
         }
 
