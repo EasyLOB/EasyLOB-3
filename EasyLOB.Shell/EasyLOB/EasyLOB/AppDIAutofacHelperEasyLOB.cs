@@ -5,9 +5,9 @@ namespace EasyLOB
 {
     public static partial class AppDIAutofacHelper
     {
-        public static void SetupEasyLOB()
+        public static void SetupEasyLOB(ContainerBuilder containerBuilder)
         {
-            ContainerBuilder.RegisterType<EasyLOBApplication>().As<IEasyLOBApplication>();
+            containerBuilder.RegisterType<EasyLOBApplication>().As<IEasyLOBApplication>();
         }
     }
 }

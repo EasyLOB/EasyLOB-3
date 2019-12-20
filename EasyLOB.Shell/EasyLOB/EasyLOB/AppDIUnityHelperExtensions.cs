@@ -7,18 +7,18 @@ namespace EasyLOB
 {
     public static partial class AppDIUnityHelper
     {
-        public static void SetupExtensions()
+        public static void SetupExtensions(IUnityContainer container)
         {
-            //Container.RegisterType(typeof(IEdmManager), typeof(EdmManagerMock), AppLifetimeManager);
-            Container.RegisterType(typeof(IEdmManager), typeof(EdmManagerFileSystem), AppLifetimeManager, new InjectionConstructor());
-            //Container.RegisterType(typeof(IEdmManager), typeof(EdmFtpSystem), AppLifetimeManager, new InjectionConstructor());
+            //container.RegisterType(typeof(IEdmManager), typeof(EdmManagerMock), AppLifetimeManager);
+            container.RegisterType(typeof(IEdmManager), typeof(EdmManagerFileSystem), AppLifetimeManager, new InjectionConstructor());
+            //container.RegisterType(typeof(IEdmManager), typeof(EdmFtpSystem), AppLifetimeManager, new InjectionConstructor());
 
-            //Container.RegisterType(typeof(IIniManager), typeof(IniManagerMock), AppLifetimeManager);
-            //Container.RegisterType(typeof(IIniManager), typeof(IniManager), AppLifetimeManager, new InjectionConstructor());
+            //container.RegisterType(typeof(IIniManager), typeof(IniManagerMock), AppLifetimeManager);
+            //container.RegisterType(typeof(IIniManager), typeof(IniManager), AppLifetimeManager, new InjectionConstructor());
 
             // DIHelper
-            //Container.RegisterType(typeof(IMailManager), typeof(MailManagerMock), AppLifetimeManager);
-            Container.RegisterType(typeof(IMailManager), typeof(MailManager), AppLifetimeManager, new InjectionConstructor());
+            //container.RegisterType(typeof(IMailManager), typeof(MailManagerMock), AppLifetimeManager);
+            container.RegisterType(typeof(IMailManager), typeof(MailManager), AppLifetimeManager, new InjectionConstructor());
         }
     }
 }

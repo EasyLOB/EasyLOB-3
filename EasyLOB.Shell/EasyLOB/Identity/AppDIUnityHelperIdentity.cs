@@ -10,28 +10,28 @@ namespace EasyLOB
 {
     public static partial class AppDIUnityHelper
     {
-        public static void SetupIdentity()
+        public static void SetupIdentity(IUnityContainer container)
         {
             // App
-            Container.RegisterFactory<IPrincipal>(x => Thread.CurrentPrincipal);
-            //Container.RegisterType<IPrincipal>(new InjectionFactory(x => Thread.CurrentPrincipal)); // DEPRECATED
+            container.RegisterFactory<IPrincipal>(x => Thread.CurrentPrincipal);
+            //container.RegisterType<IPrincipal>(new InjectionFactory(x => Thread.CurrentPrincipal)); // DEPRECATED
             // Web
-            //Container.RegisterFactory<IPrincipal>(x => new HttpContextAccessor().HttpContext.User);
-            //Container.RegisterType<IPrincipal>(new InjectionFactory(x => new HttpContextAccessor().HttpContext.User)); // DEPRECATED
+            //container.RegisterFactory<IPrincipal>(x => new HttpContextAccessor().HttpContext.User);
+            //container.RegisterType<IPrincipal>(new InjectionFactory(x => new HttpContextAccessor().HttpContext.User)); // DEPRECATED
 
-            Container.RegisterType(typeof(IAuthenticationManager), typeof(AuthenticationManagerMock), AppLifetimeManager);
-            //Container.RegisterType(typeof(IAuthenticationManager), typeof(AuthenticationManager), AppLifetimeManager);
+            container.RegisterType(typeof(IAuthenticationManager), typeof(AuthenticationManagerMock), AppLifetimeManager);
+            //container.RegisterType(typeof(IAuthenticationManager), typeof(AuthenticationManager), AppLifetimeManager);
 
-            Container.RegisterType(typeof(IIdentityGenericApplication<>), typeof(IdentityGenericApplication<>), AppLifetimeManager);
-            Container.RegisterType(typeof(IIdentityGenericApplicationDTO<,>), typeof(IdentityGenericApplicationDTO<,>), AppLifetimeManager);
+            container.RegisterType(typeof(IIdentityGenericApplication<>), typeof(IdentityGenericApplication<>), AppLifetimeManager);
+            container.RegisterType(typeof(IIdentityGenericApplicationDTO<,>), typeof(IdentityGenericApplicationDTO<,>), AppLifetimeManager);
 
             // Entity Framework
-            Container.RegisterType(typeof(IIdentityUnitOfWork), typeof(IdentityUnitOfWorkEF), AppLifetimeManager);
-            Container.RegisterType(typeof(IIdentityGenericRepository<>), typeof(IdentityGenericRepositoryEF<>), AppLifetimeManager);
+            container.RegisterType(typeof(IIdentityUnitOfWork), typeof(IdentityUnitOfWorkEF), AppLifetimeManager);
+            container.RegisterType(typeof(IIdentityGenericRepository<>), typeof(IdentityGenericRepositoryEF<>), AppLifetimeManager);
 
             // NHibernate
-            //Container.RegisterType(typeof(IIdentityUnitOfWork), typeof(IdentityUnitOfWorkNH), AppLifetimeManager);
-            //Container.RegisterType(typeof(IIdentityGenericRepository<>), typeof(IdentityGenericRepositoryNH<>), AppLifetimeManager);
+            //container.RegisterType(typeof(IIdentityUnitOfWork), typeof(IdentityUnitOfWorkNH), AppLifetimeManager);
+            //container.RegisterType(typeof(IIdentityGenericRepository<>), typeof(IdentityGenericRepositoryNH<>), AppLifetimeManager);
         }
     }
 }

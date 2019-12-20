@@ -5,11 +5,11 @@ namespace EasyLOB
 {
     public static partial class AppDIUnityHelper
     {
-        public static void SetupLog()
+        public static void SetupLog(IUnityContainer container)
         {
             // DIHelper
-            //Container.RegisterType(typeof(ILogManager), typeof(LogManagerMock), AppLifetimeManager);
-            Container.RegisterType(typeof(ILogManager), typeof(LogManagerNLog), AppLifetimeManager);
+            //container.RegisterType(typeof(ILogManager), typeof(LogManagerMock), AppLifetimeManager);
+            container.RegisterType(typeof(ILogManager), typeof(LogManagerNLog), AppLifetimeManager);
         }
     }
 }

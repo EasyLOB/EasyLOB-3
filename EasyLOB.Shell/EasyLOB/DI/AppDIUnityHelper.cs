@@ -12,9 +12,7 @@ namespace EasyLOB
     {
         #region Properties
 
-        private static IUnityContainer Container { get; set; }
-
-        public static ITypeLifetimeManager AppLifetimeManager
+        private static ITypeLifetimeManager AppLifetimeManager
         {
             // A new object for every HttpRequest
             //get { return new HttpRequestLifetimeManager(); }
@@ -46,29 +44,23 @@ namespace EasyLOB
 
         public static void Setup(IUnityContainer container)
         {
-            Container = container;
+            SetupActivity(container);
+            SetupAuditTrail(container);
+            SetupEasyLOB(container);
+            SetupExtensions(container);
+            SetupIdentity(container);
+            SetupLog(container);
 
-            SetupActivity();
-            SetupAuditTrail();
-            SetupEasyLOB();
-            SetupExtensions();
-            SetupIdentity();
-            SetupLog();
-
-            SetupApplication(); // !!!
+            SetupApplication(container); // !!!
 
             // DIHelper
-            Container.RegisterType(typeof(IEnvironmentManager), typeof(EnvironmentManagerDesktop), AppLifetimeManager);
-            //Container.RegisterType(typeof(IEnvironmentManager), typeof(EnvironmentManagerWeb), AppLifetimeManager);
+            container.RegisterType(typeof(IEnvironmentManager), typeof(EnvironmentManagerDesktop), AppLifetimeManager);
+            //container.RegisterType(typeof(IEnvironmentManager), typeof(EnvironmentManagerWeb), AppLifetimeManager);
 
             IMapper mapper = AppHelper.SetupMappers();
             AppHelper.SetupProfiles();
 
-            DIHelper.Setup(new DIManagerUnity(Container),
-                Container.Resolve<IEnvironmentManager>(),
-                Container.Resolve<ILogManager>(),
-                Container.Resolve<IMailManager>(),
-                mapper);
+            DIHelper.Setup(new DIManagerUnity(container), mapper);
         }
 
         #endregion Methods

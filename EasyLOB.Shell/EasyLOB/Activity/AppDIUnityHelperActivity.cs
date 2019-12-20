@@ -8,25 +8,25 @@ namespace EasyLOB
 {
     public static partial class AppDIUnityHelper
     {
-        public static void SetupActivity()
+        public static void SetupActivity(IUnityContainer container)
         {
-            Container.RegisterType(typeof(IAuthorizationManager), typeof(AuthorizationManagerMock), AppLifetimeManager);
-            //Container.RegisterType(typeof(IAuthorizationManager), typeof(AuthorizationManager), AppLifetimeManager);
+            container.RegisterType(typeof(IAuthorizationManager), typeof(AuthorizationManagerMock), AppLifetimeManager);
+            //container.RegisterType(typeof(IAuthorizationManager), typeof(AuthorizationManager), AppLifetimeManager);
 
-            Container.RegisterType(typeof(IActivityGenericApplication<>), typeof(ActivityGenericApplication<>), AppLifetimeManager);
-            Container.RegisterType(typeof(IActivityGenericApplicationDTO<,>), typeof(ActivityGenericApplicationDTO<,>), AppLifetimeManager);
+            container.RegisterType(typeof(IActivityGenericApplication<>), typeof(ActivityGenericApplication<>), AppLifetimeManager);
+            container.RegisterType(typeof(IActivityGenericApplicationDTO<,>), typeof(ActivityGenericApplicationDTO<,>), AppLifetimeManager);
 
             // Entity Framework
-            Container.RegisterType(typeof(IActivityUnitOfWork), typeof(ActivityUnitOfWorkEF), AppLifetimeManager);
-            Container.RegisterType(typeof(IActivityGenericRepository<>), typeof(ActivityGenericRepositoryEF<>), AppLifetimeManager);
+            container.RegisterType(typeof(IActivityUnitOfWork), typeof(ActivityUnitOfWorkEF), AppLifetimeManager);
+            container.RegisterType(typeof(IActivityGenericRepository<>), typeof(ActivityGenericRepositoryEF<>), AppLifetimeManager);
 
             // LINQ to DB
-            //Container.RegisterType(typeof(IActivityUnitOfWork), typeof(ActivityUnitOfWorkLINQ2DB), AppLifetimeManager);
-            //Container.RegisterType(typeof(IActivityGenericRepository<>), typeof(ActivityGenericRepositoryLINQ2DB<>), AppLifetimeManager);
+            //container.RegisterType(typeof(IActivityUnitOfWork), typeof(ActivityUnitOfWorkLINQ2DB), AppLifetimeManager);
+            //container.RegisterType(typeof(IActivityGenericRepository<>), typeof(ActivityGenericRepositoryLINQ2DB<>), AppLifetimeManager);
 
             // NHibernate
-            //Container.RegisterType(typeof(IActivityUnitOfWork), typeof(ActivityUnitOfWorkNH), AppLifetimeManager);
-            //Container.RegisterType(typeof(IActivityGenericRepository<>), typeof(ActivityGenericRepositoryNH<>), AppLifetimeManager);
+            //container.RegisterType(typeof(IActivityUnitOfWork), typeof(ActivityUnitOfWorkNH), AppLifetimeManager);
+            //container.RegisterType(typeof(IActivityGenericRepository<>), typeof(ActivityGenericRepositoryNH<>), AppLifetimeManager);
         }
     }
 }

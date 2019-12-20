@@ -9,25 +9,25 @@ namespace EasyLOB
 {
     public static partial class AppDIAutofacHelper
     {
-        public static void SetupActivity()
+        public static void SetupActivity(ContainerBuilder containerBuilder)
         {
-            ContainerBuilder.RegisterType<AuthorizationManagerMock>().As<IAuthorizationManager>();
-            //ContainerBuilder.RegisterType<AuthorizationManager>().As<IAuthorizationManager>();
+            containerBuilder.RegisterType<AuthorizationManagerMock>().As<IAuthorizationManager>();
+            //containerBuilder.RegisterType<AuthorizationManager>().As<IAuthorizationManager>();
 
-            ContainerBuilder.RegisterGeneric(typeof(ActivityGenericApplication<>)).As(typeof(IActivityGenericApplication<>));
-            ContainerBuilder.RegisterGeneric(typeof(ActivityGenericApplicationDTO<,>)).As(typeof(IActivityGenericApplicationDTO<,>));
+            containerBuilder.RegisterGeneric(typeof(ActivityGenericApplication<>)).As(typeof(IActivityGenericApplication<>));
+            containerBuilder.RegisterGeneric(typeof(ActivityGenericApplicationDTO<,>)).As(typeof(IActivityGenericApplicationDTO<,>));
 
             // Entity Framework
-            ContainerBuilder.RegisterType<ActivityUnitOfWorkEF>().As<IActivityUnitOfWork>();
-            ContainerBuilder.RegisterGeneric(typeof(ActivityGenericRepositoryEF<>)).As(typeof(IActivityGenericRepository<>));
+            containerBuilder.RegisterType<ActivityUnitOfWorkEF>().As<IActivityUnitOfWork>();
+            containerBuilder.RegisterGeneric(typeof(ActivityGenericRepositoryEF<>)).As(typeof(IActivityGenericRepository<>));
 
             // LINQ to DB
-            //ContainerBuilder.RegisterType<ActivityUnitOfWorkLINQ2DB>().As<IActivityUnitOfWork>();
-            //ContainerBuilder.RegisterGeneric(typeof(ActivityGenericRepositoryLINQ2DB<>)).As(typeof(IActivityGenericRepository<>));
+            //containerBuilder.RegisterType<ActivityUnitOfWorkLINQ2DB>().As<IActivityUnitOfWork>();
+            //containerBuilder.RegisterGeneric(typeof(ActivityGenericRepositoryLINQ2DB<>)).As(typeof(IActivityGenericRepository<>));
 
             // NHibernate
-            //ContainerBuilder.RegisterType<ActivityUnitOfWorkEF>().As<IActivityUnitOfWork>();
-            //ContainerBuilder.RegisterGeneric(typeof(ActivityGenericRepositoryEF<>)).As(typeof(IActivityGenericRepository<>));
+            //containerBuilder.RegisterType<ActivityUnitOfWorkEF>().As<IActivityUnitOfWork>();
+            //containerBuilder.RegisterGeneric(typeof(ActivityGenericRepositoryEF<>)).As(typeof(IActivityGenericRepository<>));
         }
     }
 }

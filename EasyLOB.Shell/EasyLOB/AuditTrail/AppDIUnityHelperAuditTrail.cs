@@ -7,25 +7,25 @@ namespace EasyLOB
 {
     public static partial class AppDIUnityHelper
     {
-        public static void SetupAuditTrail()
+        public static void SetupAuditTrail(IUnityContainer container)
         {
-            Container.RegisterType(typeof(IAuditTrailManager), typeof(AuditTrailManagerMock), AppLifetimeManager);
-            //Container.RegisterType(typeof(IAuditTrailManager), typeof(AuditTrailManager), AppLifetimeManager);
+            container.RegisterType(typeof(IAuditTrailManager), typeof(AuditTrailManagerMock), AppLifetimeManager);
+            //container.RegisterType(typeof(IAuditTrailManager), typeof(AuditTrailManager), AppLifetimeManager);
 
-            Container.RegisterType(typeof(IAuditTrailGenericApplication<>), typeof(AuditTrailGenericApplication<>), AppLifetimeManager);
-            Container.RegisterType(typeof(IAuditTrailGenericApplicationDTO<,>), typeof(AuditTrailGenericApplicationDTO<,>), AppLifetimeManager);
+            container.RegisterType(typeof(IAuditTrailGenericApplication<>), typeof(AuditTrailGenericApplication<>), AppLifetimeManager);
+            container.RegisterType(typeof(IAuditTrailGenericApplicationDTO<,>), typeof(AuditTrailGenericApplicationDTO<,>), AppLifetimeManager);
 
             // Entity Framework
-            Container.RegisterType(typeof(IAuditTrailUnitOfWork), typeof(AuditTrailUnitOfWorkEF), AppLifetimeManager);
-            Container.RegisterType(typeof(IAuditTrailGenericRepository<>), typeof(AuditTrailGenericRepositoryEF<>), AppLifetimeManager);
+            container.RegisterType(typeof(IAuditTrailUnitOfWork), typeof(AuditTrailUnitOfWorkEF), AppLifetimeManager);
+            container.RegisterType(typeof(IAuditTrailGenericRepository<>), typeof(AuditTrailGenericRepositoryEF<>), AppLifetimeManager);
 
             // LINQ to DB
-            //Container.RegisterType(typeof(IAuditTrailUnitOfWork), typeof(AuditTrailUnitOfWorkLINQ2DB), AppLifetimeManager);
-            //Container.RegisterType(typeof(IAuditTrailGenericRepository<>), typeof(AuditTrailGenericRepositoryLINQ2DB<>), AppLifetimeManager);
+            //container.RegisterType(typeof(IAuditTrailUnitOfWork), typeof(AuditTrailUnitOfWorkLINQ2DB), AppLifetimeManager);
+            //container.RegisterType(typeof(IAuditTrailGenericRepository<>), typeof(AuditTrailGenericRepositoryLINQ2DB<>), AppLifetimeManager);
 
             // NHibernate
-            //Container.RegisterType(typeof(IAuditTrailUnitOfWork), typeof(AuditTrailUnitOfWorkNH), AppLifetimeManager);
-            //Container.RegisterType(typeof(IAuditTrailGenericRepository<>), typeof(AuditTrailGenericRepositoryNH<>), AppLifetimeManager);
+            //container.RegisterType(typeof(IAuditTrailUnitOfWork), typeof(AuditTrailUnitOfWorkNH), AppLifetimeManager);
+            //container.RegisterType(typeof(IAuditTrailGenericRepository<>), typeof(AuditTrailGenericRepositoryNH<>), AppLifetimeManager);
         }
     }
 }

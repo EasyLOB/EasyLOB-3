@@ -5,9 +5,9 @@ namespace EasyLOB
 {
     public static partial class AppDIUnityHelper
     {
-        public static void SetupEasyLOB()
+        public static void SetupEasyLOB(IUnityContainer container)
         {
-            Container.RegisterType(typeof(IEasyLOBApplication), typeof(EasyLOBApplication), AppLifetimeManager);
+            container.RegisterType(typeof(IEasyLOBApplication), typeof(EasyLOBApplication), AppLifetimeManager);
         }
     }
 }

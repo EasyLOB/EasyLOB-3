@@ -5,11 +5,11 @@ namespace EasyLOB
 {
     public static partial class AppDIAutofacHelper
     {
-        public static void SetupLog()
+        public static void SetupLog(ContainerBuilder containerBuilder)
         {
             // DIHelper
-            //ContainerBuilder.RegisterType<LogManagerMock>().As<ILogManager>();
-            ContainerBuilder.RegisterType<LogManagerNLog>().As<ILogManager>();
+            //containerBuilder.RegisterType<LogManagerMock>().As<ILogManager>();
+            containerBuilder.RegisterType<LogManagerNLog>().As<ILogManager>();
         }
     }
 }
