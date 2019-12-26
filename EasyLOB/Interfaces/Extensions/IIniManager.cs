@@ -10,6 +10,18 @@ namespace EasyLOB
         #region Methods
 
         /// <summary>
+        /// Load INI.
+        /// </summary>
+        /// <param name="iniPath"></param>
+        /// <returns>Ok ?</returns>
+        void Load(string iniPath);
+
+        /// <summary>
+        /// Save INI.
+        /// </summary>
+        void Save();
+
+        /// <summary>
         /// Write INI.
         /// </summary>
         /// <param name="section">Section</param>

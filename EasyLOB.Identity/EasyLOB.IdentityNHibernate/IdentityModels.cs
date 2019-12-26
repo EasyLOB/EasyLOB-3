@@ -44,7 +44,8 @@ namespace EasyLOB.Identity
         public Task SendAsync(IdentityMessage message)
         {
             // Plug in your email service here to send an email.
-            DIHelper.MailManager.Mail(null, message.Destination, message.Subject, message.Body, true);
+            DIHelper.DIManager.GetService<IMailManager>()
+                .Mail(null, message.Destination, message.Subject, message.Body, true);
 
             return Task.FromResult(0);
         }
@@ -55,7 +56,8 @@ namespace EasyLOB.Identity
         public Task SendAsync(IdentityMessage message)
         {
             // Plug in your SMS service here to send a text message.
-            DIHelper.MailManager.Mail(null, message.Destination, message.Subject, message.Body, true);
+            DIHelper.DIManager.GetService<IMailManager>()
+                .Mail(null, message.Destination, message.Subject, message.Body, true);
 
             return Task.FromResult(0);
         }

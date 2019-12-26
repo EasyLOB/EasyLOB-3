@@ -49,8 +49,6 @@ namespace EasyLOB.Environment
 
                     Parse(menu, menuJson, null, authenticationManager.IsAdministrator, authenticationManager.Roles);
 
-                    ResourcesManager resourcesManager = new ResourcesManager();
-
                     foreach (AppMenu appMenu in menu)
                     {
                         if (appMenu.Text.Contains("Resources."))
@@ -61,19 +59,19 @@ namespace EasyLOB.Environment
                                 switch (words[0])
                                 {
                                     case "DashboardResources":
-                                        appMenu.Text = resourcesManager.GetDashboardResource(words[1]);
+                                        appMenu.Text = ResourcesHelper.GetDashboardResource(words[1]);
                                         break;
 
                                     case "MenuResources":
-                                        appMenu.Text = resourcesManager.GetMenuResource(words[1]);
+                                        appMenu.Text = ResourcesHelper.GetMenuResource(words[1]);
                                         break;
 
                                     case "ReportResources":
-                                        appMenu.Text = resourcesManager.GetReportResource(words[1]);
+                                        appMenu.Text = ResourcesHelper.GetReportResource(words[1]);
                                         break;
 
                                     default:
-                                        appMenu.Text = resourcesManager.GetResource(words[0], words[1]);
+                                        appMenu.Text = ResourcesHelper.GetResource(words[0], words[1]);
                                         break;
                                 }
                             }

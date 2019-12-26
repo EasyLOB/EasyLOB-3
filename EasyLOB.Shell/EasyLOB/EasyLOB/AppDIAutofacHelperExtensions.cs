@@ -16,7 +16,6 @@ namespace EasyLOB
             //containerBuilder.RegisterType<IniManagerMock>().As<IIniManager>();
             containerBuilder.RegisterType<IniManager>().As<IIniManager>();
 
-            // DIHelper
             //containerBuilder.RegisterType<MailManagerMock>().As<IMailManager>();
             containerBuilder.RegisterType<MailManager>().As<IMailManager>();
         }

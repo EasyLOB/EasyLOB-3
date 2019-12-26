@@ -6,6 +6,14 @@ namespace EasyLOB.Extensions.Ini
     {
         #region Methods Interface
 
+        public void Load(string iniPath)
+        {
+        }
+
+        public void Save()
+        {
+        }
+
         public bool Write(string section, string key, string value)
         {
             return true;

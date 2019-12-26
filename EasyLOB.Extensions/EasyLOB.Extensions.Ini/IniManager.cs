@@ -1,34 +1,17 @@
-﻿using IniParser;
-using IniParser.Model;
+﻿using SharpConfig;
 using System;
-
-// Install-Package ini-parser
-// *.ini UTF-8-BOM
 
 namespace EasyLOB.Extensions.Ini
 {
     public partial class IniManager : IIniManager
     {
-        #region Properties IniParser
+        #region Properties
 
-        private string IniPath { get; }
+        private string IniPath { get; set; }
 
-        private IniData Data { get; }
+        private Configuration Configuration { get; set; }
 
-        private FileIniDataParser Parser { get; }
-
-        #endregion Properties IniParser
-
-        #region Methods
-
-        public IniManager(string iniPath)
-        {
-            IniPath = iniPath;
-            Parser = new FileIniDataParser();
-            Data = Parser.ReadFile(iniPath);
-        }
-
-        #endregion Methods
+        #endregion Properties
 
         #region Methods IDispose
 
@@ -56,15 +39,28 @@ namespace EasyLOB.Extensions.Ini
 
         #region Methods Interface
 
+        public void Load(string iniPath)
+        {
+            IniPath = iniPath;
+            Configuration = SharpConfig.Configuration.LoadFromFile(IniPath);
+        }
+
+        public void Save()
+        {
+            Configuration.SaveToFile(IniPath);
+        }
+
         public bool Write(string section, string key, string value)
         {
             bool result = false;
 
             try
             {
-                Data[section][key] = value;
-                Parser.WriteFile(IniPath, Data);
-                result = true;
+                if (Configuration != null)
+                {
+                    Configuration[section][key].StringValue = value;
+                    result = true;
+                }
             }
             catch { }
 
@@ -77,7 +73,11 @@ namespace EasyLOB.Extensions.Ini
 
             try
             {
-                result = Data[section][key];
+                if (Configuration != null)
+                {
+                    var configurationSection = Configuration[section];
+                    result = configurationSection[key].StringValue;
+                }
             }
             catch { }
 
@@ -90,9 +90,12 @@ namespace EasyLOB.Extensions.Ini
 
             try
             {
-                Data[section].RemoveKey(key);
-                Parser.WriteFile(IniPath, Data);
-                result = true;
+                if (Configuration != null)
+                {
+                    var configurationSection = Configuration[section];
+                    configurationSection.Remove(key);
+                    result = true;
+                }
             }
             catch { }
 
@@ -105,9 +108,11 @@ namespace EasyLOB.Extensions.Ini
 
             try
             {
-                Data.Sections.RemoveSection(section);
-                Parser.WriteFile(IniPath, Data);
-                result = true;
+                if (Configuration != null)
+                {
+                    Configuration.Remove(section);
+                    result = true;
+                }
             }
             catch { }
 

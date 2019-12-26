@@ -29,11 +29,6 @@ namespace EasyLOB
         /// </summary>
         public static ILogManager LogManager { get; private set; }
 
-        /// <summary>
-        /// Mail manager.
-        /// </summary>
-        public static IMailManager MailManager { get; private set; }
-
         #endregion Properties
 
         #region Methods
@@ -51,7 +46,6 @@ namespace EasyLOB
 
             EnvironmentManager = diManager.GetService<IEnvironmentManager>();
             LogManager = diManager.GetService<ILogManager>();
-            MailManager = diManager.GetService<IMailManager>();
         }
 
         #endregion Methods

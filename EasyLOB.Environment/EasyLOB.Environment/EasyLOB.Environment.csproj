@@ -43,7 +43,7 @@
     <Compile Include="Profile\AppProfile.cs" />
     <Compile Include="Profile\ProfileHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResourcesManager.cs" />
+    <Compile Include="ResourcesHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\EasyLOB.AuditTrail\EasyLOB.AuditTrail.Data\EasyLOB.AuditTrail.Data.csproj">
