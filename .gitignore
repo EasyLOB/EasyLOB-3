@@ -163,6 +163,9 @@ publish/
 *.nuget.props
 *.nuget.targets
 
+# npm Packages
+**/node_modules/
+
 # Microsoft Azure Build Output
 csx/
 *.build.csdef
@@ -192,7 +195,6 @@ ClientBin/
 *.dbproj.schemaview
 *.pfx
 *.publishsettings
-node_modules/
 orleans.codegen.cs
 
 # RIA/Silverlight projects
